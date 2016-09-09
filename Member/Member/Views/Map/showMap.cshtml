@@ -1,0 +1,77 @@
+﻿<div class="row">
+
+    <div class="col-md-12">
+        <!-- START GOOGLE WORLD MAP -->
+        <div class="panel panel-default">
+
+            <div class="page-title">
+                <h3><a href="#/info"><span class="fa fa-arrow-circle-o-left"></span>Back</a></h3>
+            </div>
+
+            <div class="panel-body panel-body-map">
+                <div class="google-maps">
+                    <iframe src="http://localhost:61598/Map/showMap2"
+                            width="735" height="450" frameborder="0" style="border:0"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- END GOOGLE WORLD MAP-->
+    </div>
+</div>
+
+<div class="panel-body">
+    <form class="form-horizontal" role="form">
+        <div class="form-group" id="my_centered_buttons">
+            <div class="col-md-6">
+                <button class="button button2 btn-block" onclick="parent.location='/#/Navigation'"><strong>Navigate</strong></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style type="text/css">
+    #my_centered_buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button {
+        background-color: white; /* Green */
+        border: none;
+        color: #4CAF50;
+        padding: 10px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button2 {
+        background-color: #008CBA;
+        color: white;
+        border: 2px solid #008CBA;
+    }
+
+    .button2 {
+        border-radius: 4px;
+    }
+
+    .google-maps {
+        position: relative;
+        padding-bottom: 60%;
+        // This is the aspect ratio height: 0;
+        overflow: hidden;
+    }
+
+        .google-maps iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+</style>

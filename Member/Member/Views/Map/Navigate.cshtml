@@ -1,0 +1,56 @@
+﻿
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- START GOOGLE WORLD MAP -->
+        <div class="panel panel-default">
+
+            <div class="page-title">
+                <h3><a href="/#/showMap"><span class="fa fa-arrow-circle-o-left"></span>Back</a></h3>
+            </div>
+
+            <div class="panel-body panel-body-map">
+                <div class="google-maps">
+                    <iframe src="http://localhost:61598/Map/Navigate2"
+                            width="735" height="450" frameborder="0" style="border:0"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- END GOOGLE WORLD MAP-->
+    </div>
+</div>
+
+
+<style>
+    #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+    }
+
+    .google-maps {
+        position: relative;
+        padding-bottom: 100%;
+        // This is the aspect ratio height: 0;
+        overflow: hidden;
+    }
+
+        .google-maps iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+</style>
+
+
+
