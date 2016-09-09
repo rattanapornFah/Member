@@ -6,6 +6,7 @@ app.config(function ($routeProvider) {
         .when("/", {
             templateUrl: "Home/Index"
         })
+
         .otherwise({
             templateUrl: "Home/Index"
         })
