@@ -1,232 +1,159 @@
 ﻿
-<div class="row">
-    <div class="col-md-8">
-        <!-- START GOOGLE WORLD MAP -->
-        <div class="panel panel-default">
-            <ul id="tabs">
-                <li><a href="/#/Map" title="tab1"> Sort by location </a></li>
-                <li><a href="/#/MapByName" title="tab2"> Sort by name </a></li>
-            </ul>
-            <div class="panel-body panel-body-map table-responsive">
-                <div class="google-maps">
-                    <iframe src="http://localhost:61598/Map/Map2"
-                            width="735" height="450" frameborder="0" style="border:0"></iframe>
-                </div>
-            </div>
-        </div>
-        <!-- END GOOGLE WORLD MAP-->
-    </div>
 
     <div class="row">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <ul id="tabs">
+                <li><a href="/#/Map" title="tab1">Sort location</a></li>
+                <li><a href="/#/MapByName" title="tab2">Sort name</a></li>
+            </ul>
+            <div class="google-maps">
+                <iframe src="http://localhost:61598/Map/Map2"
+                        width="735" height="455" frameborder="0" style="border:0"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- END GOOGLE WORLD MAP-->
 
-        <div class="col-md-4">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4>Map <small>Sort By Location</small></h4>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" id="scrollArea">               
+                <a href="/#/Infor">
+                    <div class="row">
+                        <div class="timeline-item-content" style="width: 100%; height: 100px">
+                            <div class="timeline-heading">
+                                <h5 style="color:darkred"><strong>โออิชิบุฟเฟ่ต์ แฟชั่นไอซ์แลนด์</strong></h5>
+                            </div>
+                            <div class="timeline-body">
+                                <img src="~/Images/map/oishi-grand.jpg" class="img-text" width="150" align="left" />
+                                <p>ชั้น B ศูนย์การค้าแฟชั่นไอส์แลนด์</p>
+                                <p>ถ.รามอินทรา</p>
 
-            <!-- START VISITORS BLOCK -->
-            <div class="panel panel-default vertical-scrollbar ">
-                <div class="panel-body padding-0">
-
-                    <a href="/#/Infor">
-                        <div class="row">
-                            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                                <div class="timeline-heading">
-                                    <h5 style="color:darkred"><strong>โออิชิบุฟเฟ่ต์ แฟชั่นไอซ์แลนด์</strong></h5>
-                                </div>
-                                <div class="timeline-body">
-                                    <img src="~/Images/map/oishi-grand.jpg" class="img-text" width="150" align="left"/>
-                                    <p>ชั้น B ศูนย์การค้าแฟชั่นไอส์แลนด์</p>
-                                    <p>ถ.รามอินทรา</p>
-
-                                    <div class="timeline-footer">
-                                        <h5 href="/#/Infor"><strong>Read more</strong></h5>
-                                        <h6 class="pull-right">7.0 กม.</h6>
-                                    </div>
+                                <div class="timeline-footer">
+                                    <h5 href="/#/Infor"><strong>Read more</strong></h5>
+                                    <h6 class="pull-right">7.0 กม.</h6>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <a href="/#/Infor">
-                        <div class="row">
-                            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                                <div class="timeline-heading">
-                                    <h5 href="#" style="color:darkred"><strong>โออิชิราเมน เดอะมอลล์บางกะปิ</strong></h5>
-                                </div>
-                                <div class="timeline-body">           
-                                    <img src="~/Images/map/bangcare.jpg" class="img-text" width="150" align="left"/>
-                                    <p>เดอะมอลล์บางกะปิ ชั้น G ถ.ลาดพร้าว</p>
-                                    <div class="timeline-footer">
-                                        <h5 href="#"><strong>Read more</strong></h5>
-                                        <h6 class="pull-right">8.7 กม.</h6>
-                                    </div>
+                <a href="/#/Infor">
+                    <div class="row">
+                        <div class="timeline-item-content" style="width: 100%; height: 100px">
+                            <div class="timeline-heading">
+                                <h5 href="#" style="color:darkred"><strong>โออิชิราเมน เดอะมอลล์บางกะปิ</strong></h5>
+                            </div>
+                            <div class="timeline-body">
+                                <img src="~/Images/map/bangcare.jpg" class="img-text" width="150" align="left" />
+                                <p>เดอะมอลล์บางกะปิ ชั้น G ถ.ลาดพร้าว</p>
+                                <div class="timeline-footer">
+                                    <h5 href="#"><strong>Read more</strong></h5>
+                                    <h6 class="pull-right">8.7 กม.</h6>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <a href="/#/Infor">
-                        <div class="row">
-                            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                                <div class="timeline-heading">
-                                    <h5 href="#" style="color:darkred"><strong>ชาบูชิ เดอะมอลล์บางกะปิ</strong></h5>
-                                </div>
-                                <div class="timeline-body">
-                                    <img src="~/Images/map/square.jpg" class="img-text" width="150" align="left" />
-                                    <p>เดอะมอลล์บางกะปิ ชั้น G ถ.ลาดพร้าว</p>
-                                    <div class="timeline-footer">
-                                        <h5 href="#">
-                                            <strong>Read more</strong>
-                                        </h5>
-                                        <h6 class="pull-right">8.7 กม.</h6>
-                                    </div>
+                <a href="/#/Infor">
+                    <div class="row">
+                        <div class="timeline-item-content" style="width: 100%; height: 100px">
+                            <div class="timeline-heading">
+                                <h5 href="#" style="color:darkred"><strong>ชาบูชิ เดอะมอลล์บางกะปิ</strong></h5>
+                            </div>
+                            <div class="timeline-body">
+                                <img src="~/Images/map/square.jpg" class="img-text" width="150" align="left" />
+                                <p>เดอะมอลล์บางกะปิ ชั้น G ถ.ลาดพร้าว</p>
+                                <div class="timeline-footer">
+                                    <h5 href="#">
+                                        <strong>Read more</strong>
+                                    </h5>
+                                    <h6 class="pull-right">8.7 กม.</h6>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <a href="/#/Infor">
-                        <div class="row">
-                            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                                <div class="timeline-heading">
-                                    <h5 href="#" style="color:darkred"><strong>ชาบูชิ เดอะมอลล์งามวงศ์วาน</strong></h5>
-                                </div>
-                                <div class="timeline-body">
-                                    <img src="~/Images/map/pin.jpg" class="img-text" width="150" align="left" />
-                                    <p>	เดอะมอลล์งามวงศ์วาน ชั้น G </p>
-                                    <div class="timeline-footer">
-                                        <h5 href="#">
-                                            <strong>Read more</strong>
-                                        </h5>
-                                        <h6 class="pull-right">13.6 กม.</h6>
-                                    </div>
+                <a href="/#/Infor">
+                    <div class="row">
+                        <div class="timeline-item-content" style="width: 100%; height: 100px">
+                            <div class="timeline-heading">
+                                <h5 href="#" style="color:darkred"><strong>ชาบูชิ เดอะมอลล์งามวงศ์วาน</strong></h5>
+                            </div>
+                            <div class="timeline-body">
+                                <img src="~/Images/map/pin.jpg" class="img-text" width="150" align="left" />
+                                <p>	เดอะมอลล์งามวงศ์วาน ชั้น G </p>
+                                <div class="timeline-footer">
+                                    <h5 href="#">
+                                        <strong>Read more</strong>
+                                    </h5>
+                                    <h6 class="pull-right">13.6 กม.</h6>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <a href="/#/Infor">
-                        <div class="row" href="/#/Infor">
-                            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                                <div class="timeline-heading">
-                                    <h5 href="#" style="color:darkred"><strong>โออิชิราเมน ยูเนียนมอลล์</strong></h5>
-                                </div>
-                                <div class="timeline-body">
-                                    <img src="~/Images/map/bigc4.jpg" class="img-text" width="150" align="left"/>
-                                    <p>ศูนย์การค้ายูเนี่ยนมอลล์ ซ.ลาดพร้าว1 </p>
-                                    <p>แขวงจอมพล เขตจตุจักร</p>
-                                    <div class="timeline-footer">
-                                        <h5 href="#">
-                                            <strong>Read more</strong>
-                                        </h5>
-                                        <h6 class="pull-right">16.8 กม.</h6>
-                                    </div>
+                <a href="/#/Infor">
+                    <div class="row" href="/#/Infor">
+                        <div class="timeline-item-content" style="width: 100%; height: 100px">
+                            <div class="timeline-heading">
+                                <h5 href="#" style="color:darkred"><strong>โออิชิราเมน ยูเนียนมอลล์</strong></h5>
+                            </div>
+                            <div class="timeline-body">
+                                <img src="~/Images/map/bigc4.jpg" class="img-text" width="150" align="left" />
+                                <p>ศูนย์การค้ายูเนี่ยนมอลล์ ซ.ลาดพร้าว1 </p>
+                                <p>แขวงจอมพล เขตจตุจักร</p>
+                                <div class="timeline-footer">
+                                    <h5 href="#">
+                                        <strong>Read more</strong>
+                                    </h5>
+                                    <h6 class="pull-right">16.8 กม.</h6>
                                 </div>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </div>
+              
+            
 
-
-
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-<meta charset="utf-8">
-<title>Complex icons</title>
-<style>
-    .google-maps {
-        position: relative;
-        padding-bottom: 68%;
-        // This is the aspect ratio height: 0;
-        overflow: hidden;
-    }
-
-        .google-maps iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100% !important;
-            height: 100% !important;
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Complex icons</title>
+    <style>
+        .google-maps {
+            position: relative;
+            padding-bottom: 70%;
+            // This is the aspect ratio height: 0;
+            overflow: hidden;
         }
 
-       
-        .vertical-scrollbar
-        {
-            overflow-x: hidden; /*for hiding horizontal scroll bar*/
-            overflow-y: auto; /*for vertical scroll bar*/
+            .google-maps iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+            }
+
+        #scrollArea {
+            height: 445px;
+            overflow: auto;
         }
-
-</style>
-
-<div id="map"></div>
+    </style>
 
 
-<script>
 
-    // The following example creates complex markers to indicate beaches near
-    // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
-    // to the base of the flagpole.
+    <script src="~/MemberJS/tab.js"></script>
+    <link href="~/css/tab.css" rel="stylesheet" />
 
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: { lat: 13.757792, lng: 100.492984 }
-        });
-
-        setMarkers(map);
-    }
-
-    // Data for the markers consisting of a name, a LatLng and a zIndex for the
-    // order in which these markers should display on top of each other.
-    var oishis = [
-      ['โออิชิบุฟเฟ่ต์ Major Avenue', 13.831637, 100.583606, 4],
-      ['โออิชิบุฟเฟ่ต์ ไอทีสแคร์', 13.890382, 100.598026, 5],
-      ['โอิชิราเมน เซนทรัลรัตนาธิเบศร์', 13.868384, 100.460011, 3],
-      ['โออิชิบุฟเฟ่ต์ บิ๊กซีพระราม4', 13.718344, 100.597340, 2],
-      ['ชาบูชิ เซนทรัลเวิลด์พลาซ่า', 13.743691, 100.563007, 1]
-    ];
-
-    function setMarkers(map) {
-        // Adds markers to the map.
-
-        // Marker sizes are expressed as a Size of X,Y where the origin of the image
-        // (0,0) is located in the top left of the image.
-
-        // Origins, anchor positions and coordinates of the marker increase in the X
-        // direction to the right and in the Y direction down.
-        //var image = {
-        //    url: 'http://cdn.com/my-custom-icon.png',
-        //  // This marker is 20 pixels wide by 32 pixels high.
-        //  size: new google.maps.Size(20, 32),
-        //  // The origin for this image is (0, 0).
-        //  origin: new google.maps.Point(0, 0),
-        //  // The anchor for this image is the base of the flagpole at (0, 32).
-        //  anchor: new google.maps.Point(0, 32)
-        //};
-        // Shapes define the clickable region of the icon. The type defines an HTML
-        // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-        // The final coordinate closes the poly by connecting to the first coordinate.
-
-        var shape = {
-            coords: [1, 1, 1, 20, 18, 20, 18, 1],
-            type: 'poly'
-        };
-
-        for (var i = 0; i < oishis.length; i++) {
-            var oishi = oishis[i];
-            var marker = new google.maps.Marker({
-                position: { lat: oishi[1], lng: oishi[2] },
-                map: map,
-                shape: shape,
-                title: oishi[0],
-                zIndex: oishi[3]
-            });
-        }
-    }
-</script>
-
-<script src="~/MemberJS/tab.js"></script>
-<link href="~/css/tab.css" rel="stylesheet" />
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOGlI5Aps4McAxmCmbPJiuhwK3OakNsbg&callback=initMap"
-        async defer></script>
