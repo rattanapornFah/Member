@@ -160,6 +160,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\MapController.cs" />
@@ -5216,6 +5217,16 @@
     <Content Include="Template\vendors\validator\.bower.json" />
     <Content Include="Template\vendors\validator\README.md" />
     <Content Include="Template\vendors\validator\validator.jquery.json" />
+    <Content Include="Views\Map\Map.cshtml" />
+    <Content Include="Views\Map\Map2.cshtml" />
+    <Content Include="Views\Map\MapByName.cshtml" />
+    <Content Include="Views\Register\register.cshtml" />
+    <Content Include="Views\Map\Infor.cshtml" />
+    <Content Include="Views\Map\showMap.cshtml" />
+    <Content Include="Views\Map\showMap2.cshtml" />
+    <Content Include="Views\Map\Navigate.cshtml" />
+    <Content Include="Views\Map\Navigate2.cshtml" />
+    <Content Include="Views\Feedback\Feedback.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

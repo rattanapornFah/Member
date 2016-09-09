@@ -21,5 +21,25 @@ namespace Member.Controllers
         {
             return View();
         }
+        public ActionResult Infor()
+        {
+            return View();
+        }
+        public ActionResult showMap()
+        {
+            return View();
+        }
+        public ActionResult showMap2()
+        {
+            return View();
+        }
+        public ActionResult Navigate()
+        {
+            return View();
+        }
+        public ActionResult Navigate2()
+        {
+            return View();
+        }
     }
 }
