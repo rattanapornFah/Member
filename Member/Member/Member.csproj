@@ -162,6 +162,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Global.asax.cs">
@@ -187,7 +188,6 @@
     <Content Include="Images\map\square.jpg" />
     <Content Include="Images\user_sm.png" />
     <Content Include="MemberJS\app.js" />
-    <Content Include="MemberJS\tab.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-animate.js" />
@@ -5231,12 +5231,6 @@
     <Content Include="Views\Map\Map2.cshtml" />
     <Content Include="Views\Map\MapByName.cshtml" />
     <Content Include="Views\Register\register.cshtml" />
-    <Content Include="Views\Map\Infor.cshtml" />
-    <Content Include="Views\Map\showMap.cshtml" />
-    <Content Include="Views\Map\showMap2.cshtml" />
-    <Content Include="Views\Map\Navigate.cshtml" />
-    <Content Include="Views\Map\Navigate2.cshtml" />
-    <Content Include="Views\Feedback\Feedback.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
