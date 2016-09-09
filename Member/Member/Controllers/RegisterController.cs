@@ -13,5 +13,23 @@ namespace Member.Controllers
         {
             return View();
         }
+        public ActionResult Card()
+        {
+            return View();
+        }
+        public ActionResult Editmember()
+        {
+            return View();
+        }
+        public ActionResult Addcard()
+        {
+            return View();
+        }
+        public ActionResult Point()
+        {
+            return View();
+        }
+
+
     }
 }

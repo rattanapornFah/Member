@@ -59,7 +59,7 @@
                                 <li>
                                     <a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="form.html">General Form</a></li>
+                                        <li><a href="/#/Card">General Form</a></li>
                                         <li><a href="form_advanced.html">Advanced Components</a></li>
                                         <li><a href="form_validation.html">Form Validation</a></li>
                                         <li><a href="form_wizards.html">Form Wizard</a></li>
@@ -77,10 +77,10 @@
                                 <li>
                                     <a href="/#/News" onclick="window.parent.location.reload();"><i class="fa fa-bullhorn"></i> News </a>
                                 </li>
-     
+
                                 <li>
                                     <a href="/#/Map" onclick="window.parent.location.reload();"><i class="fa fa-map-marker"></i> Map </a>
-                                   
+
                                 </li>
 
                                 <li>
@@ -106,7 +106,7 @@
                             </ul>
                         </div>
                         <div class="menu_section">
-                            
+
                         </div>
                     </div>
                     <!-- /sidebar menu -->
@@ -150,7 +150,7 @@
                                         </a>
                                     </li>
                                     <li><a href="javascript:;">Help</a></li>
-                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                    <li><a href="/Login/login"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                                 </ul>
                             </li>
                             <li role="presentation" class="dropdown">
@@ -232,22 +232,25 @@
                 <div class="page-content-wrap" ng-view></div>
 
             </div>
+
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    OISHI <a href="http://www.oishigroup.com/">Oishi</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
         </div>
     </div>
-    <!-- /page content -->
-    <!-- footer content -->
-    <footer>
-        <div class="pull-right">
-            OISHI <a href="http://www.oishigroup.com/">Oishi</a>
-        </div>
-        <div class="clearfix"></div>
-    </footer>
-    <!-- /footer content -->
 
+    <!-- /footer content -->
+    <script src="~/MemberJS/app.js"></script>
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/angular-sanitize.js"></script>
-    <script src="~/MemberJS/app.js"></script>
+
+    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
     <script src="~/MemberJS/register.js"></script>
     <script src="~/MemberJS/picture.js"></script>
     <!-- jQuery -->

@@ -39,6 +39,15 @@ app.config(function ($routeProvider) {
         .when("/Unread", {
             templateUrl: "News/Detail"
         })
+        .when("/Editmember", {
+            templateUrl: "Register/Editmember"
+        })
+         .when("/Editmember", {
+            templateUrl: "Register/Card"
+         })
+        .when("/Editmember", {
+            templateUrl: "Register/Point"
+        })
         .otherwise({
             templateUrl: "Home/Index"
         })
