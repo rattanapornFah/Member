@@ -22,22 +22,22 @@
         <div class="col-md-4">
 
             <!-- START VISITORS BLOCK -->
-            <div class="panel panel-default" id="scrollArea">
+            <div class="panel panel-default vertical-scrollbar ">
                 <div class="panel-body padding-0">
 
-                    <a href="/#/info">
+                    <a href="/#/Infor">
                         <div class="row">
                             <div class="timeline-item-content" style="width: 100%; height: 100px">
                                 <div class="timeline-heading">
                                     <h5 style="color:darkred"><strong>โออิชิบุฟเฟ่ต์ แฟชั่นไอซ์แลนด์</strong></h5>
                                 </div>
                                 <div class="timeline-body">
-                                    <img src="~/Templete/img/oishi-grand.jpg" class="img-text" width="150" align="left" />
+                                    <img src="~/Images/map/oishi-grand.jpg" class="img-text" width="150" align="left"/>
                                     <p>ชั้น B ศูนย์การค้าแฟชั่นไอส์แลนด์</p>
                                     <p>ถ.รามอินทรา</p>
 
                                     <div class="timeline-footer">
-                                        <h5 href="#/info"><strong>Read more</strong></h5>
+                                        <h5 href="/#/Infor"><strong>Read more</strong></h5>
                                         <h6 class="pull-right">7.0 กม.</h6>
                                     </div>
                                 </div>
@@ -45,14 +45,14 @@
                         </div>
                     </a>
 
-                    <a href="/#/info">
+                    <a href="/#/Infor">
                         <div class="row">
                             <div class="timeline-item-content" style="width: 100%; height: 100px">
                                 <div class="timeline-heading">
                                     <h5 href="#" style="color:darkred"><strong>โออิชิราเมน เดอะมอลล์บางกะปิ</strong></h5>
                                 </div>
-                                <div class="timeline-body">
-                                    <img src="~/Templete/img/bangcare.jpg" class="img-text" width="150" align="left" />
+                                <div class="timeline-body">           
+                                    <img src="~/Images/map/bangcare.jpg" class="img-text" width="150" align="left"/>
                                     <p>เดอะมอลล์บางกะปิ ชั้น G ถ.ลาดพร้าว</p>
                                     <div class="timeline-footer">
                                         <h5 href="#"><strong>Read more</strong></h5>
@@ -63,14 +63,14 @@
                         </div>
                     </a>
 
-                    <a href="/#/info">
+                    <a href="/#/Infor">
                         <div class="row">
                             <div class="timeline-item-content" style="width: 100%; height: 100px">
                                 <div class="timeline-heading">
                                     <h5 href="#" style="color:darkred"><strong>ชาบูชิ เดอะมอลล์บางกะปิ</strong></h5>
                                 </div>
                                 <div class="timeline-body">
-                                    <img src="~/Templete/img/square.jpg" class="img-text" width="150" align="left" />
+                                    <img src="~/Images/map/square.jpg" class="img-text" width="150" align="left" />
                                     <p>เดอะมอลล์บางกะปิ ชั้น G ถ.ลาดพร้าว</p>
                                     <div class="timeline-footer">
                                         <h5 href="#">
@@ -83,14 +83,14 @@
                         </div>
                     </a>
 
-                    <a href="/#/info">
+                    <a href="/#/Infor">
                         <div class="row">
                             <div class="timeline-item-content" style="width: 100%; height: 100px">
                                 <div class="timeline-heading">
                                     <h5 href="#" style="color:darkred"><strong>ชาบูชิ เดอะมอลล์งามวงศ์วาน</strong></h5>
                                 </div>
                                 <div class="timeline-body">
-                                    <img src="~/Templete/img/pin.jpg" class="img-text" width="150" align="left" />
+                                    <img src="~/Images/map/pin.jpg" class="img-text" width="150" align="left" />
                                     <p>	เดอะมอลล์งามวงศ์วาน ชั้น G </p>
                                     <div class="timeline-footer">
                                         <h5 href="#">
@@ -103,14 +103,14 @@
                         </div>
                     </a>
 
-                    <a href="/#/info">
-                        <div class="row" href="/#/info">
+                    <a href="/#/Infor">
+                        <div class="row" href="/#/Infor">
                             <div class="timeline-item-content" style="width: 100%; height: 100px">
                                 <div class="timeline-heading">
                                     <h5 href="#" style="color:darkred"><strong>โออิชิราเมน ยูเนียนมอลล์</strong></h5>
                                 </div>
                                 <div class="timeline-body">
-                                    <img src="~/Templete/img/bigc4.jpg" class="img-text" width="150" align="left" />
+                                    <img src="~/Images/map/bigc4.jpg" class="img-text" width="150" align="left"/>
                                     <p>ศูนย์การค้ายูเนี่ยนมอลล์ ซ.ลาดพร้าว1 </p>
                                     <p>แขวงจอมพล เขตจตุจักร</p>
                                     <div class="timeline-footer">
@@ -149,6 +149,14 @@
             width: 100% !important;
             height: 100% !important;
         }
+
+       
+        .vertical-scrollbar
+        {
+            overflow-x: hidden; /*for hiding horizontal scroll bar*/
+            overflow-y: auto; /*for vertical scroll bar*/
+        }
+
 </style>
 
 <div id="map"></div>

@@ -178,6 +178,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\map\bangcare.jpg" />
+    <Content Include="Images\map\bigc4.jpg" />
+    <Content Include="Images\map\oishi-grand.jpg" />
+    <Content Include="Images\map\pin.jpg" />
+    <Content Include="Images\map\square.jpg" />
     <Content Include="Images\user_sm.png" />
     <Content Include="MemberJS\app.js" />
     <Content Include="MemberJS\tab.js" />
