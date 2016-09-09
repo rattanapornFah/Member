@@ -30,6 +30,15 @@ app.config(function ($routeProvider) {
         .when("/Feedback", {
             templateUrl: "Feedback/Feedback"
         })
+        .when("/News", {
+            templateUrl: "News/News"
+        })
+        .when("/Unread", {
+            templateUrl: "News/Unread"
+        })
+        .when("/Unread", {
+            templateUrl: "News/Detail"
+        })
         .otherwise({
             templateUrl: "Home/Index"
         })
