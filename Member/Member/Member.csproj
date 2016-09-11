@@ -188,9 +188,11 @@
     <Content Include="Images\map\pin.jpg" />
     <Content Include="Images\map\square.jpg" />
     <Content Include="Images\register\oishi-footer.png" />
+    <Content Include="Images\register\oishi2.png" />
     <Content Include="Images\register\oishi_logo_sm.png" />
     <Content Include="Images\register\user_sm.png" />
     <Content Include="MemberJS\app.js" />
+    <Content Include="MemberJS\card.js" />
     <Content Include="MemberJS\picture.js" />
     <Content Include="MemberJS\register.js" />
     <Content Include="MemberJS\tab.js" />
@@ -998,6 +1000,7 @@
     <Content Include="Template\build\css\custom.min.css" />
     <Content Include="Template\build\js\custom.js" />
     <Content Include="Template\build\js\custom.min.js" />
+    <Content Include="Template\css\card\card.css" />
     <Content Include="Template\css\maps\jquery-jvectormap-2.0.3.css" />
     <Content Include="Template\images\american-express.png" />
     <Content Include="Template\images\cropper.jpg" />

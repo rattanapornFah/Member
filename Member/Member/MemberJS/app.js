@@ -42,10 +42,10 @@ app.config(function ($routeProvider) {
         .when("/Editmember", {
             templateUrl: "Register/Editmember"
         })
-         .when("/Editmember", {
+         .when("/Card", {
             templateUrl: "Register/Card"
          })
-        .when("/Editmember", {
+        .when("/Point", {
             templateUrl: "Register/Point"
         })
         .otherwise({
