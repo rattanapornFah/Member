@@ -21,63 +21,65 @@
     <link href="~/Template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
+    <style>
+        .bg {
+            background-image: url('../../Images/Register/oishi2.png');
+            width: 100%;
+            height: auto;
+        }
+        .center {
+            text-align: center;
+        }
+        h2 ,p {
+            color:white;
+        }
+    </style>
 </head>
 <body>
-
     <div class="container">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 
 
-            <div class="x_title">
-                <h4 style="color:darkred"><strong> Enter your card number and pin code <i class="glyphicon glyphicon-plus"></i></strong></h4>
-            </div>
-
             <div class="login_wrapper">
                 <div class="animate form login_form">
 
+                    <h2><span class="fa fa-plus-circle"><strong> Add your card</strong></span></h2>
+                    <p>Enter your card number and pin code.</p>
                     <section class="login_content">
+                        <form class="bg img-rounded" align="center" style="width:100%; height:290px">
+                            
 
-                        <form class="form-signin bg" style="width:100%; height:290px">
                             <span id="reauth-email" class="reauth-email"></span>
                             <br><br><br><br>
-
                             <input type="number" id="inputNumber" class="form-control" placeholder="Card Number" required autofocus>
                             <br>
                             <input type="password" id="inputPassword" class="form-control" placeholder="Pin Number" required>
-                            <br>
 
                             <div>
                                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" onclick="parent.location='/#/Point'"><strong>Submit</strong></button>
                             </div>
+                            <!-- /form -->
 
-                        </form><!-- /form -->
-                        </section>
-                </div>
-                <div class="login-footer">
-
+                        </form>
+                    </section>
                 </div>
             </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h4><a href="/Register/register" style="color:white"><span class="fa fa-arrow-circle-o-left" style="color:white"></span>Back</a></h4>
         </div>
     </div><!-- /card-container -->
-    <!-- /container -->
-   
 
-    <script src="~/MemberJS/js.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/MemberJS/app.js"></script>
     <script src="~/MemberJS/card.js"></script>
     <link href="~/css/card.css" rel="stylesheet" />
-
+    <link rel="stylesheet" type="text/css" id="theme" href="~/Templete/css/theme-default.css" />
 </body>
 </html>
-<style>
-    .bg {
-        background-image: url('../../Images/register/oishi2.png'); 
-       
-    }
+   
 
-    .center {
-        text-align: center;
-    }
-
-</style>
-
+    
