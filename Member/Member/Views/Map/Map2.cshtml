@@ -41,7 +41,7 @@
     <div id="map"></div>
 
 
-    <script>
+     <script>
 
         // The following example creates complex markers to indicate beaches near
         // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
@@ -65,6 +65,8 @@
           ['โออิชิบุฟเฟ่ต์ บิ๊กซีพระราม4', 13.718344, 100.597340, 2],
           ['ชาบูชิ เซนทรัลเวิลด์พลาซ่า', 13.743691, 100.563007, 1]
         ];
+
+
 
         function setMarkers(map) {
             // Adds markers to the map.
@@ -92,6 +94,23 @@
                 type: 'poly'
             };
 
+
+        /*      for (var i = 0; i < oishis.length; i++) {
+                var oishi = oishis[i];
+                var marker = new google.maps.Marker({
+                    position: { lat: oishi[1], lng: oishi[2] },
+                    map: map,
+                    shape: shape,
+                    title: oishi[0],
+                    zIndex: oishi[3]
+                });
+
+            }  */
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
             for (var i = 0; i < oishis.length; i++) {
                 var oishi = oishis[i];
                 var marker = new google.maps.Marker({
@@ -101,7 +120,16 @@
                     title: oishi[0],
                     zIndex: oishi[3]
                 });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(oishis[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
             }
+
+
         }
     </script>
 
