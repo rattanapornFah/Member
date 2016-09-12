@@ -187,12 +187,17 @@
     <Content Include="Images\map\oishigrandpr2015.jpg" />
     <Content Include="Images\map\pin.jpg" />
     <Content Include="Images\map\square.jpg" />
+    <Content Include="Images\news\oishi-central.jpg" />
+    <Content Include="Images\point\Barcode-card.png" />
+    <Content Include="Images\point\card4.png" />
+    <Content Include="Images\point\QRcode-card.png" />
     <Content Include="Images\register\oishi-footer.png" />
     <Content Include="Images\register\oishi2.png" />
     <Content Include="Images\register\oishi_logo_sm.png" />
     <Content Include="Images\register\user_sm.png" />
     <Content Include="MemberJS\app.js" />
     <Content Include="MemberJS\card.js" />
+    <Content Include="MemberJS\editmember.js" />
     <Content Include="MemberJS\picture.js" />
     <Content Include="MemberJS\register.js" />
     <Content Include="MemberJS\tab.js" />

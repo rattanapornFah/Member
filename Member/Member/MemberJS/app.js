@@ -36,7 +36,7 @@ app.config(function ($routeProvider) {
         .when("/Unread", {
             templateUrl: "News/Unread"
         })
-        .when("/Unread", {
+        .when("/Detail", {
             templateUrl: "News/Detail"
         })
         .when("/Editmember", {
