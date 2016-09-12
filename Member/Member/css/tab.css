@@ -19,7 +19,7 @@
     background: #ad1c1c;
     background:    -moz-linear-gradient(220deg, transparent 10px, #ad1c1c 10px);
     background:    -webkit-linear-gradient(220deg, transparent 10px, #ad1c1c 10px);
-    background:     -ms-linear-gradient(220deg, transparent 10px, #ad1c1c 10px);
+    background:-ms-linear-gradient(220deg, transparent 10px, #ad1c1c 10px);
     background:      -o-linear-gradient(220deg, transparent 10px, #ad1c1c 10px);
     background:         linear-gradient(220deg, transparent 10px, #ad1c1c 10px);
     text-shadow: 0 1px 0 rgba(0,0,0,.5);
