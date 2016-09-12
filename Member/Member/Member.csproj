@@ -248,6 +248,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Properties\PublishProfiles\oishi.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1030,7 +1031,6 @@
     <Content Include="Template\vendors\animate.css\animate.css" />
     <Content Include="Template\vendors\animate.css\animate.min.css" />
     <Content Include="Template\vendors\animate.css\gulpfile.js" />
-    <Content Include="Template\vendors\autosize\.gitignore" />
     <Content Include="Template\vendors\autosize\build.js" />
     <Content Include="Template\vendors\autosize\dist\autosize.js" />
     <Content Include="Template\vendors\autosize\dist\autosize.min.js" />
@@ -1144,7 +1144,6 @@
     <Content Include="Template\vendors\bootstrap\js\tooltip.js" />
     <Content Include="Template\vendors\bootstrap\js\transition.js" />
     <Content Include="Template\vendors\bootstrap\package.js" />
-    <Content Include="Template\vendors\Chart.js\.gitignore" />
     <Content Include="Template\vendors\Chart.js\dist\Chart.bundle.js" />
     <Content Include="Template\vendors\Chart.js\dist\Chart.bundle.min.js" />
     <Content Include="Template\vendors\Chart.js\dist\Chart.js" />
@@ -2140,7 +2139,6 @@
     <Content Include="Template\vendors\dropzone\dist\min\dropzone-amd-module.min.js" />
     <Content Include="Template\vendors\dropzone\dist\min\dropzone.min.css" />
     <Content Include="Template\vendors\dropzone\dist\min\dropzone.min.js" />
-    <Content Include="Template\vendors\echarts\.gitignore" />
     <Content Include="Template\vendors\echarts\asset\logo.png" />
     <Content Include="Template\vendors\echarts\build\amd2common.js" />
     <Content Include="Template\vendors\echarts\build\mangleString.js" />
@@ -2686,7 +2684,6 @@
     <Content Include="Template\vendors\flot.orderbars\examples\js\main.js" />
     <Content Include="Template\vendors\flot.orderbars\examples\js\vendor\jquery-1.9.1.min.js" />
     <Content Include="Template\vendors\flot.orderbars\js\jquery.flot.orderBars.js" />
-    <Content Include="Template\vendors\Flot\.gitignore" />
     <Content Include="Template\vendors\Flot\examples\ajax\index.html" />
     <Content Include="Template\vendors\Flot\examples\annotating\index.html" />
     <Content Include="Template\vendors\Flot\examples\axes-interacting\index.html" />
@@ -2744,12 +2741,10 @@
     <Content Include="Template\vendors\Flot\jquery.flot.time.js" />
     <Content Include="Template\vendors\Flot\jquery.js" />
     <Content Include="Template\vendors\Flot\LICENSE.txt" />
-    <Content Include="Template\vendors\font-awesome\.gitignore" />
     <Content Include="Template\vendors\font-awesome\css\font-awesome.css" />
     <Content Include="Template\vendors\font-awesome\css\font-awesome.min.css" />
     <Content Include="Template\vendors\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Template\vendors\font-awesome\HELP-US-OUT.txt" />
-    <Content Include="Template\vendors\fontawesome\.gitignore" />
     <Content Include="Template\vendors\fontawesome\css\font-awesome.css" />
     <Content Include="Template\vendors\fontawesome\css\font-awesome.min.css" />
     <Content Include="Template\vendors\fontawesome\fonts\fontawesome-webfont.svg" />
@@ -2996,7 +2991,6 @@
     <Content Include="Template\vendors\iCheck\skins\square\yellow.css" />
     <Content Include="Template\vendors\iCheck\skins\square\yellow.png" />
     <Content Include="Template\vendors\iCheck\skins\square\_all.css" />
-    <Content Include="Template\vendors\ion.rangeSlider\.gitignore" />
     <Content Include="Template\vendors\ion.rangeSlider\css\ion.rangeSlider.css" />
     <Content Include="Template\vendors\ion.rangeSlider\css\ion.rangeSlider.skinFlat.css" />
     <Content Include="Template\vendors\ion.rangeSlider\css\ion.rangeSlider.skinHTML5.css" />
@@ -3011,7 +3005,6 @@
     <Content Include="Template\vendors\ion.rangeSlider\js\ion.rangeSlider.js" />
     <Content Include="Template\vendors\ion.rangeSlider\js\ion.rangeSlider.min.js" />
     <Content Include="Template\vendors\ion.rangeSlider\_tmp\logo-ion-range-slider.png" />
-    <Content Include="Template\vendors\jquery-knob\.gitignore" />
     <Content Include="Template\vendors\jquery-knob\dist\jquery.knob.min.js" />
     <Content Include="Template\vendors\jquery-knob\excanvas.js" />
     <Content Include="Template\vendors\jquery-knob\index.html" />
@@ -3055,7 +3048,6 @@
     <Content Include="Template\vendors\jquery-sparkline\src\vcanvas-canvas.js" />
     <Content Include="Template\vendors\jquery-sparkline\src\vcanvas-vml.js" />
     <Content Include="Template\vendors\jquery-sparkline\version.txt" />
-    <Content Include="Template\vendors\jquery.easy-pie-chart\.gitignore" />
     <Content Include="Template\vendors\jquery.easy-pie-chart\dist\angular.easypiechart.js" />
     <Content Include="Template\vendors\jquery.easy-pie-chart\dist\angular.easypiechart.min.js" />
     <Content Include="Template\vendors\jquery.easy-pie-chart\dist\easypiechart.js" />
@@ -3703,7 +3695,6 @@
     <Content Include="Template\vendors\moment\templates\globals.js" />
     <Content Include="Template\vendors\moment\templates\locale-header.js" />
     <Content Include="Template\vendors\moment\templates\test-header.js" />
-    <Content Include="Template\vendors\morris.js\.gitignore" />
     <Content Include="Template\vendors\morris.js\examples\area-as-line.html" />
     <Content Include="Template\vendors\morris.js\examples\area.html" />
     <Content Include="Template\vendors\morris.js\examples\bar-colors.html" />
@@ -3746,7 +3737,6 @@
     <Content Include="Template\vendors\morris.js\spec\viz\exemplary\stacked_bar0.png" />
     <Content Include="Template\vendors\morris.js\spec\viz\test.html" />
     <Content Include="Template\vendors\morris.js\spec\viz\visual_specs.js" />
-    <Content Include="Template\vendors\normalize-css\.gitignore" />
     <Content Include="Template\vendors\normalize-css\normalize.css" />
     <Content Include="Template\vendors\nprogress\index.html" />
     <Content Include="Template\vendors\nprogress\nprogress.css" />
@@ -4004,7 +3994,6 @@
     <Content Include="Template\vendors\pdfmake\build\pdfmake.js" />
     <Content Include="Template\vendors\pdfmake\build\pdfmake.min.js" />
     <Content Include="Template\vendors\pdfmake\build\vfs_fonts.js" />
-    <Content Include="Template\vendors\pnotify\.gitignore" />
     <Content Include="Template\vendors\pnotify\dist\pnotify.animate.js" />
     <Content Include="Template\vendors\pnotify\dist\pnotify.brighttheme.css" />
     <Content Include="Template\vendors\pnotify\dist\pnotify.buttons.css" />
@@ -4038,7 +4027,6 @@
     <Content Include="Template\vendors\raphael\raphael.no-deps.min.js" />
     <Content Include="Template\vendors\raphael\webpack.config.js" />
     <Content Include="Template\vendors\requirejs\require.js" />
-    <Content Include="Template\vendors\select2\.gitignore" />
     <Content Include="Template\vendors\select2\dist\css\select2.css" />
     <Content Include="Template\vendors\select2\dist\css\select2.min.css" />
     <Content Include="Template\vendors\select2\dist\js\i18n\ar.js" />
@@ -4092,7 +4080,6 @@
     <Content Include="Template\vendors\select2\dist\js\select2.full.min.js" />
     <Content Include="Template\vendors\select2\dist\js\select2.js" />
     <Content Include="Template\vendors\select2\dist\js\select2.min.js" />
-    <Content Include="Template\vendors\select2\docs\.gitignore" />
     <Content Include="Template\vendors\select2\docs\announcements-4.0.html" />
     <Content Include="Template\vendors\select2\docs\browserconfig.xml" />
     <Content Include="Template\vendors\select2\docs\community.html" />
@@ -4371,7 +4358,6 @@
     <Content Include="Template\vendors\select2\tests\vendor\qunit-1.23.1.css" />
     <Content Include="Template\vendors\select2\tests\vendor\qunit-1.23.1.js" />
     <Content Include="Template\vendors\select2\vendor\jquery-2.1.0.js" />
-    <Content Include="Template\vendors\skycons\.gitignore" />
     <Content Include="Template\vendors\skycons\index.html" />
     <Content Include="Template\vendors\skycons\skycons.js" />
     <Content Include="Template\vendors\starrr\dist\starrr.css" />
@@ -4391,8 +4377,6 @@
     <Content Include="Template\vendors\transitionize\examples\browserify.js" />
     <Content Include="Template\vendors\transitionize\examples\example.html" />
     <Content Include="Template\vendors\transitionize\transitionize.js" />
-    <Content Include="Template\vendors\validator\.gitattributes" />
-    <Content Include="Template\vendors\validator\.gitignore" />
     <Content Include="Template\vendors\validator\fv.css" />
     <Content Include="Template\vendors\validator\index.html" />
     <Content Include="Template\vendors\validator\multifield.js" />
@@ -4412,42 +4396,35 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Map\Map.cshtml" />
+    <Content Include="Views\Map\Map2.cshtml" />
+    <Content Include="Views\Map\MapByName.cshtml" />
+    <Content Include="Views\Register\register.cshtml" />
+    <Content Include="Views\Login\login.cshtml" />
+    <Content Include="Views\Feedback\Feedback.cshtml" />
+    <Content Include="Views\Map\Infor.cshtml" />
+    <Content Include="Views\Map\Navigate.cshtml" />
+    <Content Include="Views\Map\Navigate2.cshtml" />
+    <Content Include="Views\Map\showMap.cshtml" />
+    <Content Include="Views\Map\showMap2.cshtml" />
+    <Content Include="Views\News\News.cshtml" />
+    <Content Include="Views\News\Unread.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\Register\Card.cshtml" />
+    <Content Include="Views\Register\Editmember.cshtml" />
+    <Content Include="Views\Register\Addcard.cshtml" />
+    <Content Include="Views\Register\Point.cshtml" />
     <Content Include="Template\vendors\animate.css\.bower.json" />
     <Content Include="Template\vendors\animate.css\animate-config.json" />
     <Content Include="Template\vendors\animate.css\bower.json" />
     <Content Include="Template\vendors\animate.css\package.json" />
     <Content Include="Template\vendors\autosize\.bower.json" />
+    <Content Include="Template\vendors\autosize\.gitignore" />
     <Content Include="Template\vendors\autosize\bower.json" />
     <Content Include="Template\vendors\autosize\changelog.md" />
     <Content Include="Template\vendors\autosize\LICENSE.md" />
     <Content Include="Template\vendors\autosize\package.json" />
     <Content Include="Template\vendors\autosize\readme.md" />
-    <Content Include="Template\vendors\bootstrap-daterangepicker\.bower.json" />
-    <Content Include="Template\vendors\bootstrap-daterangepicker\bower.json" />
-    <Content Include="Template\vendors\bootstrap-daterangepicker\daterangepicker.scss" />
-    <Content Include="Template\vendors\bootstrap-daterangepicker\example\browserify\README.md" />
-    <Content Include="Template\vendors\bootstrap-daterangepicker\package.json" />
-    <Content Include="Template\vendors\bootstrap-daterangepicker\README.md" />
-    <Content Include="Template\vendors\bootstrap-progressbar\.bower.json" />
-    <Content Include="Template\vendors\bootstrap-progressbar\bower.json" />
-    <Content Include="Template\vendors\bootstrap-progressbar\CHANGELOG.md" />
-    <Content Include="Template\vendors\bootstrap-progressbar\CONTRIBUTORS.md" />
-    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-2.x.x.less" />
-    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.0.0-3.1.x.less" />
-    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.2.0.less" />
-    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.3.0-3.x.x.less" />
-    <Content Include="Template\vendors\bootstrap-progressbar\LICENSE" />
-    <Content Include="Template\vendors\bootstrap-progressbar\package.json" />
-    <Content Include="Template\vendors\bootstrap-progressbar\README.md" />
-    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-2.x.x.scss" />
-    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.0.0-3.1.x.scss" />
-    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.2.0.scss" />
-    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.3.0-3.x.x.scss" />
-    <Content Include="Template\vendors\bootstrap-wysiwyg\.bower.json" />
-    <Content Include="Template\vendors\bootstrap-wysiwyg\bower.json" />
-    <Content Include="Template\vendors\bootstrap-wysiwyg\examples\php\upload.php" />
-    <Content Include="Template\vendors\bootstrap-wysiwyg\package.json" />
-    <Content Include="Template\vendors\bootstrap-wysiwyg\README.md" />
     <Content Include="Template\vendors\bootstrap\.bower.json" />
     <Content Include="Template\vendors\bootstrap\bower.json" />
     <Content Include="Template\vendors\bootstrap\CHANGELOG.md" />
@@ -4547,6 +4524,32 @@
     <Content Include="Template\vendors\bootstrap\nuget\MyGet.ps1" />
     <Content Include="Template\vendors\bootstrap\package.json" />
     <Content Include="Template\vendors\bootstrap\README.md" />
+    <Content Include="Template\vendors\bootstrap-daterangepicker\.bower.json" />
+    <Content Include="Template\vendors\bootstrap-daterangepicker\bower.json" />
+    <Content Include="Template\vendors\bootstrap-daterangepicker\daterangepicker.scss" />
+    <Content Include="Template\vendors\bootstrap-daterangepicker\example\browserify\README.md" />
+    <Content Include="Template\vendors\bootstrap-daterangepicker\package.json" />
+    <Content Include="Template\vendors\bootstrap-daterangepicker\README.md" />
+    <Content Include="Template\vendors\bootstrap-progressbar\.bower.json" />
+    <Content Include="Template\vendors\bootstrap-progressbar\bower.json" />
+    <Content Include="Template\vendors\bootstrap-progressbar\CHANGELOG.md" />
+    <Content Include="Template\vendors\bootstrap-progressbar\CONTRIBUTORS.md" />
+    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-2.x.x.less" />
+    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.0.0-3.1.x.less" />
+    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.2.0.less" />
+    <Content Include="Template\vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.3.0-3.x.x.less" />
+    <Content Include="Template\vendors\bootstrap-progressbar\LICENSE" />
+    <Content Include="Template\vendors\bootstrap-progressbar\package.json" />
+    <Content Include="Template\vendors\bootstrap-progressbar\README.md" />
+    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-2.x.x.scss" />
+    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.0.0-3.1.x.scss" />
+    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.2.0.scss" />
+    <Content Include="Template\vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.3.0-3.x.x.scss" />
+    <Content Include="Template\vendors\bootstrap-wysiwyg\.bower.json" />
+    <Content Include="Template\vendors\bootstrap-wysiwyg\bower.json" />
+    <Content Include="Template\vendors\bootstrap-wysiwyg\examples\php\upload.php" />
+    <Content Include="Template\vendors\bootstrap-wysiwyg\package.json" />
+    <Content Include="Template\vendors\bootstrap-wysiwyg\README.md" />
     <Content Include="Template\vendors\Chart.js\.bower.json" />
     <Content Include="Template\vendors\Chart.js\.codeclimate.yml" />
     <Content Include="Template\vendors\Chart.js\.editorconfig" />
@@ -4554,6 +4557,7 @@
     <Content Include="Template\vendors\Chart.js\.eslintrc" />
     <Content Include="Template\vendors\Chart.js\.github\ISSUE_TEMPLATE.md" />
     <Content Include="Template\vendors\Chart.js\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Template\vendors\Chart.js\.gitignore" />
     <Content Include="Template\vendors\Chart.js\.travis.yml" />
     <Content Include="Template\vendors\Chart.js\bower.json" />
     <Content Include="Template\vendors\Chart.js\composer.json" />
@@ -4584,6 +4588,9 @@
     <Content Include="Template\vendors\cropper\src\scss\_mixins.scss" />
     <Content Include="Template\vendors\cropper\src\scss\_utilities.scss" />
     <Content Include="Template\vendors\cropper\src\scss\_variables.scss" />
+    <Content Include="Template\vendors\datatables.net\.bower.json" />
+    <Content Include="Template\vendors\datatables.net\bower.json" />
+    <Content Include="Template\vendors\datatables.net\Readme.md" />
     <Content Include="Template\vendors\datatables.net-bs\.bower.json" />
     <Content Include="Template\vendors\datatables.net-bs\bower.json" />
     <Content Include="Template\vendors\datatables.net-bs\Readme.md" />
@@ -4614,9 +4621,6 @@
     <Content Include="Template\vendors\datatables.net-scroller\.bower.json" />
     <Content Include="Template\vendors\datatables.net-scroller\bower.json" />
     <Content Include="Template\vendors\datatables.net-scroller\Readme.md" />
-    <Content Include="Template\vendors\datatables.net\.bower.json" />
-    <Content Include="Template\vendors\datatables.net\bower.json" />
-    <Content Include="Template\vendors\datatables.net\Readme.md" />
     <Content Include="Template\vendors\DateJS\.bower.json" />
     <Content Include="Template\vendors\DateJS\bower.json" />
     <Content Include="Template\vendors\DateJS\LICENSE" />
@@ -4636,6 +4640,7 @@
     <Content Include="Template\vendors\echarts\.editorconfig" />
     <Content Include="Template\vendors\echarts\.github\CONTRIBUTING.md" />
     <Content Include="Template\vendors\echarts\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Template\vendors\echarts\.gitignore" />
     <Content Include="Template\vendors\echarts\.jshintrc" />
     <Content Include="Template\vendors\echarts\.npmignore" />
     <Content Include="Template\vendors\echarts\build\build.sh" />
@@ -4706,6 +4711,7 @@
     <Content Include="Template\vendors\flot.orderbars\.bower.json" />
     <Content Include="Template\vendors\flot.orderbars\README.md" />
     <Content Include="Template\vendors\Flot\.bower.json" />
+    <Content Include="Template\vendors\Flot\.gitignore" />
     <Content Include="Template\vendors\Flot\.travis.yml" />
     <Content Include="Template\vendors\Flot\API.md" />
     <Content Include="Template\vendors\Flot\component.json" />
@@ -4745,6 +4751,7 @@
     <Content Include="Template\vendors\Flot\PLUGINS.md" />
     <Content Include="Template\vendors\Flot\README.md" />
     <Content Include="Template\vendors\font-awesome\.bower.json" />
+    <Content Include="Template\vendors\font-awesome\.gitignore" />
     <Content Include="Template\vendors\font-awesome\.npmignore" />
     <Content Include="Template\vendors\font-awesome\bower.json" />
     <Content Include="Template\vendors\font-awesome\css\font-awesome.css.map" />
@@ -4782,6 +4789,7 @@
     <Content Include="Template\vendors\font-awesome\scss\_stacked.scss" />
     <Content Include="Template\vendors\font-awesome\scss\_variables.scss" />
     <Content Include="Template\vendors\fontawesome\.bower.json" />
+    <Content Include="Template\vendors\fontawesome\.gitignore" />
     <Content Include="Template\vendors\fontawesome\.npmignore" />
     <Content Include="Template\vendors\fontawesome\bower.json" />
     <Content Include="Template\vendors\fontawesome\css\font-awesome.css.map" />
@@ -4833,6 +4841,7 @@
     <Content Include="Template\vendors\iCheck\bower.json" />
     <Content Include="Template\vendors\iCheck\icheck.jquery.json" />
     <Content Include="Template\vendors\ion.rangeSlider\.bower.json" />
+    <Content Include="Template\vendors\ion.rangeSlider\.gitignore" />
     <Content Include="Template\vendors\ion.rangeSlider\.npmignore" />
     <Content Include="Template\vendors\ion.rangeSlider\bower.json" />
     <Content Include="Template\vendors\ion.rangeSlider\history.md" />
@@ -4841,6 +4850,7 @@
     <Content Include="Template\vendors\ion.rangeSlider\readme.md" />
     <Content Include="Template\vendors\ion.rangeSlider\readme.ru.md" />
     <Content Include="Template\vendors\jquery-knob\.bower.json" />
+    <Content Include="Template\vendors\jquery-knob\.gitignore" />
     <Content Include="Template\vendors\jquery-knob\bower.json" />
     <Content Include="Template\vendors\jquery-knob\knob.jquery.json" />
     <Content Include="Template\vendors\jquery-knob\LICENSE" />
@@ -4860,6 +4870,7 @@
     <Content Include="Template\vendors\jquery-sparkline\README.md" />
     <Content Include="Template\vendors\jquery-sparkline\sparkline.jquery.json" />
     <Content Include="Template\vendors\jquery.easy-pie-chart\.bower.json" />
+    <Content Include="Template\vendors\jquery.easy-pie-chart\.gitignore" />
     <Content Include="Template\vendors\jquery.easy-pie-chart\.travis.yml" />
     <Content Include="Template\vendors\jquery.easy-pie-chart\bower.json" />
     <Content Include="Template\vendors\jquery.easy-pie-chart\changelog.md" />
@@ -4970,6 +4981,7 @@
     <Content Include="Template\vendors\moment\LICENSE" />
     <Content Include="Template\vendors\moment\README.md" />
     <Content Include="Template\vendors\morris.js\.bower.json" />
+    <Content Include="Template\vendors\morris.js\.gitignore" />
     <Content Include="Template\vendors\morris.js\.travis.yml" />
     <Content Include="Template\vendors\morris.js\bower.json" />
     <Content Include="Template\vendors\morris.js\bower.travis.json" />
@@ -5000,6 +5012,7 @@
     <Content Include="Template\vendors\morris.js\spec\viz\run.sh" />
     <Content Include="Template\vendors\normalize-css\.bower.json" />
     <Content Include="Template\vendors\normalize-css\.editorconfig" />
+    <Content Include="Template\vendors\normalize-css\.gitignore" />
     <Content Include="Template\vendors\normalize-css\.travis.yml" />
     <Content Include="Template\vendors\normalize-css\bower.json" />
     <Content Include="Template\vendors\normalize-css\LICENSE.md" />
@@ -5079,6 +5092,7 @@
     <Content Include="Template\vendors\pdfmake\build\pdfmake.min.js.map" />
     <Content Include="Template\vendors\pdfmake\LICENSE" />
     <Content Include="Template\vendors\pnotify\.bower.json" />
+    <Content Include="Template\vendors\pnotify\.gitignore" />
     <Content Include="Template\vendors\pnotify\bower.json" />
     <Content Include="Template\vendors\pnotify\COPYING" />
     <Content Include="Template\vendors\pnotify\README.md" />
@@ -5089,6 +5103,7 @@
     <Content Include="Template\vendors\requirejs\README.md" />
     <Content Include="Template\vendors\select2\.bower.json" />
     <Content Include="Template\vendors\select2\.editorconfig" />
+    <Content Include="Template\vendors\select2\.gitignore" />
     <Content Include="Template\vendors\select2\.jshintignore" />
     <Content Include="Template\vendors\select2\.jshintrc" />
     <Content Include="Template\vendors\select2\.travis.yml" />
@@ -5096,6 +5111,7 @@
     <Content Include="Template\vendors\select2\component.json" />
     <Content Include="Template\vendors\select2\composer.json" />
     <Content Include="Template\vendors\select2\CONTRIBUTING.md" />
+    <Content Include="Template\vendors\select2\docs\.gitignore" />
     <Content Include="Template\vendors\select2\docs\css\bootstrap.scss" />
     <Content Include="Template\vendors\select2\docs\css\font-awesome.scss" />
     <Content Include="Template\vendors\select2\docs\css\s2-docs.scss" />
@@ -5226,6 +5242,7 @@
     <Content Include="Template\vendors\select2\src\scss\_multiple.scss" />
     <Content Include="Template\vendors\select2\src\scss\_single.scss" />
     <Content Include="Template\vendors\skycons\.bower.json" />
+    <Content Include="Template\vendors\skycons\.gitignore" />
     <Content Include="Template\vendors\skycons\README.md" />
     <Content Include="Template\vendors\starrr\.bower.json" />
     <Content Include="Template\vendors\starrr\bower.json" />
@@ -5242,26 +5259,10 @@
     <Content Include="Template\vendors\transitionize\bower.json" />
     <Content Include="Template\vendors\transitionize\package.json" />
     <Content Include="Template\vendors\validator\.bower.json" />
+    <Content Include="Template\vendors\validator\.gitattributes" />
+    <Content Include="Template\vendors\validator\.gitignore" />
     <Content Include="Template\vendors\validator\README.md" />
     <Content Include="Template\vendors\validator\validator.jquery.json" />
-    <Content Include="Views\Map\Map.cshtml" />
-    <Content Include="Views\Map\Map2.cshtml" />
-    <Content Include="Views\Map\MapByName.cshtml" />
-    <Content Include="Views\Register\register.cshtml" />
-    <Content Include="Views\Login\login.cshtml" />
-    <Content Include="Views\Feedback\Feedback.cshtml" />
-    <Content Include="Views\Map\Infor.cshtml" />
-    <Content Include="Views\Map\Navigate.cshtml" />
-    <Content Include="Views\Map\Navigate2.cshtml" />
-    <Content Include="Views\Map\showMap.cshtml" />
-    <Content Include="Views\Map\showMap2.cshtml" />
-    <Content Include="Views\News\News.cshtml" />
-    <Content Include="Views\News\Unread.cshtml" />
-    <Content Include="Views\News\Detail.cshtml" />
-    <Content Include="Views\Register\Card.cshtml" />
-    <Content Include="Views\Register\Editmember.cshtml" />
-    <Content Include="Views\Register\Addcard.cshtml" />
-    <Content Include="Views\Register\Point.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5276,11 +5277,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Template\vendors\devbridge-autocomplete\src\jquery.autocomplete.d.ts" />
-    <TypeScriptCompile Include="Template\vendors\moment\moment.d.ts" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <TypeScriptCompile Include="Template\vendors\devbridge-autocomplete\src\jquery.autocomplete.d.ts" />
+    <TypeScriptCompile Include="Template\vendors\moment\moment.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
