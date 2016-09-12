@@ -24,38 +24,44 @@
 </head>
 <body>
 
-    <div class="login-container lightmode">
-        <div class="login-box animated fadeInDown">
-            <div class="container">
-                <div class="card card-container">
-                    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                    <p id="profile-name" class="profile-name-card"></p>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <form class="form-signin bg" style="width:100%; height:290px">
-                                <span id="reauth-email" class="reauth-email"></span>
-                                <br><br><br><br>
+    <div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 
-                                <input type="number" id="inputNumber" class="form-control" placeholder="Card Number" required autofocus>
-                                <br>
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Pin Number" required>
-                                <br>
 
-                                <div>
-                                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" onclick="parent.location='/#/Point'"><strong>Submit</strong></button>
-                                </div>
+            <div class="x_title">
+                <h4 style="color:darkred"><strong> Enter your card number and pin code <i class="glyphicon glyphicon-plus"></i></strong></h4>
+            </div>
 
-                            </form><!-- /form -->
-                        </div>
-                        <div class="login-footer">
+            <div class="login_wrapper">
+                <div class="animate form login_form">
 
-                        </div>
-                    </div>
+                    <section class="login_content">
+
+                        <form class="form-signin bg" style="width:100%; height:290px">
+                            <span id="reauth-email" class="reauth-email"></span>
+                            <br><br><br><br>
+
+                            <input type="number" id="inputNumber" class="form-control" placeholder="Card Number" required autofocus>
+                            <br>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Pin Number" required>
+                            <br>
+
+                            <div>
+                                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" onclick="parent.location='/#/Point'"><strong>Submit</strong></button>
+                            </div>
+
+                        </form><!-- /form -->
+                        </section>
                 </div>
-            </div><!-- /card-container -->
-            <!-- /container -->
+                <div class="login-footer">
+
+                </div>
+            </div>
         </div>
-    </div>
+    </div><!-- /card-container -->
+    <!-- /container -->
+   
 
     <script src="~/MemberJS/js.js"></script>
     <script src="~/MemberJS/card.js"></script>
