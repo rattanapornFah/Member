@@ -4,7 +4,7 @@ app.config(function ($routeProvider) {
     $routeProvider
 
         .when("/", {
-            templateUrl: "Login/login"
+            templateUrl: "Home/Index"
         })
          .when("/Map", {
              templateUrl: "Map/Map"
@@ -49,6 +49,6 @@ app.config(function ($routeProvider) {
             templateUrl: "Register/Point"
         })
         .otherwise({
-            templateUrl: "Home/Index"
+            templateUrl: "/"
         })
 });
