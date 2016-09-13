@@ -7,7 +7,8 @@ app.config(function ($routeProvider) {
             templateUrl: "Home/Index"
         })
          .when("/Map", {
-             templateUrl: "Map/Map"
+             templateUrl: "Map/Map",
+             controller: 'MapController'
          })
          .when("/Map2", {
              templateUrl: "Map/Map2"
