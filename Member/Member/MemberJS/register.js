@@ -23,6 +23,7 @@
             'memberGroupId={0}&atShopId={0}'
 
     };
+   
     
     
     $scope.start = new Date();
@@ -51,6 +52,15 @@
     };
     //----------------------------------------------------------------------------------------------//
 }])
+ app.factory('registerService',function($http){
+  registerService = {};
+
+  app.saveRegistration = function(fromdata){
+    return $http.post('/api/account/register',fromdata)
+  }
+  return signupService;
+
+ })
 
 //app.controller('MemberController', ['$scope', function ($scope) {
 //    $http.get("www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromMemberId?merchantId=1&memberId=1").then(function (data) {
