@@ -175,7 +175,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\card.css" />
-    <Content Include="css\map.css" />
     <Content Include="css\slide.css" />
     <Content Include="css\star.css" />
     <Content Include="css\tab.css" />
@@ -192,6 +191,8 @@
     <Content Include="Images\map\square.jpg" />
     <Content Include="Images\news\oishi-central.jpg" />
     <Content Include="Images\point\Barcode-card.png" />
+    <Content Include="Images\point\Button-Add-icon.png" />
+    <Content Include="Images\point\button_add.png" />
     <Content Include="Images\point\card4.png" />
     <Content Include="Images\point\QRcode-card.png" />
     <Content Include="Images\register\oishi-footer.png" />
