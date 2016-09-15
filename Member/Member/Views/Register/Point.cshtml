@@ -16,13 +16,13 @@
     }
 </style>
 
-<div class="panel panel-default" ng-controller="RegisterController">
+<div class="panel panel-default" ng-controller="PointController">
 
-    <div id="head" class="panel-heading ui-draggable-handle">
+    <div id="head" class="panel-heading ui-draggable-handle" >
         <h3 class="panel-title" style="color:white">OISHI PRIMIER CARD </h3>
     </div>
     <div class="row">
-        <div class="panel-body">
+        <div class="panel-body" ng-repeat="detail in memberDetails">
             <div class="col-md-5 col-sm-6">
                 <div class="widget-item-left">
 
@@ -45,13 +45,12 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-7 col-sm-6 ">
                 <div class="widget-item-right">
                     <div class="text-left">
-                        <h4 style="color:white"><span class="fa fa-user" style="color:black"> Yourname : รัตนาภรณ์  สมนึก</span></h4>
-                        <h4 style="color:white"><span class="fa fa-credit-card" style="color:black"> Card No. : 0001-4696-1234-7890</span></h4>
-                        <h4 style="color:white"><span class="fa fa-heart" style="color:black"> Points : 11    </span></h4>
+                        <h4 style="color:white"><span class="fa fa-user" style="color:black"> Card Number : {{detail.cardNo}}</span></h4>
+                        <h4 style="color:white"><span class="fa fa-credit-card" style="color:black"> Card Name : </span></h4>
+                        <h4 style="color:white"><span class="fa fa-heart" style="color:black"> Points : {{detail.memberId}}    </span></h4>
                         <h4 style="color:white"><span class="fa fa-clock-o" style="color:black"> Expire : 01-05-2017 </span> </h4>
                     </div>
                 </div>

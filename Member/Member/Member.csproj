@@ -202,8 +202,10 @@
     <Content Include="MemberJS\card.js" />
     <Content Include="MemberJS\editmember.js" />
     <Content Include="MemberJS\feedback.js" />
+    <Content Include="MemberJS\login.js" />
     <Content Include="MemberJS\map.js" />
     <Content Include="MemberJS\picture.js" />
+    <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\register.js" />
     <Content Include="MemberJS\slide.js" />
     <Content Include="MemberJS\tab.js" />

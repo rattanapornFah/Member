@@ -75,26 +75,26 @@
                                     <br />
                                 </li>
                                 <li>
-                                    <a href="#/Point"><i class="fa fa-credit-card"></i> Member Card</a>
+                                    <a href="#/Point" onclick="parent.location.reload();"><i class="fa fa-credit-card"></i> Member Card</a>
                                 </li>
                                 <li>
-                                    <a href="#/Editmember"><i class="fa fa-edit"></i> Edit Member </a>
+                                    <a href="#/Editmember" onclick="parent.location.reload();"><i class="fa fa-edit"></i> Edit Member </a>
                                 </li>
                                 <li>
-                                    <a href="#/News"><i class="fa fa-bullhorn"></i> News </a>
-                                </li>
-
-                                <li>
-                                    <a href="#/Map"><i class="fa fa-map-marker"></i> Map </a>
-
+                                    <a href="#/News" onclick="parent.location.reload();"><i class="fa fa-bullhorn"></i> News </a>
                                 </li>
 
                                 <li>
-                                    <a href="#/Feedback"><i class="fa fa-star"></i> Feedback </a>
+                                    <a href="#/Map " onclick="parent.location.reload();"><i class="fa fa-map-marker"></i> Map </a>
+
+                                </li>
+
+                                <li>
+                                    <a href="#/Feedback" onclick="parent.location.reload();"><i class="fa fa-star"></i> Feedback </a>
                                 </li>
 
 
-                               <li>
+                               @*<li>
                                     <a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="#/Feedback">Chart JS</a></li>
@@ -110,7 +110,7 @@
                                         <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
                                         <li><a href="fixed_footer.html">Fixed Footer</a></li>
                                     </ul>
-                                </li>   
+                                </li>*@   
                             </ul>
                         </div>
                         <div class="menu_section">
@@ -255,17 +255,18 @@
     <script src="~/MemberJS/map.js"></script>
     <script src="~/MemberJS/feedback.js"></script>
     <script src="~/Angular-google-map/scripts/maps.js"></script>
+    <script src="~/MemberJS/login.js"></script>
+    <script src="~/MemberJS/point.js"></script>
 
     <!-- jQuery -->
     <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
+    
     <!-- Bootstrap -->
     <script src="~/Template/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script src="~/Template/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="~/Template/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="~/Template/vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- gauge.js -->
     <script src="~/Template/vendors/gauge.js/dist/gauge.min.js"></script>
     <!-- bootstrap-progressbar -->
@@ -296,10 +297,10 @@
     <!-- Custom Theme Scripts -->
     <script src="~/Template/build/js/custom.min.js"></script>
     <!-- Flot -->
-
+    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs&callback=initMap"
             async defer></script>
-    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
+    
 
     <!-- bootstrap-daterangepicker -->
     <script>
