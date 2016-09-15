@@ -24,7 +24,7 @@
 
 </head>
 
-<body class="login" bgcolor="PaleGreen">
+<body class="login" bgcolor="PaleGreen" ng-controller="LoginController">
     <div>
         <a class="hiddenanchor" id="signup"></a>
         <a class="hiddenanchor" id="signin"></a>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <a href="/#/Card" ng-click="main.login()" class="btn btn-default btn-block alert-success"><span class="fa fa-sign-in"></span> Log In</a>
+                                <a ng-click="login(main)" class="btn btn-default btn-block alert-success"><span class="fa fa-sign-in"></span> Log In</a>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                 <a href="/Register/register" class="btn btn-default btn-block alert-success"><span class="fa fa-edit"></span> Create an account</a>
@@ -70,6 +70,14 @@
             </div>
         </div>
     </div>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/MemberJS/app.js"></script>
+    <script src="~/MemberJS/login.js"></script>
+
+    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
+
 </body>
 </html>
 
