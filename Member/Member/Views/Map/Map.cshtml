@@ -22,11 +22,11 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content" id="scrollArea">               
-                <a href="#/Infor">
+                <a href="#/Infor" ng-repeat="myWelcomes in myWelcome">
                     <div class="row">
                         <div class="timeline-item-content" style="width: 100%; height: 100px">
                             <div class="timeline-heading">
-                                <h5 style="color:darkred"><strong>&nbsp; โออิชิบุฟเฟ่ต์ แฟชั่นไอซ์แลนด์</strong></h5>
+                                <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
                             </div>
                             <div class="timeline-body">
                                 <img src="~/Images/map/oishi-grand.jpg" class="img-text" width="150" align="left" />
@@ -42,7 +42,7 @@
                     </div>
                 </a>
 
-                <a href="#/Infor">
+                @*<a href="#/Infor">
                     <div class="row">
                         <div class="timeline-item-content" style="width: 100%; height: 100px">
                             <div class="timeline-heading">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                </a>*@
             </div>
         </div>
     </div>
@@ -156,6 +156,7 @@
 
     <script src="~/MemberJS/tab.js"></script>
     <link href="~/css/tab.css" rel="stylesheet" />
+<script src="~/MemberJS/map.js"></script>
 
 
 

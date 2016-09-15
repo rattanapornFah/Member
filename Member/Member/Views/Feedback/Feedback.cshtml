@@ -139,7 +139,25 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <button type="submit" class="button button1" ng-click="feedback(branch,star,star1,star2,star3,star4)"><strong> Send</strong></button>
+                                        <button class="button button1" data-toggle="modal" data-target="#modal_basic2"><strong> Send</strong></button>
+                                     <!--   <button type="submit" class="button button1" ng-click="feedback(branch,star,star1,star2,star3,star4)"><strong> Send</strong></button>  -->
+                                    </div>
+
+                                    <div class="modal" id="modal_basic2" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-header">
+                                                    <button type="button" class="close" data-dismiss="modal" style="color:white"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="defModalHead" style="color:white">Feedback</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h2> Thank you for your answer </h2>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -183,6 +201,10 @@
                 background-color: white;
                 color: #4CAF50;
             }
+
+        .bg-header{
+            background-color: darkred;
+        }
     </style>
 
 
@@ -191,3 +213,8 @@
 
     <link href="~/css/star.css" rel="stylesheet" />
 
+<script src="~/MemberJS/app.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/angular-sanitize.js"></script>
+<script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
