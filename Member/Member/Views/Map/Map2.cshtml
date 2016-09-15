@@ -12,6 +12,7 @@
             <div class="x_panel">
                 <div ng-controller="MapController">
                     <div id="map" style="width:100%"></div>
+                    <marker animation="DROP" position="current-location"></marker>
                     <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
                         <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
                             <label id="names">{{marker.title}}</label>
@@ -24,6 +25,7 @@
         <!-- END GOOGLE WORLD MAP-->
     </div>
 
+    <input type="submit" Value="currentLocation" ng-click="currentLocation()" />
 
 
 
