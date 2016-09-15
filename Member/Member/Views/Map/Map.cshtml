@@ -16,11 +16,11 @@
     <!-- END GOOGLE WORLD MAP-->
 
     <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="x_panel">
-            <div class="x_title">
-                <h4>Map <small>Sort By Location</small></h4>
-                <div class="clearfix"></div>
-            </div>
+        <div class="x_panel" style="height:513px">
+          @*  <div class="x_title">
+        <h4>Map <small>Sort By Location</small></h4>
+        <div class="clearfix"></div>
+    </div>  *@
             <div class="x_content" id="scrollArea">               
                 <a href="#/Infor" ng-repeat="myWelcomes in myWelcome">
                     <div class="row">
@@ -30,8 +30,8 @@
                             </div>
                             <div class="timeline-body">
                                 <img src="~/Images/map/oishi-grand.jpg" class="img-text" width="150" align="left" />
-                                <p>ชั้น B ศูนย์การค้าแฟชั่นไอส์แลนด์</p>
-                                <p>ถ.รามอินทรา</p>
+                                <p> {{myWelcomes.storeAddress1}}</p>
+                                <p> {{myWelcomes.storeAddress2}}</p>
 
                                 <div class="timeline-footer">
                                     <h5 href="#/Infor"><strong>Read more</strong></h5>
@@ -281,7 +281,4 @@
         async defer></script>
 
 
-</body>
-</html>
 
-</script>
