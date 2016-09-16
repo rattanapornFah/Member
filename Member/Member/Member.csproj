@@ -208,6 +208,7 @@
     <Content Include="MemberJS\picture.js" />
     <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\register.js" />
+    <Content Include="MemberJS\signup.js" />
     <Content Include="MemberJS\slide.js" />
     <Content Include="MemberJS\tab.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -4554,6 +4555,7 @@
     <Content Include="Template\vendors\validator\.gitignore" />
     <Content Include="Template\vendors\validator\README.md" />
     <Content Include="Template\vendors\validator\validator.jquery.json" />
+    <Content Include="Views\Register\Signup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
