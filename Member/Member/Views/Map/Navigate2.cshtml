@@ -44,9 +44,9 @@
                 </div>
                 
 
-                <div id="MyMapLOC" style="width: 100%; height: 600px">
+                <div id="MyMapLOC" style="width: 100%; height: 800px">
                 </div>
-                <div id="MapRoute" style="width: 100%; height: 600px">
+                <div id="MapRoute" style="width: 100%; height: 800px">
                 </div>
 
             </div>
@@ -170,7 +170,9 @@
 
                 function SearchRoute() {
                     document.getElementById("MyMapLOC").style.display = 'none';
-
+                    //$.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs", function (data, status) {
+                    //    console.log(data);
+                    //});
                     var markers = new Array();
                     var myLatLng;
 
@@ -184,6 +186,7 @@
                             m.lng = p.coords.longitude;
                             markers.push(m);
 
+
                             //Find Destination address location.
                             var address = document.getElementById("txtDestination").value;
                             var geocoder = new google.maps.Geocoder();
@@ -194,6 +197,7 @@
                                     m.lat = results[0].geometry.location.lat();
                                     m.lng = results[0].geometry.location.lng();
                                     markers.push(m);
+
                                     var mapOptions = {
                                         center: myLatLng,
                                         zoom: 4,
@@ -263,6 +267,20 @@
                                 }
                             });
 
+                            //$.ajax({
+                            //    type: 'GET',
+                            //    url: "/account?",
+                            //    data: "cf=cw&operation=update"
+                            //})
+                            $.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs"
+  , function (data, status) {
+                                console.log(data);
+                            });
+
+                            //$.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs", function (data, status) {
+                            //    console.log(data);
+                            //});
+
                         });
                     }
                     else {
@@ -271,7 +289,7 @@
                     }
                 }
     </script>
-
+    <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/angular-sanitize.js"></script>
