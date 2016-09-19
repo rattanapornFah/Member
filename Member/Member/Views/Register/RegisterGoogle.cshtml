@@ -21,17 +21,17 @@
     <link href="~/Template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
-<style>
-    #head {
-        color: #333;
-        background-color: darkred;
-        border-color: #5c5151;
-    }
-</style>
+    <style>
+        #head {
+            color: #333;
+            background-color: darkred;
+            border-color: #5c5151;
+        }
+    </style>
 </head>
 <body>
     <!-- page content -->
-    <div id="head" class="panel panel-default" role="main" ng-controller="RegisterController">
+    <div id="head" class="panel panel-default" role="main" ng-controller="RegisterwithGoogleController">
         <div id="head" class="panel-heading ui-draggable-handle">
             <h1 class="panel-title" style="color:white" align="center"><strong>Register</strong></h1>
         </div>
@@ -70,10 +70,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Title
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    Title
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" ng-model="register.title" required="required" >
+                                    <select class="form-control" ng-model="register.title" required="required">
                                         <option value="">-- select your title --</option>
                                         <option value="1">Mrs.</option>
                                         <option value="2">Miss</option>
@@ -81,13 +83,15 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                    First Name
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" ng-model="register.first_name" id="firstname" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" ng-model="register.Name" id="firstname" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
@@ -99,27 +103,33 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                    Last Name
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.last_name" id="lastname" name="lastname" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="gender" class="control-label col-md-3 col-sm-3 col-xs-12">Gender
-                                    <span class="required">*</span></label>
+                                <label for="gender" class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    Gender
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <p>
-                                        <input class="flat iradio_flat-green" ng-model="register.gender" value="male" type="radio" name="gender" id="genderM"  checked="" required /> Male
+                                        <input class="flat iradio_flat-green" ng-model="register.gender" value="male" type="radio" name="gender" id="genderM" checked="" required /> Male
                                         <input class="flat iradio_flat-green" ng-model="register.gender" value="female" type="radio" name="gender" id="genderF" /> Female
                                     </p>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">Address1
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">
+                                    Address1
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.address1" id="address" name="address" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
@@ -133,8 +143,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">City
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    City
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <select class="form-control" ng-model="register.city" required="required">
                                         <option value="">--select your city--</option>
@@ -148,16 +160,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zipcode">Zip code
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zipcode">
+                                    Zip code
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="number" ng-model="register.zipcode" id="zipcode" name="zipcode" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Phone Number
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
+                                    Phone Number
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.phone" id="phone" name="phone" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
@@ -173,17 +189,21 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Email
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
+                                    Email
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="email" ng-model="register.email"  class="form-control has-feedback-left" id="email" placeholder="example@email.com" required="required">
+                                    <input type="email" ng-model="register.Email" class="form-control has-feedback-left" id="email" placeholder="example@email.com" required="required">
                                     <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthday
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    Birthday
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;">
                                         <div class="control-group">
@@ -203,9 +223,9 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="input-group">
                                         <br>
-                                        <img id="blah" ng-src="{{register.image}}" class="img-circle img-responsive center-block" style="width:50%">
+                                        <img id="blah" ng-src="{{register.picture.data.url}}" class="img-circle img-responsive center-block" style="width:50%">
                                         <br><br>
-                                        <input type="file" class="align:center" ng-model="register.picture" onchange="readURL(this);">
+                                        <input type="file" class="align:center" ng-model="register.Image.url" onchange="readURL(this);">
                                     </div>
                                 </div>
                             </div>
@@ -214,8 +234,10 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <a href="/Login/login" class="btn btn-primary pull-right">Cancel</a>
-                                    <button type="submit" ng-click="addMember(register)" 
-                                            class="btn btn-success pull-right">Submit</button>
+                                    <button type="submit" ng-click="addMember(register)"
+                                            class="btn btn-success pull-right">
+                                        Submit
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -235,7 +257,7 @@
 <script src="~/Scripts/angular-sanitize.js"></script>
 <script src="~/MemberJS/app.js"></script>
 <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
-<script src="~/MemberJS/register.js"></script>
+<script src="~/MemberJS/registerwithgoogle.js"></script>
 <script src="~/MemberJS/picture.js"></script>
 <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
 

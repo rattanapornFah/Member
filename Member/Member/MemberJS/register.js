@@ -1,9 +1,20 @@
 ﻿app.controller('RegisterController', ['$scope','$http', function ($scope,$http) {
     $scope.register = {};
-    $scope.register = JSON.parse(localStorage.getItem('memberDetails'));
-    console.log($scope.register)
-    parent.location = '#/Login'
-    //--------------------------- Register Member ---------------------------------------------------//
+    
+    if (localStorage.getItem('status') == "google") {
+        var register = JSON.parse(localStorage.getItem('Details'));        
+        $scope.register.first_name = register.ofa
+        $scope.register.last_name = register.wea
+        $scope.register.email = register.U3
+        $scope.register.image = register.Paa
+
+    } else {
+        $scope.register = JSON.parse(localStorage.getItem('memberDetails'));
+        $scope.register.image = $scope.register.data.url;
+    }
+
+
+    //--------------------------- Register Member with facebook ---------------------------------------------------//
     $scope.addMember = function (register) {
         console.log(register)
         var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/InsertNewMemberData?' + 
@@ -27,7 +38,7 @@
          
              $http.get(apiName)
              .success(function (data) {
-                 parent.location = '/#/Addcard';
+                 parent.location = '/#/Point';
             })
 
    }

@@ -1,6 +1,9 @@
-﻿app.controller('SignupController', ['$scope', function ($scope) {
+﻿app.controller('RegisterwithGoogleController', ['$scope', '$http', function ($scope, $http) {
     $scope.register = {};
-    //--------------------------- Register Member with user ---------------------------------------------------//
+    $scope.register = JSON.parse(localStorage.getItem('Details'));
+    //console.log($scope.register)
+    //parent.location = '/Login/login'
+    //--------------------------- Register Member with google ---------------------------------------------------//
     $scope.addMember = function (register) {
         console.log(register)
         var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/InsertNewMemberData?' +
@@ -22,7 +25,14 @@
             'birthday=' + register.birthday + '&'
             'memberGroupId=1&atShopId=1'
 
-    };
+            $http.get(apiName)
+            .success(function (data) {
+                parent.location = '/Register/Addcard';
+            })
+
+        }
+
+     //--------------------------- Calendar of Birthday ---------------------------------------------------//
 
     $scope.start = new Date();
 
@@ -50,18 +60,4 @@
     };
     //----------------------------------------------------------------------------------------------//
 }])
-app.factory('registerService', function ($http) {
-    registerService = {};
 
-    app.saveRegistration = function (fromdata) {
-        return $http.post('/api/account/register', fromdata)
-    }
-    return signupService;
-
-})
-
-//app.controller('MemberController', ['$scope', function ($scope) {
-//    $http.get("www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromMemberId?merchantId=1&memberId=1").then(function (data) {
-//        $scope.myWelcome = data.dataExtra;
-//    });
-//}])

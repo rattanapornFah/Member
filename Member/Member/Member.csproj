@@ -210,6 +210,7 @@
     <Content Include="MemberJS\picture.js" />
     <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\register.js" />
+    <Content Include="MemberJS\registerwithgoogle.js" />
     <Content Include="MemberJS\signup.js" />
     <Content Include="MemberJS\slide.js" />
     <Content Include="MemberJS\tab.js" />
@@ -4558,6 +4559,7 @@
     <Content Include="Template\vendors\validator\README.md" />
     <Content Include="Template\vendors\validator\validator.jquery.json" />
     <Content Include="Views\Register\Signup.cshtml" />
+    <Content Include="Views\Register\RegisterGoogle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

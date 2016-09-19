@@ -33,6 +33,10 @@ namespace Member.Controllers
         {
             return View();
         }
+        public ActionResult RegisterGoogle()
+        {
+            return View();
+        }
 
 
     }
