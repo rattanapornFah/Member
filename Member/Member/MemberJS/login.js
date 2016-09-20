@@ -15,7 +15,7 @@
                 if (data.status == 0) {
                     $scope.memberDetails = data.dataResult;
                     localStorage.setItem('memberDetails', JSON.stringify($scope.memberDetails))
-                    //parent.location = '/#/Point';
+                    parent.location = '/#/Point';
                     //console.log(data)
                 } else {
                     alert(data.dataResult)
