@@ -41,5 +41,9 @@ namespace Member.Controllers
         {
             return View();
         }
+        public ActionResult PicInfor()
+        {
+            return View();
+        }
     }
 }

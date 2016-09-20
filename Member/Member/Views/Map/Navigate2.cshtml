@@ -168,11 +168,10 @@
 
     <script type="text/javascript">
 
-                function SearchRoute() {
+        function SearchRoute() {
+
                     document.getElementById("MyMapLOC").style.display = 'none';
-                    //$.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs", function (data, status) {
-                    //    console.log(data);
-                    //});
+
                     var markers = new Array();
                     var myLatLng;
 
@@ -272,14 +271,15 @@
                             //    url: "/account?",
                             //    data: "cf=cw&operation=update"
                             //})
-                            $.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs"
-  , function (data, status) {
+  //                          $.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs"
+  //, function (data, status) {
+  //                              console.log(data);
+  //                          });
+
+                            $.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs", function (data, status) {
                                 console.log(data);
                             });
 
-                            //$.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs", function (data, status) {
-                            //    console.log(data);
-                            //});
 
                         });
                     }
@@ -299,7 +299,7 @@
     <script src="~/MemberJS/app.js"></script>
             <script src="~/MemberJS/navigate.js"></script>
             <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs&callback=initMap">
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs">
             </script>
 
             <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>

@@ -52,6 +52,9 @@ app.config(function ($routeProvider) {
         .when("/Point", {
             templateUrl: "Register/Point"
         })
+        .when("/PicInfor", {
+            templateUrl: "Map/PicInfor"
+        })
         .otherwise({
             templateUrl: "/"
         })
