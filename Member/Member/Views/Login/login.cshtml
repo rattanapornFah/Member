@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="Member">
+<html lang="en" ng-app="Member" itemscope itemtype="http://schema.org/Article">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -78,8 +78,8 @@
                                 <div  class="g-signin2 btn btn-block" data-onsuccess="onSignIn"> </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                                    Login With Facebook
+                                <fb:login-button class="btn-lg" scope="public_profile,email" onlogin="checkLoginState();">
+                                    Facebook
                                 </fb:login-button>
                             </div>
                         </div>
