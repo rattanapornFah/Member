@@ -4563,7 +4563,6 @@
     <Content Include="Template\vendors\validator\validator.jquery.json" />
     <Content Include="Views\Register\Signup.cshtml" />
     <Content Include="Views\Register\RegisterGoogle.cshtml" />
-    <Content Include="Views\Map\PicInfor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
