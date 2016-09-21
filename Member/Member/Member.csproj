@@ -185,6 +185,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\language\English_icon.png" />
+    <Content Include="Images\language\English_icon_sm.png" />
+    <Content Include="Images\language\thailand_icon_sm.png" />
     <Content Include="Images\map\bangcare.jpg" />
     <Content Include="Images\map\bigc4.jpg" />
     <Content Include="Images\map\oishi-grand.jpg" />
@@ -217,6 +220,7 @@
     <Content Include="MemberJS\signup.js" />
     <Content Include="MemberJS\slide.js" />
     <Content Include="MemberJS\tab.js" />
+    <Content Include="MemberJS\translate.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-animate.js" />
@@ -244,6 +248,8 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-translate.js" />
+    <Content Include="Scripts\angular-translate.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />

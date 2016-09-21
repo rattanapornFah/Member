@@ -1,5 +1,4 @@
-﻿var app = angular.module('Member', ['ngRoute','ui.bootstrap']);
-
+﻿var app = angular.module('Member', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate']);
 app.config(function ($routeProvider) {
     $routeProvider
 
@@ -55,4 +54,9 @@ app.config(function ($routeProvider) {
         .otherwise({
             templateUrl: "/"
         })
+});
+app.controller('langCtrl', function ($scope, $translate) {
+    $scope.changeLanguage = function (key) {
+        $translate.use(key);
+    };
 });

@@ -1,74 +1,103 @@
-﻿<style>
-    #head {
-        color: #333;
-        background-color: darkred;
-        border-color: #5c5151;
+﻿
+<style>
+    .btn-circle, .btn-sm {
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+        z-index:1;
     }
-
+    .btn-circle {
+	box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
+	border: .5em solid #00CED1;
+	font-size: 1em;
+	line-height: 1em;
+	color: #ffffff;
+	background-color: #00CED1;
+	margin: auto;
+	border-radius: 50%;
+	position: relative;
+    height: 2.5em;
+	width: 2.5em;
+}
+.btn-circle:hover {
+		color:#ffffff;
+        background-color: #00CED1;
+        text-decoration: none;
+	    border-color: #66CCFF;
+}
+.btn-circle:visited {
+	color:#ffffff; 
+	text-decoration: none;
+    background-color: #00CED1;
+} 
 </style>
+<div class="x_title">
+    <h3 style="color:darkred">Your cards
+        <button type="button" class="btn btn-info btn-circle btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Add Card" onclick="parent.location='#/Card'">
+            <i class="glyphicon glyphicon-plus"></i>
+        </button>
+    </h3>
+</div>
+<div class="row" ng-controller="PointController">
+    <div class="panel-body list-group-item" href="" ng-repeat="detail in memberDetails">
+
+        <div class="col-md-5 col-sm-6">
+            <div class="widget-item-left">
+
+                <div class="timeline-item-content">
 
 
-        <h3 style="color:darkred">Your cards 
-        <span class="pull-right" >
-        <img src="~/Images/point/button_add.png" style="height:35px;" onclick="parent.location='#/Card'"> </span></h3>
-   
-    <div class="row" ng-controller="PointController">
-        <div class="panel-body list-group-item" href="" ng-repeat="detail in memberDetails" >
-            
-                <div class="col-md-5 col-sm-6">
-                    <div class="widget-item-left">
-
-                        <div class="timeline-item-content">
-
-
-                            @*<section class="container">
+                    @*<section class="container">
                         <div class="card pull-right" onclick="flip()">*@
-                            <div class="front">
-
-                                <img src="~/Images/point/card4.png" class="img-responsive img-thumbnail img-rounded">
-                            </div>
-                            @*<div class="back">
+                    <div class="front">
+                        <img src="~/Images/point/card4.png" class="img-responsive img-thumbnail img-rounded">
+                    </div>
+                    @*<div class="back">
                                     <img src="~/Images/card/cards-barcode.png" class="img-text img-responsive">
                                 </div>
                             </div>
 
                         </section>*@
 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-7 col-sm-6 ">
-                    <div class="widget-item-right">
-                        <div class="text-left">
-                            <h4>
-                                <span class="fa fa-user" style="color:black"> Card Number :</span> {{detail.cardNo}}
-                            </h4>
-                            <h4>
-                                <span class="fa fa-credit-card" style="color:black"> Card Name :</span> {{detail.cardTypeName}}
-                            </h4>
-                            <h4>
-                                <span class="fa fa-heart" style="color:black"> Points :</span> {{detail.cardPoint}}
-                            </h4>
-                            <h4>
-                                <span class="fa fa-btc" style="color:black"> Balance :</span> {{detail.cardBalance}}
-                            </h4>
-                            <h4>
-                                <span class="fa fa-clock-o" style="color:black"> Activate Date :</span> {{detail.cardActivateDate}}
-                            </h4>
-                            <h4>
-                                <span class="fa fa-clock-o" style="color:black"> Expire date :</span> {{detail.cardExpireDate}}
-                            </h4>
-                        </div>
-                    </div>
-                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic">   QR code  </button>
-                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic2">  Barcode  </button>
-                </div>
-
                 </div>
             </div>
-   
-   
+        </div>
+
+        <div class="col-md-7 col-sm-6 ">
+            <div class="widget-item-right">
+                <div class="text-left">
+                    <h4>
+                        <span class="fa fa-user" style="color:black"> Card Number :</span> {{detail.cardNo}}
+                    </h4>
+                    <h4>
+                        <span class="fa fa-credit-card" style="color:black"> Card Name :</span> {{detail.cardTypeName}}
+                    </h4>
+                    <h4>
+                        <span class="fa fa-heart" style="color:black"> Points :</span> {{detail.cardPoint}}
+                    </h4>
+                    <h4>
+                        <span class="fa fa-btc" style="color:black"> Balance :</span> {{detail.cardBalance}}
+                    </h4>
+                    <h4>
+                        <span class="fa fa-clock-o" style="color:black"> Activate Date :</span> {{detail.cardActivateDate}}
+                    </h4>
+                    <h4>
+                        <span class="fa fa-clock-o" style="color:black"> Expire date :</span> {{detail.cardExpireDate}}
+                    </h4>
+                </div>
+            </div>
+           
+                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic">   QR code  </button>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic2">  Barcode  </button>
+                    <button class="btn btn-info"> History </button>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 <div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
@@ -106,9 +135,9 @@
 
 
 <script>
-     function flip() {
-     $('.card').toggleClass('flipped');
-     }
+    function flip() {
+        $('.card').toggleClass('flipped');
+    }
 </script>
 @*<style>
         .container {
@@ -175,8 +204,8 @@
 <script src="~/Scripts/angular-sanitize.js"></script>
 <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
 
-
-
-
-
-
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
