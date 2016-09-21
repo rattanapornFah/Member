@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+
 </head>
 <body>
 
@@ -27,20 +28,28 @@
                 <div class="form-group">                   
                     <div class="col-md-9 col-sm-9 col-xs-12">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Enter Destination : </label>
-                        <select id="txtDestination" class="form-control" @* ng-model="storeId" ng-options="item.storeLatitude as item.storeName for item in myWelcome"*@>
-                            <option value="">select</option>
-                            <option value="13.7207, 100.586">VTEC Coffee สาขาเอกมัย</option>
-                            <option value="13.8694, 100.6064">VTEC Coffee สาขารามอินทรา</option>
-                            <option value="13.7602, 100.6013">VTEC Coffee สาขาวังทองหลาง</option>
-                            <option value="13.8109, 100.5586">VTEC Coffee สาขาห้าแยกลาดพร้าว</option>
-                            <option value="7.0083, 100.4696">VTEC Coffee สาขาหาดใหญ่</option>
-                            <option value="13.6007, 100.844">VTEC Coffee สาขาสมุทรปราการ</option>
-                            <option value="13.3581, 101.0104">VTEC Coffee ในปั๊ม By Pass ชลบุรี</option>
-                            <option value="18.7893, 98.9936">VTEC Coffee สาขาเชียงใหม่ (ท่าแพ)</option>
-                            <option value="19.9052, 99.8331">VTEC Coffee สาขาเชียงราย</option>
-                        </select>
-                        <input type="button" value="Search Route" onclick="SearchRoute()" />
-                    </div>
+
+                            <select name="repeatSelect" id="txtDestination" ng-model="storeId">
+                                <option ng-repeat="option in myWelcome" value="{{option.storeLatitude+','+option.storeLongitude}}">{{option.storeName}}</option>
+                                <option value="">select</option>
+                            </select>                           
+
+                            @*<select id="txtDestination" class="form-control"  ng-model="storeId" ng-options="item.storeLatitude +item.storeLongitude  as item.storeName for item in myWelcome">
+                <option value="13.7207, 100.586">VTEC Coffee สาขาเอกมัย</option>
+                   <option value="">select</option>
+                        <option value="13.7207, 100.586">VTEC Coffee สาขาเอกมัย</option> 
+                        <option value="13.8694, 100.6064">VTEC Coffee สาขารามอินทรา</option>
+                        <option value="13.7602, 100.6013">VTEC Coffee สาขาวังทองหลาง</option>
+                        <option value="13.8109, 100.5586">VTEC Coffee สาขาห้าแยกลาดพร้าว</option>
+                        <option value="7.0083, 100.4696">VTEC Coffee สาขาหาดใหญ่</option>
+                        <option value="13.6007, 100.844">VTEC Coffee สาขาสมุทรปราการ</option>
+                        <option value="13.3581, 101.0104">VTEC Coffee ในปั๊ม By Pass ชลบุรี</option>
+                        <option value="18.7893, 98.9936">VTEC Coffee สาขาเชียงใหม่ (ท่าแพ)</option>
+                        <option value="19.9052, 99.8331">VTEC Coffee สาขาเชียงราย</option>
+            </select>*@
+
+                            <input type="button" value="Search Route" onclick="SearchRoute()" />
+                        </div>
                 </div>
                 
 
@@ -48,6 +57,8 @@
                 </div>
                 <div id="MapRoute" style="width: 100%; height: 800px">
                 </div>
+
+                <div id="right-panel"></div>
 
             </div>
         </div>
@@ -80,6 +91,7 @@
                             line-height: 30px;
                             padding-left: 10px;
                         }
+                
             </style>
 
             @*<div id="floating-panel">
@@ -159,8 +171,10 @@
                     var getInfoWindow = new google.maps.InfoWindow({
                         content: "<b>Your Current Location</b><br/> Latitude:" +
                                                 lat + "<br /> Longitude:" + long + ""
-                    });
+                    });                   
+
                     getInfoWindow.open(map, marker);
+
                 }
             </script>
 
@@ -227,7 +241,7 @@
                                     map.setCenter(latlngbounds.getCenter());
                                     map.fitBounds(latlngbounds);
 
-                                    //***********ROUTING****************//
+                                    //***********ROUTING****************//                                 
 
                                     //Initialize the Path Array.
                                     var path = new google.maps.MVCArray();
@@ -254,31 +268,28 @@
                                                     for (var i = 0, len = result.routes[0].overview_path.length; i < len; i++) {
                                                         path.push(result.routes[0].overview_path[i]);
                                                     }
-                                                } else {
+                                                }
+                                                else {
                                                     alert("Invalid location.");
                                                     window.location.href = window.location.href;
                                                 }
                                             });
                                         }
-                                    }
+                                    }                                
+
                                 } else {
                                     alert("Request failed.")
                                 }
+
+                                
                             });
 
-                            //$.ajax({
-                            //    type: 'GET',
-                            //    url: "/account?",
-                            //    data: "cf=cw&operation=update"
-                            //})
+                     
+
   //                          $.getJSON("https://maps.googleapis.com/maps/api/directions/json?origin=13.7207,100.586&destination=13.8694,100.6064&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs"
   //, function (data, status) {
   //                              console.log(data);
   //                          });
-
-                            $.getJSON("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs", function (data, status) {
-                                console.log(data);
-                            });
 
 
                         });
@@ -287,8 +298,11 @@
                         alert('Some Problem in getting Geo Location.');
                         return;
                     }
-                }
+        }
     </script>
+
+    
+
     <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
@@ -302,11 +316,6 @@
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs">
             </script>
 
-            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">
-
-            </script>
-
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs&libraries=places"></script>
 </body>
 </html>

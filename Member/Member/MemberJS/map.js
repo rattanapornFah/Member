@@ -5,6 +5,7 @@
         $scope.myWelcome = data.dataResult;
         console.log($scope.myWelcome);
 
+
         var cities = $scope.myWelcome;
         console.log($scope.myWelcome);
 
