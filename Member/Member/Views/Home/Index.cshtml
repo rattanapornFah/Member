@@ -22,9 +22,16 @@
     <!-- Custom Theme Style -->
     <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
     <link href="~/css/tab.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <style>
+        .body {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+
 </head>
 
-<body class="nav-md">
+<body class="nav-md" ng-controller="RegisterController">
     <div class="container body"> 
         <div class="main_container">
             <div class="col-md-3 left_col">                    
@@ -38,13 +45,14 @@
                     <!-- menu profile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
-                            <img src="~/Template/images/img.jpg" alt="..." class="img-circle profile_img">
+                            <img ng-src="{{register.image}}" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Rattanaporn</h2>
+                            <h2>{{register.first_name}}</h2>
                         </div>
                     </div>
+                    
                     <!-- /menu profile quick info -->
                     <br />
                     <!-- sidebar menu -->
@@ -52,7 +60,7 @@
                         <div class="menu_section">
                             <h3>General</h3>
                             
-                            <ul class="nav side-menu">
+                            <ul class="nav side-menu" ng-controller="langCtrl">
                           <!--     <li>
                                     <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -94,26 +102,31 @@
                                 <li>
                                     <a href="#/Feedback" onclick="parent.location.reload();"><i class="fa fa-star"></i> Feedback </a>
                                 </li>
-
-
-                               @*<li>
-                                    <a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="#/Feedback">Chart JS</a></li>
-                                        <li><a href="chartjs2.html">Chart JS2</a></li>
-                                        <li><a href="morisjs.html">Moris JS</a></li>
-                                        <li><a href="echarts.html">ECharts</a></li>
-                                        <li><a href="other_charts.html">Other Charts</a></li>
-                                    </ul>
-                                </li>
                                 <li>
-                                    <a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                    </ul>
-                                </li>*@   
-                            </ul>
+                                    <button class="btn ng-scope" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">English</button>
+                                </li>  
+                                <li>
+                                    <button class="btn ng-scope" ng-click="changeLanguage('th')" translate="BUTTON_LANG_TH">Thai</button>
+                                </li>
+
+                                    @*<li>
+                <a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="#/Feedback">Chart JS</a></li>
+                    <li><a href="chartjs2.html">Chart JS2</a></li>
+                    <li><a href="morisjs.html">Moris JS</a></li>
+                    <li><a href="echarts.html">ECharts</a></li>
+                    <li><a href="other_charts.html">Other Charts</a></li>
+                </ul>
+            </li>
+            <li>
+                <a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                    <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                </ul>
+            </li>*@
+</ul>
                         </div>
                         <div class="menu_section">
 
@@ -148,14 +161,19 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="~/Template/images/img.jpg" alt="">Fah
+                                    <img ng-src="{{register.image}}" alt="">{{register.first_name}}
                                     <span class="fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li><a href="#/Editmember">Edit Profile</a></li> 
+                                    <li><a>Change Language
+                                            <img src="~/Images/language/English_icon.png"  />
+                                            <img src="~/Images/language/thailand_icon_sm.png"/>
+                                        </a></li>
+
                                     <li><a href="/Login/login"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                                     
-</ul>
+                                </ul>
                             </li>
                            
                             <li role="presentation" class="dropdown">
@@ -243,6 +261,7 @@
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-translate.js"></script>
     <script src="~/MemberJS/app.js"></script>
 
     <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
@@ -263,6 +282,8 @@
     <script src="~/MemberJS/registerwithgoogle.js"></script>
     <script src="~/MemberJS/signup.js"></script>
     <script src="~/MemberJS/js-image-slider.js"></script>
+    <script src="~/MemberJS/translate.js"></script>
+    >
     <!-- jQuery -->
 
     <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
@@ -306,6 +327,7 @@
     <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs&callback=initMap"
             async defer></script>
+
     
 
     <!-- bootstrap-daterangepicker -->
