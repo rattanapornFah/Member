@@ -34,7 +34,7 @@
 } 
 </style>
 <div class="x_title">
-    <h3 style="color:darkred">Your cards
+    <h3 style="color:darkred">{{'Yourcard' | translate}}
         <button type="button" class="btn btn-info btn-circle btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Add Card" onclick="parent.location='#/Card'">
             <i class="glyphicon glyphicon-plus"></i>
         </button>
@@ -69,29 +69,29 @@
             <div class="widget-item-right">
                 <div class="text-left">
                     <h4>
-                        <span class="fa fa-user" style="color:black"> Card Number :</span> {{detail.cardNo}}
+                        <span class="fa fa-user" style="color:black"> {{'Cardnumber' | translate}} :</span> {{detail.cardNo}}
                     </h4>
                     <h4>
-                        <span class="fa fa-credit-card" style="color:black"> Card Name :</span> {{detail.cardTypeName}}
+                        <span class="fa fa-credit-card" style="color:black"> {{' Cardname' | translate}} :</span> {{detail.cardTypeName}}
                     </h4>
                     <h4>
-                        <span class="fa fa-heart" style="color:black"> Points :</span> {{detail.cardPoint}}
+                        <span class="fa fa-heart" style="color:black"> {{'Points' | translate}} :</span> {{detail.cardPoint}}
                     </h4>
                     <h4>
-                        <span class="fa fa-btc" style="color:black"> Balance :</span> {{detail.cardBalance}}
+                        <span class="fa fa-btc" style="color:black"> {{'Balance' | translate}} :</span> {{detail.cardBalance}}
                     </h4>
                     <h4>
-                        <span class="fa fa-clock-o" style="color:black"> Activate Date :</span> {{detail.cardActivateDate}}
+                        <span class="fa fa-clock-o" style="color:black"> {{'Activatedate' | translate}} :</span> {{detail.cardActivateDate}}
                     </h4>
                     <h4>
-                        <span class="fa fa-clock-o" style="color:black"> Expire date :</span> {{detail.cardExpireDate}}
+                        <span class="fa fa-clock-o" style="color:black"> {{'Expiredate' | translate}} :</span> {{detail.cardExpireDate}}
                     </h4>
                 </div>
             </div>
            
-                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic">   QR code  </button>
-                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic2">  Barcode  </button>
-                    <button class="btn btn-info"> History </button>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic"> {{'QRcode' | translate}}  </button>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic2"> {{'Barcode' | translate}}  </button>
+                    <button class="btn btn-info"> {{'History' | translate}} </button>
             </div>
         </div>
     </div>
@@ -104,14 +104,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="defModalHead">QR code</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
+                <h4 class="modal-title" id="defModalHead">{{'QRcode' | translate}} </h4>
             </div>
             <div class="modal-body">
                 <img src="~/Images/point/QRcode-card.png" class="img-responsive">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}} </button>
             </div>
         </div>
     </div>
@@ -120,14 +120,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="defModalHead">Barcode</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
+                <h4 class="modal-title" id="defModalHead">{{'Barcode' | translate}}</h4>
             </div>
             <div class="modal-body">
                 <img src="~/Images/point/Barcode-card.png" class="img-responsive" />
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}}</button>
             </div>
         </div>
     </div>
@@ -198,10 +198,12 @@
             }
     </style>*@
 
+<script src="~/Scripts/angular.js"></script>
 <script src="~/MemberJS/app.js"></script>
 <script src="~/Scripts/angular.min.js"></script>
 <script src="~/Scripts/angular-route.js"></script>
 <script src="~/Scripts/angular-sanitize.js"></script>
+<script src="~/MemberJS/translate.js"></script>
 <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
 
 <script>
