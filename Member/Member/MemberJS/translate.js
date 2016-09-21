@@ -1,5 +1,6 @@
 ﻿app.config(function ($translateProvider) {
   $translateProvider.translations('en', {
+      /*--------------------Edit Profile-------------------*/
       Profile:'Your Profile',
       Title: 'Title',
       SelectTitle: '-- select your title --',
@@ -29,12 +30,25 @@
       Picture: 'Picture',
       Cancal: 'Cancal',
       Submit: 'Submit',
+       /*--------------------Point-------------------*/
+      Yourcard: 'Your cards',
+      Cardnumber: 'Card number',
+      Cardname: 'Card name',
+      Points: 'Points',
+      Balance: 'Balance',
+      Activatedate: 'Activate Date',
+      Expiredate: 'Expire Date',
+      QRcode: 'QRcode',
+      Barcode: 'Barcode',
+      Close: 'Close',
+      History:'History',
     FOO: 'This is a paragraph.',
     BUTTON_LANG_EN: 'english',
     BUTTON_LANG_TH: 'thai'
   });
    
   $translateProvider.translations('th', {
+   /*--------------------Edit Profile-------------------*/
       Profile: 'ข้อมูลส่วนตัว',
       Title: 'คำนำหน้า',
       SelectTitle: '-- เลือกคำนำหน้า --',
@@ -64,6 +78,18 @@
       Picture: 'ภาพโปรไฟล์',
       Cancal: 'ยกเลิก',
       Submit: 'บันทึก',
+       /*------------------ Point ---------------------*/
+      Yourcard: 'บัตรของคุณ',
+      Cardnumber: 'เลขที่บัตร',
+      Cardname: 'ชื่อบัตร',
+      Points: 'คะแนนสะสม',
+      Balance: 'ยอดเงิน',
+      Activatedate: 'วันที่เปิดใช้งาน',
+      Expiredate: 'วันที่หมดอายุ',
+      QRcode: 'คิวอาร์โค้ด',
+      Barcode: 'บาร์โค้ด',
+      Close: 'ปิด',
+      History: 'ประวัติ',
       FOO: 'Dies ist ein Paragraph.',
       BUTTON_LANG_EN: 'english',
       BUTTON_LANG_TH: 'thai'
