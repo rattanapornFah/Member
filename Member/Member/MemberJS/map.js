@@ -9,7 +9,7 @@
         var cities = $scope.myWelcome;
         console.log($scope.myWelcome);
 
-var mapOptions = {
+        var mapOptions = {
         zoom: 4,
         center: new google.maps.LatLng(25, 80),
         mapTypeId: google.maps.MapTypeId.ROADMAP

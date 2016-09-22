@@ -1,5 +1,8 @@
-﻿app.controller('NavigateController', ['$scope', '$http', function ($scope, $http) {
+﻿app.controller('NavigateController', ['$scope', '$http', '$translate', function ($scope, $http) {
 
+    $scope.changeLanguage = function (key) {
+        $translate.use(key);
+    };
 
     $http.get("http://www.vtec-system.com:8080/LoyaltyApi/Stores/GetListAllStoresOfBrand?merchantId=1&brandId=1").success(function (data) {
         $scope.myWelcome = data.dataResult;

@@ -2,7 +2,7 @@
 
 <div ng-controller="feedbackController">
     <div id="head" class="panel-heading ui-draggable-handle" style="background-color:darkred">
-        <h1 class="panel-title" style="color:white" align="center"><strong>Feedback</strong></h1>
+        <h1 class="panel-title" style="color:white" align="center"><strong>{{ 'Feedback' | translate }}</strong></h1>
     </div>
 
 
@@ -11,22 +11,22 @@
         <div class="panel-body mail" align:center>
             <div class="mail-item mail-unread mail-success">
                 <div class="">
-                    <h5 class="panel-title" style="color:lightseagreen"><strong>สาขาที่ใช้บริการ</strong></h5>
+                    <h5 class="panel-title" style="color:lightseagreen"><strong>{{ 'Branch' | translate }}</strong></h5>
                 </div>
                 <br>
                 <div class="row">
                     <div class="form-group">
 
-                        <h5 class="col-md-1 text-left" style="padding-top:7px;"><strong>สาขา</strong></h5>
+                        <h5 class="col-md-1 text-left" style="padding-top:7px;"><strong>{{ 'SelectBranch' | translate }}</strong></h5>
 
                         <div class="col-md-2 col-xs-9 ">
                             <select class="form-control select" style="align-content:center" ng-model="branch">
-                                <option value="">เลือกสาขา</option>
-                                <option value="1">โออิชิแกรนด์ สยามพารากอน</option>
-                                <option value="2">โออิชิบุฟเฟ่ต์ ซีคอนสแควร์</option>
-                                <option value="3">โออิชิบุฟเฟ่ต์ ซีคอนบางแค</option>
-                                <option value="4">โออิชิบุฟเฟ่ต์ ปิ่นเกล้า</option>
-                                <option value="5">โออิชิบุฟเฟ่ต์ บิ๊กซีพระราม4</option>
+                                <option value="">{{ 'Select1' | translate }}</option>
+                                <option value="1">{{ 'Select2' | translate }}</option>
+                                <option value="2">{{ 'Select3' | translate }}</option>
+                                <option value="3">{{ 'Select4' | translate }}</option>
+                                <option value="4">{{ 'Select5' | translate }}</option>
+                                <option value="5">{{ 'Select6' | translate }}</option>
                             </select>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <br>
 
                 <div class="">
-                    <h5 class="panel-title" style="color:lightseagreen;"><strong>คุณภาพ</strong></h5>
+                    <h5 class="panel-title" style="color:lightseagreen;"><strong>{{ 'Quality' | translate }}</strong></h5>
                 </div>
 
 
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h5>
-                                รสชาติอาหาร
+                                {{ 'Taste' | translate }}
                             </h5>
                             <div class="stars">
                                 <form action="">
@@ -62,7 +62,7 @@
 
                             <div>
                                 <h5>
-                                    ความหลากหลายของอาหาร
+                                    {{ 'VarietyOfFood' | translate }}
                                 </h5>
 
                                 <div class="stars">
@@ -82,7 +82,7 @@
 
                                 <div>
                                     <h5>
-                                        ความสดของอาหาร
+                                        {{ 'FreshnessOfFood' | translate }}
                                     </h5>
                                     <div class="stars">
                                         <form action="">
@@ -101,7 +101,7 @@
 
                                     <div>
                                         <h5>
-                                            คุ้มค่าราคา
+                                            {{ 'Worthy' | translate }}
                                         </h5>
                                         <div class="stars">
                                             <form action="">
@@ -120,7 +120,7 @@
                                     </div>
                                     <div>
                                         <h5>
-                                            หน้าตาและสีสันของอาหาร
+                                            {{ 'LookDelicious' | translate }}
                                         </h5>
                                         <div class="stars">
                                             <form action="">
@@ -139,7 +139,7 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <button class="button button1" data-toggle="modal" data-target="#modal_basic2"><strong> Send</strong></button>
+                                        <button class="button button1" data-toggle="modal" data-target="#modal_basic2"><strong> {{ 'Send' | translate }}</strong></button>
                                      <!--   <button type="submit" class="button button1" ng-click="feedback(branch,star,star1,star2,star3,star4)"><strong> Send</strong></button>  -->
                                     </div>
 
@@ -148,13 +148,13 @@
                                             <div class="modal-content">
                                                 <div class="modal-header bg-header">
                                                     <button type="button" class="close" data-dismiss="modal" style="color:white"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                    <h4 class="modal-title" id="defModalHead" style="color:white">Feedback</h4>
+                                                    <h4 class="modal-title" id="defModalHead" style="color:white">{{ 'Feedback' | translate }}</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <h2> Thank you for your answer </h2>
+                                                    <h2>{{ 'Thankyou' | translate }}</h2>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{ 'Close' | translate }}</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -217,4 +217,5 @@
 <script src="~/Scripts/angular.min.js"></script>
 <script src="~/Scripts/angular-route.js"></script>
 <script src="~/Scripts/angular-sanitize.js"></script>
+<script src="~/Scripts/angular-translate.js"></script>
 <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>

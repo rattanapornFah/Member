@@ -41,7 +41,43 @@
       QRcode: 'QRcode',
       Barcode: 'Barcode',
       Close: 'Close',
-      History:'History',
+      History: 'History',
+
+       /*--------------------Map-------------------*/
+      SortByLocation: 'By Location',
+      SortByName: 'By Name',
+      Readmore: 'Read more',
+
+      /*--------------------Infor-------------------*/
+      OishiGrand: 'oishi grand siam paragon',
+      Back: 'Back',
+      ShowMap: 'Show Map',
+
+      /*--------------------Navigate-------------------*/
+      EnterDestination: 'Enter Destination :',
+      Select: 'select',
+      SearchRoute: 'Search',
+
+      /*--------------------Feedback-------------------*/
+      Feedback: 'Feedback',
+      Branch: 'Branch Services',
+      SelectBranch: 'branch',
+      Select1: 'Select branch',
+      Select2: 'Oishi grand siam paragon',
+      Select3: 'Oishi buffet seacon square',
+      Select4: 'Oishi buffet seacon bangkae',
+      Select5: 'Oishi buffet pinklao',
+      Select6: 'Oishi buffet bigc Rama 4',
+      Quality: 'quality',
+      Taste: 'taste',
+      VarietyOfFood: 'variety of food',
+      FreshnessOfFood: 'freshness of food',
+      Worthy: 'worthy',
+      LookDelicious: 'look delicious',
+      Send: 'Send',
+      Thankyou: ' Thank you for your answer ',
+      Close: 'Close',
+
     FOO: 'This is a paragraph.',
     BUTTON_LANG_EN: 'english',
     BUTTON_LANG_TH: 'thai'
@@ -90,6 +126,42 @@
       Barcode: 'บาร์โค้ด',
       Close: 'ปิด',
       History: 'ประวัติ',
+
+      /*--------------------Map-------------------*/
+      SortByLocation: 'ค้นหาร้านใกล้ตัว',
+      SortByName: 'ค้นหาตามชื่อร้าน',
+      Readmore: 'อ่านต่อ',
+
+      /*--------------------Infor-------------------*/
+      OishiGrand: 'โออิชิแกรนด์ สยามพารากอน',
+      Back: 'กลับ',
+      ShowMap: 'แสดงแผนที่',
+
+      /*--------------------Navigate-------------------*/
+      EnterDestination: 'เลือกร้านปลายทาง :',
+      Select: 'เลือก',
+      SearchRoute: 'ค้นหา',
+
+      /*--------------------Feedback-------------------*/
+      Feedback: 'ข้อติชม',
+      Branch: 'สาขาที่ใช้บริการ',
+      SelectBranch: 'สาขา',
+      Select1: 'เลือกสาขา',
+      Select2: 'โออิชิแกรนด์ สยามพารากอน',
+      Select3: 'โออิชิบุฟเฟ่ต์ ซีคอนสแควร์',
+      Select4: 'โออิชิบุฟเฟ่ต์ ซีคอนบางแค',
+      Select5: 'โออิชิบุฟเฟ่ต์ ปิ่นเกล้า',
+      Select6: 'โออิชิบุฟเฟ่ต์ บิ๊กซีพระราม4',
+      Quality: 'คุณภาพ',   
+      Taste: 'รสชาติอาหาร',      
+      VarietyOfFood: 'ความหลากหลายของอาหาร',
+      FreshnessOfFood: 'ความสดของอาหาร',
+      Worthy: 'คุ้มค่าราคา',
+      LookDelicious: 'หน้าตาและสีสันของอาหาร',
+      Send: 'ส่ง',
+      Thankyou: ' ขอบคุณสำหรับคำติชมของคุณ ',
+      Close: 'ปิด',
+
       FOO: 'Dies ist ein Paragraph.',
       BUTTON_LANG_EN: 'english',
       BUTTON_LANG_TH: 'thai'
