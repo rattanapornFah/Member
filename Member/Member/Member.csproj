@@ -177,6 +177,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\card.css" />
     <Content Include="css\generic.css" />
+    <Content Include="css\google-plus-signin.css" />
     <Content Include="css\js-image-slider.css" />
     <Content Include="css\slide.css" />
     <Content Include="css\star.css" />
@@ -269,6 +270,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Properties\PublishProfiles\oishi.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\google-plus-signin.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
