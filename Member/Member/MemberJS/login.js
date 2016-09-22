@@ -1,4 +1,4 @@
-﻿app.controller('LoginController', ['$scope', '$http', function ($scope, $http) {
+﻿app.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
     $scope.register = {};
 
     //--------------------------- Log in---------------------------------------------------//
@@ -24,5 +24,28 @@
                 
             })
     };
+
+
+    $scope.$on('event:google-plus-signin-success', function (event, authResult) {
+        // User successfully authorized the G+ App!
+        console.log('Signed in!');
+        var user = authResult.w3;
+        var userdata = { "ImageProfile": user.Paa, 
+            "FirstName": user.ofa,
+            "LastName": user.wea,
+            "Email": user.U3
+        }
+        localStorage.setItem("Status", 1);
+        localStorage.setItem("MyProfile", JSON.stringify(userdata));
+
+       //    window.location = "../Register/register";
+
+
+        
+    });
+    $scope.$on('event:google-plus-signin-failure', function (event, authResult) {
+        // User has not authorized the G+ App!
+        console.log('Not signed into Google Plus.');
+    });
   
 }])

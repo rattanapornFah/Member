@@ -28,6 +28,7 @@
     <link href="~/Template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
+    <link href="~/css/google-plus-signin.css" rel="stylesheet" />
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script>
     function start() {
@@ -71,17 +72,19 @@
                         </div>
                         <div class="clearfix"></div>
                         <br />
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-6">
-                               
-                                <div  class="g-signin2 btn btn-block" data-onsuccess="onSignIn"> </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6">
+                        <google-plus-signin clientid="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj" >
+                          
+                        </google-plus-signin>
+                        
+                        
+                     
+                           <div class="form-group">
+                           
+                            @*<div class="col-md-6 col-sm-6 col-xs-6">
                                 <fb:login-button class="btn-lg" scope="public_profile,email" onlogin="checkLoginState();">
                                     Facebook
                                 </fb:login-button>
-                            </div>
+                            </div>*@
                         </div>
                     </form>
                 </section>
@@ -95,7 +98,7 @@
     <script src="~/Scripts/angular-translate.js"></script>
     <script src="~/MemberJS/app.js"></script>
     <script src="~/MemberJS/login.js"></script>
-
+    <script src="~/Scripts/google-plus-signin.js"></script>
     <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
 
     <script>
@@ -174,7 +177,7 @@
                 localStorage.setItem('memberDetails', JSON.stringify(response));
                 //console.log(response)
 
-                //parent.location = '/Register/register';
+           //     parent.location = '/Register/register';
 
                 //console.log('Successful login for: ' + response.name);
                 //document.getElementById('status').innerHTML =
@@ -185,6 +188,7 @@
 
     <script>
         function onSignIn(googleUser) {
+            alert("222");
             var profile = googleUser.getBasicProfile();
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName());
@@ -194,11 +198,10 @@
 
             localStorage.setItem('Details', JSON.stringify(profile));
             localStorage.setItem('status', 'google');
-            //parent.location = '/Register/register';
+            ////parent.location = '/Register/register';
 
         }
     </script>
-   
 
 </body>
 </html>

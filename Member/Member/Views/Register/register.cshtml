@@ -214,7 +214,10 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <a href="/Login/login" class="btn btn-primary pull-right">Cancel</a>
+                                    <button type="button" ng-click="Cancel(register)"
+                                            class="btn btn-primary pull-right">
+                                        Cancel
+                                    </button>
                                     <button type="submit" ng-click="addMember(register)" 
                                             class="btn btn-success pull-right">Submit</button>
                                 </div>
@@ -239,6 +242,7 @@
 <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
 <script src="~/MemberJS/register.js"></script>
 <script src="~/MemberJS/picture.js"></script>
+<script src="~/Scripts/google-plus-signin.js"></script>
 <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
 
 

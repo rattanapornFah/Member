@@ -76,7 +76,27 @@
       LookDelicious: 'look delicious',
       Send: 'Send',
       Thankyou: ' Thank you for your answer ',
-      Close: 'Close',
+      
+      /*--------------------News-------------------*/
+      Latest: 'Latest',
+      Unread: 'Unread',
+
+      /*--------------------Card-------------------*/
+      Addcard: 'Add your card',
+      Enterpin: 'Enter your card number and pin code',
+
+      /*--------------------Index-------------------*/
+       MemberCard: ' Member Card',
+       EditMember: 'Edit Member',
+       News: 'News',
+       Map: 'Map',
+       English: 'English',
+       Thai: 'Thai',
+       Welcome: 'Welcome',
+       ChangeLanguage: 'Change Language',
+       SeeAllAlerts: 'See All Alerts',
+       EditProfile: 'EditProfile',
+       LogOut: 'Log Out',
 
     FOO: 'This is a paragraph.',
     BUTTON_LANG_EN: 'english',
@@ -160,7 +180,26 @@
       LookDelicious: 'หน้าตาและสีสันของอาหาร',
       Send: 'ส่ง',
       Thankyou: ' ขอบคุณสำหรับคำติชมของคุณ ',
-      Close: 'ปิด',
+      
+      /*--------------------News-------------------*/
+      Latest: 'ล่าสุด',
+      Unread: 'ยังไม่ได้อ่าน',
+      /*--------------------Card-------------------*/
+      Addcard: 'เพิ่มบัตรของคุณ',
+      Enterpin: 'กรุณาใส่เลขบัตรและเลข pin',
+
+      /*--------------------Index-------------------*/
+       MemberCard: 'บัตรสมาชิก',
+       EditMember: 'แก้ไขข้อมูลส่วนตัว',
+       News: 'ข่าวสาร',
+       Map: 'แผนที่',
+       English: 'ภาษาอังกฤษ',
+       Thai: 'ภาษาไทย',
+       Welcome: 'ยินดีต้อนรับ',
+       ChangeLanguage: 'เปลี่ยนภาษา',
+       SeeAllAlerts: 'ดูทั้งหมด',
+       EditProfile: 'แก้ไขข้อมูลส่วนตัว',
+       LogOut: 'ออกจากระบบ',
 
       FOO: 'Dies ist ein Paragraph.',
       BUTTON_LANG_EN: 'english',

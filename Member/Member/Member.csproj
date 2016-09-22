@@ -177,6 +177,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\card.css" />
     <Content Include="css\generic.css" />
+    <Content Include="css\google-plus-signin.css" />
     <Content Include="css\js-image-slider.css" />
     <Content Include="css\map.css" />
     <Content Include="css\slide.css" />
@@ -217,8 +218,6 @@
     <Content Include="MemberJS\picture.js" />
     <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\register.js" />
-    <Content Include="MemberJS\registerwithgoogle.js" />
-    <Content Include="MemberJS\signup.js" />
     <Content Include="MemberJS\slide.js" />
     <Content Include="MemberJS\tab.js" />
     <Content Include="MemberJS\translate.js" />
@@ -270,6 +269,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Properties\PublishProfiles\oishi.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\google-plus-signin.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -4568,8 +4568,6 @@
     <Content Include="Template\vendors\validator\.gitignore" />
     <Content Include="Template\vendors\validator\README.md" />
     <Content Include="Template\vendors\validator\validator.jquery.json" />
-    <Content Include="Views\Register\Signup.cshtml" />
-    <Content Include="Views\Register\RegisterGoogle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

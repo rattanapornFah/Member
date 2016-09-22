@@ -59,4 +59,9 @@ app.controller('langCtrl', function ($scope, $translate) {
     $scope.changeLanguage = function (key) {
         $translate.use(key);
     };
+
+     $scope.logout= function () {
+         localStorage.removeItem();
+     }
+
 });
