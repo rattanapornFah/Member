@@ -4,8 +4,8 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
 
-                <h2><span class="fa fa-plus-circle"> Add your card</span></h2>
-                <p>Enter your card number and pin code </p>
+                <h2><span class="fa fa-plus-circle"> {{ 'Addcard' | translate }}</span></h2>
+                <h5>{{ 'Enterpin ' | translate }}</h5>
                 <section class="login_content">
 
 
@@ -17,7 +17,8 @@
                         <input type="password" id="inputPassword" class="form-control" placeholder="Pin Number" required>
 
                         <div>
-                            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" onclick="parent.location='/#/Point'"><strong>Submit</strong></button>
+                            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
+                                    onclick="parent.location='/#/Point'"><strong>{{ 'Submit' | translate }} </strong></button>
                         </div>
                     </form><!-- /form -->
                 </section>

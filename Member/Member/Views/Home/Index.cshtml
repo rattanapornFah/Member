@@ -51,7 +51,7 @@
                             <img ng-src="{{register.image}}" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Welcome,</span>
+                            <span>{{ 'Welcome' | translate}},</span>
                             <h2>{{register.first_name}}</h2>
                         </div>
                     </div>
@@ -64,94 +64,38 @@
                             <h3>General</h3>
 
                             <ul class="nav side-menu">
-                                <!--     <li>
-                                          <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                          <ul class="nav child_menu">
-                                              <li><a href="index.html">Dashboard</a></li>
-                                              <li><a href="index2.html">Dashboard2</a></li>
-                                              <li><a href="index3.html">Dashboard3</a></li>
-                                          </ul>
-                                      </li>
-                                      <li>
-                                          <a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                          <ul class="nav child_menu">
-                                              <li><a href="#/Card">General Form</a></li>
-                                              <li><a href="form_advanced.html">Advanced Components</a></li>
-                                              <li><a href="form_validation.html">Form Validation</a></li>
-                                              <li><a href="form_wizards.html">Form Wizard</a></li>
-                                              <li><a href="form_upload.html">Form Upload</a></li>
-                                              <li><a href="form_buttons.html">Form Buttons</a></li>
-                                          </ul>
-                                      </li>     -->
-
                                 <li>
                                     <br />
                                 </li>
                                 <li>
-                                    <a href="#/Point" onclick="parent.location.reload();"><i class="fa fa-credit-card"></i> Member Card</a>
+                                    <a href="#/Point" onclick="parent.location.reload();"><i class="fa fa-credit-card"></i> {{ 'MemberCard' | translate}}</a>
                                 </li>
                                 <li>
-                                    <a href="#/Editmember" onclick="parent.location.reload();"><i class="fa fa-edit"></i> Edit Member </a>
+                                    <a href="#/Editmember" onclick="parent.location.reload();"><i class="fa fa-edit"></i> {{ 'EditMember' | translate}} </a>
                                 </li>
                                 <li>
-                                    <a href="#/News" onclick="parent.location.reload();"><i class="fa fa-bullhorn"></i> News </a>
+                                    <a href="#/News" onclick="parent.location.reload();"><i class="fa fa-bullhorn"></i> {{ 'News' | translate}} </a>
                                 </li>
 
                                 <li>
-                                    <a href="#/Map " onclick="parent.location.reload();"><i class="fa fa-map-marker"></i> Map </a>
-
+                                    <a href="#/Map " onclick="parent.location.reload();"><i class="fa fa-map-marker"></i> {{ 'Map' | translate}} </a>
                                 </li>
 
                                 <li>
-                                    <a href="#/Feedback" onclick="parent.location.reload();"><i class="fa fa-star"></i> Feedback </a>
+                                    <a href="#/Feedback" onclick="parent.location.reload();"><i class="fa fa-star"></i> {{ 'Feedback' | translate}} </a>
                                 </li>
                                 <li>
-                                    <button class="btn ng-scope" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">English</button>
+                                    <button class="btn ng-scope" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">{{ 'English' | translate}}</button>
                                 </li>
                                 <li>
-                                    <button class="btn ng-scope" ng-click="changeLanguage('th')" translate="BUTTON_LANG_TH">Thai</button>
+                                    <button class="btn ng-scope" ng-click="changeLanguage('th')" translate="BUTTON_LANG_TH">{{ 'Thai' | translate}}</button>
                                 </li>
-
-                                @*<li>
-                                        <a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="#/Feedback">Chart JS</a></li>
-                                            <li><a href="chartjs2.html">Chart JS2</a></li>
-                                            <li><a href="morisjs.html">Moris JS</a></li>
-                                            <li><a href="echarts.html">ECharts</a></li>
-                                            <li><a href="other_charts.html">Other Charts</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                        </ul>
-                                    </li>*@
                             </ul>
                         </div>
                         <div class="menu_section">
 
                         </div>
                     </div>
-                    <!-- /sidebar menu -->
-                    <!-- /menu footer buttons -->
-                    @*<div class="sidebar-footer hidden-small">
-                            <a data-toggle="tooltip" data-placement="top" title="Settings">
-                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                            </a>
-                            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                            </a>
-                            <a data-toggle="tooltip" data-placement="top" title="Lock">
-                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                            </a>
-                            <a data-toggle="tooltip" data-placement="top" title="Logout">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                            </a>
-                        </div>*@
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
             <!-- top navigation -->
@@ -168,16 +112,16 @@
                                     <span class="fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                    <li><a href="#/Editmember">Edit Profile</a></li>
+                                    <li><a href="#/Editmember">{{ 'EditProfile' | translate}}</a></li>
                                     <li>
                                         <a>
-                                            Change Language
+                                            {{ 'ChangeLanguage' | translate}}
                                             <img src="~/Images/language/English_icon.png" />
                                             <img src="~/Images/language/thailand_icon_sm.png" />
                                         </a>
                                     </li>
 
-                                    <li><a href="/Login/login" ng-click="logout()"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                    <li><a href="/Login/login" ng-click="logout()"><i class="fa fa-sign-out pull-right"></i> {{ 'LogOut' | translate}}</a></li>
                                     
                                 </ul>
                             </li>
@@ -222,7 +166,7 @@
                                     <li>
                                         <div class="text-center">
                                             <a href="#/News">
-                                                <strong>See All Alerts</strong>
+                                                <strong>{{ 'SeeAllAlerts' | translate}}</strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </div>
