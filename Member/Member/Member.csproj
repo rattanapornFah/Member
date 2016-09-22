@@ -178,6 +178,7 @@
     <Content Include="css\card.css" />
     <Content Include="css\generic.css" />
     <Content Include="css\js-image-slider.css" />
+    <Content Include="css\map.css" />
     <Content Include="css\slide.css" />
     <Content Include="css\star.css" />
     <Content Include="css\tab.css" />

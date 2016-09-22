@@ -2,14 +2,16 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-
+<link href="~/css/js-image-slider.css" rel="stylesheet" />
+<script src="~/MemberJS/js-image-slider.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- START CONTENT FRAME BODY -->
 
-<style>
+@*<style>
     .mySlides {
         display: none;
     }
-</style>
+</style>*@
 
 <div class="x_panel">
     <div class="row">
@@ -24,45 +26,57 @@
                                 <h4 style="color:darkred"><strong>{{ 'OishiGrand' | translate }}</strong></h4>
                             </div>
 
-                                <div class="w3-content w3-section" style="max-width:400px">
+                                @*<div class="w3-content w3-section" style="max-width:400px">
                                     <img class="w3-animate-left" src="Images/map/oishi-grand.jpg" style="width:100%">
                                     <img class="mySlides w3-animate-left" src="Images/map/oishigrand2.png" style="width:100%">
                                     <img class="mySlides w3-animate-left" src="Images/map/oishigrandpr2015.jpg" style="width:100%">
-                                </div> 
+                                </div>*@ 
+                            <div class="col-xs-12">
+                                <center>
+                                    <div id="contain" style="max-width:450px; max-height:250px;">
+                                        <ul1 id="slidImage">
+                                            <li1 class="slide selected"><img src="Images/map/oishi-grand.jpg" style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src="Images/map/oishigrand2.png" style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src="Images/map/oishigrandpr2015.jpg" style="width:100%; height:100%" alt="" /></li1>
+                                        </ul1>
+                                        @*<button id="p">Previous</button>
+                                        <button id="n">Next</button>
+                                        <div style="clear:both"></div>*@
+                                    </div>
+                                </center>
+                            </div>
+                                @*<div class="col-xs-12">
 
+                        <center>
+                             <div class="mask">
+                            <div id="slider" style="max-width:450px; height:280px">
 
-                                    @*<div class="col-xs-12">
-                                        
-                                                <center> 
-                                                     <div class="mask">                                           
-                                                    <div id="slider" style="max-width:450px; height:280px">
-                                                        
-                                                            <img src="~/Images/map/oishi-grand.jpg" style="width:100%" class="img-responsive" />
-                                                            <img src="~/Images/map/oishigrand2.png" style="width:100%" class="img-responsive" />
-                                                            <img src="~/Images/map/oishigrandpr2015.jpg" style="width:100%" class="img-responsive" />
-                                                        </div>
-                                                    </div>
-                                                </center>
+                                    <img src="~/Images/map/oishi-grand.jpg" style="width:100%" class="img-responsive" />
+                                    <img src="~/Images/map/oishigrand2.png" style="width:100%" class="img-responsive" />
+                                    <img src="~/Images/map/oishigrandpr2015.jpg" style="width:100%" class="img-responsive" />
+                                </div>
+                            </div>
+                        </center>
 
-                                        <br /><br />
-                                    </div>*@
-                        
+                <br /><br />
+            </div>*@
+
                            
-                                        <div class="paragraph">
-                                                <div class="col-md-12">
-                                                    <h5 style="color:darkgreen"><strong>โออิชิ แกรนด์ "แกรนด์บุฟเฟ่ต์หรูแนวใหม่"</strong></h5>
-                                                    <h6>แกรนด์บุฟเฟ่ต์ ในราคาเบาๆ… เปิดประสบการณ์ความอร่อยกับหลากหลายเมนูคุณภาพคัดพิเศษ</h6>
-                                                    <h6>ระดับพรีเมี่ยม ที่ให้คุณเลือกอร่อยได้...แบบไม่จำกัด ทั้งอาหาร ญี่ปุ่น จีน ยุโรป กว่า 100 รายการ</h6>
-                                                    <h6> อาทิ ซาชิมิ ปลาฮามาจิ , ปลาหิมะย่างเกลือ , เทปันยากิ เนื้อนิวซีแลนด์ , ไอศกรีม ฮาเก้นดาส</h6>
-                                                    <br>
-                                                    <h6><strong>ที่ตั้ง</strong></h6>
-                                                    <h6>ศูนย์การค้าสยามพารากอน ถ.พระราม 1 แขวง ปทุมวัน เขต ปทุมวัน กรุงเทพฯ 10330</h6>
-                                                    <br>
-                                                    <br>
-                                                </div>
-                                            </div>
+                                <div class="paragraph">
+                                    <div class="col-md-12"><br />
+                                        <h5 style="color:darkgreen"><strong>โออิชิ แกรนด์ "แกรนด์บุฟเฟ่ต์หรูแนวใหม่"</strong></h5>
+                                        <h6>แกรนด์บุฟเฟ่ต์ ในราคาเบาๆ… เปิดประสบการณ์ความอร่อยกับหลากหลายเมนูคุณภาพคัดพิเศษ</h6>
+                                        <h6>ระดับพรีเมี่ยม ที่ให้คุณเลือกอร่อยได้...แบบไม่จำกัด ทั้งอาหาร ญี่ปุ่น จีน ยุโรป กว่า 100 รายการ</h6>
+                                        <h6> อาทิ ซาชิมิ ปลาฮามาจิ , ปลาหิมะย่างเกลือ , เทปันยากิ เนื้อนิวซีแลนด์ , ไอศกรีม ฮาเก้นดาส</h6>
+                                        <br>
+                                        <h6><strong>ที่ตั้ง</strong></h6>
+                                        <h6>ศูนย์การค้าสยามพารากอน ถ.พระราม 1 แขวง ปทุมวัน เขต ปทุมวัน กรุงเทพฯ 10330</h6>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
 
-                                
+
                                 <button class="button button2" onclick="parent.location='#/Navigate'"><span class="fa fa-map-marker "><strong> {{ 'ShowMap' | translate }}</strong></span></button>
                                 <br><br><br><br>
                                 <div class="login-footer">
@@ -77,7 +91,7 @@
     </div>
 
 
-<script>
+@*<script>
 var myIndex = 0;
 carousel();
 
@@ -92,7 +106,7 @@ function carousel() {
     x[myIndex-1].style.display = "block";
     setTimeout(carousel, 2500);
 }
-</script>
+</script>*@
 
 <style>
     .button {
