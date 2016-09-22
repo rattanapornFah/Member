@@ -1,4 +1,4 @@
-﻿app.controller('RegisterController', ['$scope','$http', function ($scope,$http) {
+﻿app.controller('RegisterController', ['$scope', '$http', function ($scope, $http) {
     $scope.register = {};
     
     if (Number(localStorage.getItem('Status')) == 1) {
@@ -33,7 +33,7 @@
         var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/InsertNewMemberData?' + 
             'merchantId=1&brandId=1&code=001' +
             '&title=' + register.title + '&' +
-            'firstName=' + register.first_name+ '&' +
+            'firstName=' + register.first_name + '&' +
             'middleName=' + register.middlename + '&' +
             'lastName=' + register.last_name ;
             'gender=' +register.gender + '&' +
@@ -55,10 +55,10 @@
                  parent.location = '/#/Point';
             })
 
-   }
-   
-    
-    
+    }
+
+
+
     $scope.start = new Date();
 
     $scope.format = "dd/MM/yyyy";

@@ -4,8 +4,8 @@
     <div class="col-md-8 col-sm-12 col-xs-12">
         <div class="x_panel">
             <ul id="tabs">
-                <li><a href="#/Map" title="tab1">By location</a></li>
-                <li><a href="#/MapByName" title="tab2">By name</a></li>
+                <li><a href="#/Map" title="tab1">{{ 'SortByLocation' | translate }}</a></li>
+                <li><a href="#/MapByName" title="tab2">{{ 'SortByName' | translate }}</a></li>
             </ul>
             <div class="google-maps">
                 <iframe src="http://localhost:51813/Map/Map2"
@@ -34,7 +34,7 @@
                                 <p> {{myWelcomes.storeAddress2}}</p>
 
                                 <div class="timeline-footer">
-                                    <h5 href="#/Infor"><strong>Read more</strong></h5>
+                                    <h5 href="#/Infor"><strong>{{ 'Readmore' | translate }}</strong></h5>
                                     <h6 class="pull-right">7.0 กม.</h6>
                                 </div>
                             </div>
@@ -276,8 +276,6 @@
 
 <script src="~/MemberOnlineJS/tabs.js"></script>
 <link href="~/Content/layouts/tabs.css" rel="stylesheet" />
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs&callback=initMap"
-        async defer></script>
-
+  
 
 

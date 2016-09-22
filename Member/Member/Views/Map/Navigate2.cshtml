@@ -5,6 +5,14 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
 
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-translate.js"></script>
+    <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
+    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
+
+
 </head>
 <body>
 
@@ -27,11 +35,11 @@
                 @*<input type="text" id="txtDestination" value="" style="width: 200px" />*@
                 <div class="form-group">                   
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Enter Destination : </label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ 'EnterDestination' | translate }} </label>
 
                             <select name="repeatSelect" id="txtDestination" ng-model="storeId">
                                 <option ng-repeat="option in myWelcome" value="{{option.storeLatitude+','+option.storeLongitude}}">{{option.storeName}}</option>
-                                <option value="">select</option>
+                                <option value="">{{ 'Select' | translate }}</option>
                             </select>                           
 
                             @*<select id="txtDestination" class="form-control"  ng-model="storeId" ng-options="item.storeLatitude +item.storeLongitude  as item.storeName for item in myWelcome">
@@ -48,7 +56,7 @@
                         <option value="19.9052, 99.8331">VTEC Coffee สาขาเชียงราย</option>
             </select>*@
 
-                            <input type="button" value="Search Route" onclick="SearchRoute()" />
+                            <input type="button" value="{{ 'SearchRoute' | translate }}" onclick="SearchRoute()" />
                         </div>
                 </div>
                 
@@ -301,17 +309,11 @@
         }
     </script>
 
-    
-
-    <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
-    <script src="~/Scripts/angular.js"></script>
-    <script src="~/Scripts/angular-route.min.js"></script>
-    <script src="~/Scripts/angular-sanitize.js"></script>
-    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
-
-
+   
     <script src="~/MemberJS/app.js"></script>
-            <script src="~/MemberJS/navigate.js"></script>
+    <script src="~/MemberJS/translate.js"></script>
+    <script src="~/MemberJS/navigate.js"></script>
+
             <script async defer
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs">
             </script>
