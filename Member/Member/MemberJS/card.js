@@ -1,6 +1,7 @@
-﻿$('form').on("submit", function () {
-    return false;
-});
-$('tr').on('click', function () {
-    $(this).find('input[type=text], input[type=password]').focus();
-});
+﻿app.controller('CardController', ['$scope', '$http', '$translate', function ($scope, $http, $translate) {
+        $scope.changeLanguage = function (key) {
+            $translate.use(key);
+        };
+
+ 
+}])

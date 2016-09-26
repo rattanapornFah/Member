@@ -1,13 +1,13 @@
-﻿<div class="container">
+﻿<link href="~/css/card.css" rel="stylesheet" />
+<div class="container" ng-controller="CardController">
     <div class="card card-container">
-        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
         <div class="login_wrapper">
             <div class="animate form login_form">
 
                 <h2><span class="fa fa-plus-circle"> {{ 'Addcard' | translate }}</span></h2>
                 <h5>{{ 'Enterpin ' | translate }}</h5>
+                     
                 <section class="login_content">
-
 
                     <form class="bg img-rounded" align="center" style="width:100%; height:290px">
                         <span id="reauth-email" class="reauth-email"></span>
@@ -20,35 +20,35 @@
                             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
                                     onclick="parent.location='/#/Point'"><strong>{{ 'Submit' | translate }} </strong></button>
                         </div>
-                    </form><!-- /form -->
+                    </form>
                 </section>
+                  
             </div>
-        </div>        
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>        
+        <h4><a href="/#/Point"><span class="fa fa-arrow-circle-o-left"></span> {{'Back' | translate }}</a></h4> 
     </div>
-</div><!-- /card-container -->
-
-        
-<script src="~/MemberJS/card.js"></script>
-<link href="~/css/card.css" rel="stylesheet" />
-
+</div>
 
 
 <style>
     .bg {
-        background-image: url('../../Images/Register/oishi2.png');
+        background-image: url('http://203.150.94.101:8080/Resources/CardImages/Merchant-1/Brand-1/MemberCard-1.png');
         width: 100%;
-        height: auto;
-         
+        height: auto;    
     }
-
     .center {
         text-align: center;
     }
-
 </style>
 
-<script src="~/Scripts/angular.js"></script>
-<script src="~/Scripts/angular-route.min.js"></script>
-<script src="~/Scripts/angular-sanitize.js"></script>
-<script src="~/MemberJS/app.js"></script>
-
+@*------------------------ Verify Card ------------------------------*@
+<script>
+        $('form').on("submit", function () {
+            return false;
+        });
+        $('tr').on('click', function () {
+        $(this).find('input[type=text], input[type=password]').focus();
+});
+</script>

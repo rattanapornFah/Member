@@ -42,6 +42,7 @@
       Barcode: 'Barcode',
       Close: 'Close',
       History: 'History',
+      Stamps:'Stamps',
 
        /*--------------------Map-------------------*/
       SortByLocation: 'By Location',
@@ -98,6 +99,9 @@
        EditProfile: 'EditProfile',
        LogOut: 'Log Out',
 
+       /*--------------------Gift card-------------------*/
+       Giftcard: 'Gift cards',
+
     FOO: 'This is a paragraph.',
     BUTTON_LANG_EN: 'english',
     BUTTON_LANG_TH: 'thai'
@@ -146,6 +150,7 @@
       Barcode: 'บาร์โค้ด',
       Close: 'ปิด',
       History: 'ประวัติ',
+      Stamps:'แต้มสะสม',
 
       /*--------------------Map-------------------*/
       SortByLocation: 'ค้นหาร้านใกล้ตัว',
@@ -200,6 +205,9 @@
        SeeAllAlerts: 'ดูทั้งหมด',
        EditProfile: 'แก้ไขข้อมูลส่วนตัว',
        LogOut: 'ออกจากระบบ',
+
+      /*--------------------Gift card-------------------*/
+       Giftcard: 'บัตรของขวัญ',
 
       FOO: 'Dies ist ein Paragraph.',
       BUTTON_LANG_EN: 'english',

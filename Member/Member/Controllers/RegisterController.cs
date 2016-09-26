@@ -29,7 +29,10 @@ namespace Member.Controllers
         {
             return View();
         }
-        
+        public ActionResult Giftcard()
+        {
+            return View();
+        }
 
 
     }
