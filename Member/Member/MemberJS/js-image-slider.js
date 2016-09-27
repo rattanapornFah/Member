@@ -28,6 +28,7 @@ function timer() {
     $selected = $(".selected");
     // get the selected item
     // If next li is empty , get the first
+    console.log($selected.next('li1').length);
     $next = $selected.next('li1').length ? $selected.next('li1') : $first;
     $selected.removeClass("selected").fadeOut('fast');
     $next.addClass('selected').fadeIn('fast');
