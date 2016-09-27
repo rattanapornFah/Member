@@ -52,6 +52,9 @@ app.config(function ($routeProvider) {
         .when("/Point", {
             templateUrl: "Register/Point"
         })
+        .when("/Giftcard", {
+            templateUrl: "Register/Giftcard"
+        })
         .otherwise({
             templateUrl: "/"
         })

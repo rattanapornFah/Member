@@ -6,53 +6,57 @@
         font-size: 12px;
         line-height: 1.428571429;
         border-radius: 15px;
-        z-index:1;
+        z-index: 1;
     }
+
     .btn-circle {
-	box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
-	border: .5em solid #00CED1;
-	font-size: 1em;
-	line-height: 1em;
-	color: #ffffff;
-	background-color: #00CED1;
-	margin: auto;
-	border-radius: 50%;
-	position: relative;
-    height: 4em;
-	width: 4em;
-}
-.btn-circle:hover {
-		color:#ffffff;
+        box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
+        border: .5em solid #00CED1;
+        font-size: 1em;
+        line-height: 1em;
+        color: #ffffff;
         background-color: #00CED1;
-        text-decoration: none;
-	    border-color: #66CCFF;
-}
-.btn-circle:visited {
-	color:#ffffff; 
-	text-decoration: none;
-    background-color: #00CED1;
-} 
+        margin: auto;
+        border-radius: 50%;
+        position: relative;
+        height: 4em;
+	    width: 4em;
+    }
+
+        .btn-circle:hover {
+            color: #ffffff;
+            background-color: #00CED1;
+            text-decoration: none;
+            border-color: #66CCFF;
+        }
+
+        .btn-circle:visited {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #00CED1;
+        }
 </style>
-<div class="row" ng-controller="PointController">
+<div class="row" ng-controller="GiftcardController">
     <form class="form-horizontal">
         <ul id="tabs">
             <li><a href="#/Point" title="Latest">{{ 'MemberCard' | translate }} </a></li>
             <li><a href="#/Giftcard" title="Unread">{{ 'Giftcard' | translate }} </a></li>
         </ul>
         <button type="button" class="btn btn-info btn-circle btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Add Card" onclick="parent.location='#/Card'">
-             <i class="glyphicon glyphicon-plus"></i>
+            <i class="glyphicon glyphicon-plus"></i>
         </button>
-      
-        <div class="panel-body list-group-item" href="" ng-repeat="detail in memberDetails|filter:{isGiftCard:0} ">
+        <div class="panel-body list-group-item" href="" ng-repeat="detail in memberDetails|filter:{isGiftCard:1} ">
             <div class="col-md-5 col-sm-6">
                 <div class="widget-item-left">
                     <div class="timeline-item-content">
+                       
                         <div ng-if="detail.isGiftCard==1">
                             <img src={{PathImage2}} class="img-responsive img-thumbnail img-rounded">
                         </div>
                         <div ng-if="detail.isGiftCard==0">
                             <img src={{PathImage1}} class="img-responsive img-thumbnail img-rounded">
                         </div>
+                       
                     </div>
                 </div>
             </div>
@@ -69,8 +73,8 @@
                             {{'Cardname' | translate}} :</span>{{detail.cardTypeName}}
                         </h4>
                         <h4>
-                            <span class="fa fa-gift " style="color:black"> 
-                            {{'Stamps' | translate}} :</span> {{detail.cardBalance}}
+                            <span class="fa fa-star-half-o" style="color:black"> 
+                            {{'Points' | translate}} :</span> {{detail.cardPoint}}
                         </h4>
                         <h4>
                             <span class="fa fa-clock-o" style="color:black"> 
@@ -90,6 +94,9 @@
         </div>
      </form>
 </div>
+
+
+
 
 @*------------------------------------------------ Modal QRcode --------------------------------------------*@
 <div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
@@ -132,4 +139,5 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
+
 
