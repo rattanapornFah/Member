@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="Member" itemscope itemtype="http://schema.org/Article">
+<html lang="en" ng-app="SigninApp" itemscope itemtype="http://schema.org/Article">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -29,6 +29,7 @@
     <!-- Custom Theme Style -->
     <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
     <link href="~/css/google-plus-signin.css" rel="stylesheet" />
+    
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script>
     function start() {
@@ -41,6 +42,11 @@
       });
     }
     </script>
+    <style>
+        .facebook {
+        height:100px;
+        }
+    </style>
 </head>
 
 
@@ -72,21 +78,26 @@
                         </div>
                         <div class="clearfix"></div>
                         <br />
-                        <google-plus-signin clientid="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj" >
-                          
-                        </google-plus-signin>
-                        
-                        
-                     
-                           <div class="form-group">
-                           
-                            @*<div class="col-md-6 col-sm-6 col-xs-6">
-                                <fb:login-button class="btn-lg" scope="public_profile,email" onlogin="checkLoginState();">
-                                    Facebook
-                                </fb:login-button>
-                            </div>*@
+       
+                        <div class="form-group">
+                                <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <div class="facebook">
+                                        <fb:login-button  scope="public_profile,email"  data-size="large"  autologoutlink="true" onlogin="checkLoginState();">
+                                            Sign in with Facebook
+                                        </fb:login-button>
+                                    </div>
+                                </div>
                         </div>
-                    </form>
+                        <div class="form-group">
+                            <div class="col-md-5 col-sm-5col-xs-5">
+                                @*<div class="g-signin2" data-onsuccess="onSignIn"></div>*@
+                                <google-plus-signin clientid="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj" language="en" >
+                                    
+                                </google-plus-signin>
+                              
+                            </div>
+                        </div>
+                     </form>
                 </section>
             </div>
         </div>
@@ -177,7 +188,7 @@
                 localStorage.setItem('memberDetails', JSON.stringify(response));
                 //console.log(response)
 
-            parent.location = '/Register/register';
+                parent.location = '/#/Point';
 
                 //console.log('Successful login for: ' + response.name);
                 //document.getElementById('status').innerHTML =
@@ -186,22 +197,26 @@
         }
     </script>
 
-    <script>
+    @*<script>
         function onSignIn(googleUser) {
-            alert("222");
+            console.log(googleUser);
+            console.log(localStorage);
+            debugger;
             var profile = googleUser.getBasicProfile();
+            console.log(profile);
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail());
-
-
             localStorage.setItem('Details', JSON.stringify(profile));
             localStorage.setItem('status', 'google');
-            parent.location = '/Register/register';
+            debugger;
+            parent.location = '/#/Point';
+            
 
         }
-    </script>
+    </script>*@
 
+  
 </body>
 </html>

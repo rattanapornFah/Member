@@ -15,8 +15,16 @@
 
 
     $scope.Cancel = function () {
-        var accessToken = sessionStorage.getItem(oauth2_tr);
-        console.log(accessToken);
+        //var accessToken = sessionStorage.getItem(oauth2_tr);
+        //console.log(accessToken);
+        //localStorage.removeItem('Details');
+        //localStorage.removeItem('status');
+        //console.log(localStorage);
+        //debugger;
+        window.onbeforeunload = function(e){
+        gapi.auth2.getAuthInstance().signOut();
+        };
+        parent.location = '/Login/login';
       //  $http.jsonp('https://accounts.google.com/o/oauth2/revoke?token=' +
       //accessToken, {
       //    params: {
@@ -24,9 +32,15 @@
       //        format: 'json'
       //    }
       //}).success( /* Do stuff on success */);
-    //    window.location = "../Login/login";
+        //window.location = "../Login/login";
+        function onLoad() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
+            });
+        }
     }
-
+   
+ 
     //--------------------------- Register Member with facebook ---------------------------------------------------//
     $scope.addMember = function (register) {
         console.log(register)

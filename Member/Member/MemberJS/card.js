@@ -2,6 +2,4 @@
         $scope.changeLanguage = function (key) {
             $translate.use(key);
         };
-
- 
 }])

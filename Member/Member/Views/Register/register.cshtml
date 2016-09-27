@@ -1,10 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="en" ng-app="Member">
-<head>
+<<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+    <script src="https://plus.google.com/js/client:platform.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oishi Member</title>
     <!-- Bootstrap -->
@@ -21,7 +28,22 @@
     <link href="~/Template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
-<style>
+    <link href="~/css/google-plus-signin.css" rel="stylesheet" />
+    
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script>
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+            client_id: '398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+    </script>
+
+ <style>
     #head {
         color: #333;
         background-color: darkred;
