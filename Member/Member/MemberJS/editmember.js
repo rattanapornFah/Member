@@ -4,8 +4,10 @@
     $translate.use(key);
   };
 
-    //--------------------Edit ----------------//
-    var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromMemberId?merchantId=1&memberId=8'
+    //--------------------EditMember ----------------//
+     var member = JSON.parse(localStorage.getItem('memberDetails'));
+    var memberApi = 'merchantId=' +1+ '&memberId=' + member.memberId;
+    var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromMemberId?'+memberApi;
     $http.get(apiName).
         success(function (data) {
             $scope.memberDetails = data.dataExtra;
@@ -30,8 +32,8 @@
     //    $scope.maxStartDate = v;
     //});
 
-    $scope.format = "dd/MM/yyyy";
-    $scope.altInputFormats = ['d!/M!/yyyy'];
+    $scope.format = "yyyy/MM/dd";
+    $scope.altInputFormats = ['yyyy/M!/d!'];
     $scope.dateOptions = {
         startingDay: 0,
         showWeeks: false
