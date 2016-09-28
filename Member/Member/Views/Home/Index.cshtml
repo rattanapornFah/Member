@@ -40,7 +40,7 @@
 
 </head>
 
-<body class="nav-md" ng-controller="RegisterController">
+<body class="nav-md" ng-controller="EditController">
     <div class="container body" ng-controller="langCtrl">
         <div class="main_container">
             <div class="col-md-3 left_col">
@@ -57,11 +57,11 @@
                     <!-- menu profile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
-                            <img ng-src="{{register.image}}" alt="..." class="img-circle profile_img">
+                            <img ng-src="memberDetails.imgUrl" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>{{ 'Welcome' | translate}},</span>
-                            <h2>{{register.first_name}}</h2>
+                            <h2>{{memberDetails.firstName}}</h2>
                         </div>
                     </div>
 
@@ -117,7 +117,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img ng-src="{{register.image}}" alt="">{{register.first_name}}
+                                    <img ng-src="memberDetails.imgUrl" alt="">{{memberDetails.firstName}}
                                     <span class="fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">

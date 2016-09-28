@@ -53,7 +53,7 @@ app.config(function ($routeProvider) {
             templateUrl: "Register/Point"
         })
         .when("/Giftcard", {
-            templateUrl: "Register/Giftcard"
+            templateUrl: "Register/Point"
         })
         .otherwise({
             templateUrl: "/"
