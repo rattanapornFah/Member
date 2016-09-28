@@ -7,13 +7,11 @@
 
         var cities = $scope.myWelcome;
         //console.log($scope.myWelcome);
-
-        console.log($scope.myWelcome);
         
-        for (i = 0 ; i < $scope.myWelcome.length; i++) {
-            $scope.myWelcome[i].distance = 0;
-            $scope.myWelcome[i].distanceText = "";
-        }      
+        //for (i = 0 ; i < $scope.myWelcome.length; i++) {
+        //    $scope.myWelcome[i].distance = 0;
+        //    $scope.myWelcome[i].distanceText = "";
+        //}      
 
         var destinationLocation = [];
         for (var i = 0; i < $scope.myWelcome.length; i++) {
@@ -92,21 +90,27 @@
                         $scope.myWelcome[j].distance = elements[j].distance.value;
                         $scope.myWelcome[j].distanceText = elements[j].distance.text;
                     }
-                }
+                }             
                 display();
             }
+          
         });
 
         function display() {           
             // sort by distance
             $scope.myWelcome.sort(compare);
 
-            html += "</br><b>after sort</b></br>";
-
+            //html += "</br><b>after sort</b></br>";
+            
             for (var i = 0; i < $scope.myWelcome.length; i++) {
-                var store = $scope.myWelcome[i];              
+                var store=($scope.myWelcome[i]);              
             }
+
+            
         }
+            $scope.mapDistance = $scope.myWelcome;
+            
+            console.log($scope.mapDistance);
 
         function compare(a, b) {
             if (a.distance < b.distance)
@@ -156,26 +160,26 @@
         e.preventDefault();
         google.maps.event.trigger(selectedMarker, 'click');
     }
-
+   
     });
 
-    $scope.currentLocation = function(){
-        var options = {
-            enableHighAccuracy: true
-        };
+    //$scope.currentLocation = function(){
+    //    var options = {
+    //        enableHighAccuracy: true
+    //    };
 
-        navigator.geolocation.getCurrentPosition(function (pos) {
-            $scope.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-            console.log(JSON.stringify($scope.position));
-        },
-                    function (error) {
-                        alert('Unable to get location: ' + error.message);
-                    }, options);
+    //    navigator.geolocation.getCurrentPosition(function (pos) {
+    //        $scope.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+    //        console.log(JSON.stringify($scope.position));
+    //    },
+    //                function (error) {
+    //                    alert('Unable to get location: ' + error.message);
+    //                }, options);
 
-        var marker = new google.maps.Marker({
-            position: LatLng,
-            map: map,
-            title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
-        });
-    };
+    //    var marker = new google.maps.Marker({
+    //        position: LatLng,
+    //        map: map,
+    //        title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
+    //    });
+    //};
 }])
