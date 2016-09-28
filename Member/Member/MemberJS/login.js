@@ -38,7 +38,8 @@ signin.controller('LoginController', ['$scope', '$http', '$location', function (
                    $scope.memberDetails = data.dataResult;
                    localStorage.setItem('memberDetails', JSON.stringify($scope.memberDetails));
                    parent.location = '/#/Point';
-                   //console.log(data)
+                   console.log(data)
+
                } else {
                    alert(data.dataResult)
                    //console.log(data)

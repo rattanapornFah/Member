@@ -2,8 +2,9 @@
     $scope.changeLanguage = function (key) {
     $translate.use(key);
   };
- 
-    var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberCardsFromMemberId?merchantId=1&memberId=8'
+    var member = JSON.parse(localStorage.getItem('memberDetails'));
+    var memberApi = 'merchantId=' + 1 + '&memberId=' + member.memberId;
+    var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberCardsFromMemberId?' + memberApi;
     $http.get(apiName).
         success(function (data) {
             $scope.memberDetails = data.dataResult;

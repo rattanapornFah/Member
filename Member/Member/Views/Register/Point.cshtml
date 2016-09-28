@@ -36,14 +36,14 @@
 <div class="row" ng-controller="PointController">
     <form class="form-horizontal">
         <ul id="tabs">
-            <li><a href="#/Point" title="Latest">{{ 'MemberCard' | translate }} </a></li>
-            <li><a href="#/Giftcard" title="Unread">{{ 'Giftcard' | translate }} </a></li>
+            <li><a href="#/Point/" title="Latest" >{{ 'MemberCard' | translate }} </a></li>
+            <li><a href="#/Giftcard" title="Unread" >{{ 'Giftcard' | translate }} </a></li>
         </ul>
         <button type="button" class="btn btn-info btn-circle btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Add Card" onclick="parent.location='#/Card'">
              <i class="glyphicon glyphicon-plus"></i>
         </button>
       
-        <div class="panel-body list-group-item" href="" ng-repeat="detail in memberDetails|filter:{isGiftCard:0} ">
+        <div class="panel-body list-group-item" href="" ng-repeat="detail in memberCardDetails|filter:{isGiftCard:IsGiftCard}">
             <div class="col-md-5 col-sm-6">
                 <div class="widget-item-left">
                     <div class="timeline-item-content">
