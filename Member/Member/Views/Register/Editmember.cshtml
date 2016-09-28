@@ -141,7 +141,7 @@
                                 <div class="col-xs-12" style="padding-left:0px;padding-right: 0px;">
                                     <div class="control-group">
                                         <div class="input-group">
-                                            <input type="text" ng-model="register.birthday" class="form-control datepicker ng-pristine ng-valid ng-isolate-scope ng-not-empty ng-valid-date ng-valid-required ng-touched" ng-click="openStart()" min-date="minStartDate" max-date="maxStartDate" uib-datepicker-popup="dd-MM-yyyy" ng-model="start" is-open="popupStart.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required="required" />
+                                            <input type="text" ng-model="memberDetails.birthday" class="form-control datepicker ng-pristine ng-valid ng-isolate-scope ng-not-empty ng-valid-date ng-valid-required ng-touched" ng-click="openStart()" min-date="minStartDate" max-date="maxStartDate" uib-datepicker-popup="yyyy-MM-dd" ng-model="start" is-open="popupStart.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required="required" />
                                             <span class="input-group-addon">
                                                 <i class="ace-icon fa fa-calendar"></i>
                                             </span>
@@ -171,8 +171,8 @@
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                 <a href="/Point" class="btn btn-primary pull-right">{{ 'Cancal' | translate }}</a>
-                                <button type="submit" onclick="parent.location='/#/Point'" 
-                                        class="btn btn-success pull-right">{{ 'Submit' | translate }}</button>
+                                <a ng-click="update(memberDetails)" 
+                                        class="btn btn-success pull-right">{{ 'Submit' | translate }}</a>
                             </div>
                         </div>
                     </form>

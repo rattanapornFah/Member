@@ -5,14 +5,47 @@
   };
 
     //--------------------EditMember ----------------//
-     var member = JSON.parse(localStorage.getItem('memberDetails'));
+    var member = JSON.parse(localStorage.getItem('memberDetails'));
     var memberApi = 'merchantId=' +1+ '&memberId=' + member.memberId;
     var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromMemberId?'+memberApi;
     $http.get(apiName).
         success(function (data) {
             $scope.memberDetails = data.dataExtra;
-            console.log($scope.memberDetails)
-})
+            //console.log($scope.memberDetails)
+        })
+
+    //--------------------------- Update Member Details---------------------------------------------------//
+    $scope.update = function (memberDetails) {
+        console.log(memberDetails)
+        var member = JSON.parse(localStorage.getItem('memberDetails'));
+        var memberApi = 'merchantId=' + 1 + '&memberId=' + member.memberId;
+        var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/UpdateMemberProfile?'+memberApi+
+            '&title=' + memberDetails.title + '&' +
+            'firstName=' + memberDetails.firstName + '&' +
+            'middleName=' + memberDetails.middlename + '&' +
+            'lastName=' + memberDetails.lastName + '&' +
+            'gender=' + memberDetails.gender + '&' +
+            'address1=' + memberDetails.address1 + '&' +
+            'address2=' + memberDetails.address2 + '&' +
+            'city=' + memberDetails.city + '&' +
+            'provinceId=' + 1 + '&' +
+            '&zipCode=' + memberDetails.zipCode + '&' +
+            'countryId=' + 1 + '&' +
+            '&phoneNo=' + memberDetails.phone + '&' +
+            'mobileNo=' + memberDetails.mobileNo + '&' +
+            'email=' + memberDetails.email + '&' +
+            'birthday=' + memberDetails.birthday + '&' +
+            'atShopId=' + 1;
+
+            console.log(apiName);
+        $http.get(apiName)
+        .success(function (data) {
+            console.log(data);
+            
+        })
+
+    }
+
 
 
     // ------------------------------------ JavaScript -------------------------------- //
