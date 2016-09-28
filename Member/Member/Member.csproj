@@ -214,16 +214,15 @@
     <Content Include="MemberJS\editmember.js" />
     <Content Include="MemberJS\feedback.js" />
     <Content Include="MemberJS\Infor.js" />
-    <Content Include="MemberJS\Giftcard.js" />
     <Content Include="MemberJS\js-image-slider.js" />
     <Content Include="MemberJS\login.js" />
     <Content Include="MemberJS\map.js" />
     <Content Include="MemberJS\navigate.js" />
-    <Content Include="MemberJS\picture.js" />
     <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\register.js" />
     <Content Include="MemberJS\slide.js" />
     <Content Include="MemberJS\tab.js" />
+    <Content Include="MemberJS\translate.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-animate.js" />
@@ -4571,7 +4570,6 @@
     <Content Include="Template\vendors\validator\.gitignore" />
     <Content Include="Template\vendors\validator\README.md" />
     <Content Include="Template\vendors\validator\validator.jquery.json" />
-    <Content Include="Views\Register\Giftcard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

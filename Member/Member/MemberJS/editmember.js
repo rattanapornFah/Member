@@ -50,20 +50,8 @@
 
     // ------------------------------------ JavaScript -------------------------------- //
 
+
     $scope.start = new Date();
-    //$scope.end = new Date();
-
-    //$scope.minStartDate = new Date(); //fixed date
-    //$scope.maxStartDate = $scope.end; //init value
-    //$scope.minEndDate = $scope.start; //init value
-    //$scope.maxEndDate = $scope.end; //fixed date same as $scope.maxStartDate init value
-
-    //$scope.$watch('start', function (v) {
-    //    $scope.minEndDate = v;
-    //});
-    //$scope.$watch('end', function (v) {
-    //    $scope.maxStartDate = v;
-    //});
 
     $scope.format = "yyyy/MM/dd";
     $scope.altInputFormats = ['yyyy/M!/d!'];
