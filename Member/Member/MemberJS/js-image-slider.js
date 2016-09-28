@@ -21,7 +21,7 @@ var $first = $('li1:first', 'ul1'),
 //    $prev.addClass('selected').fadeIn('fast');
 //});
 
-var time = 2000;
+var time = 3000;
 var tid = setTimeout(timer, time);
 function timer() {
     var $next,
