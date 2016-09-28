@@ -18,7 +18,8 @@ app.config(function ($routeProvider) {
             controller: 'MapController'
         })
         .when("/Infor", {
-            templateUrl: "Map/Infor"
+            templateUrl: "Map/Infor",
+            controller: 'InforController'
         })
         .when("/showMap", {
             templateUrl: "Map/showMap"

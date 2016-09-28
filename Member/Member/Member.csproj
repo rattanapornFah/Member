@@ -173,7 +173,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular-map\angular-map.html" />
-    <Content Include="Angular-map\map-matrix.html" />
+    <Content Include="Angular-map\cal-map.html" />
+    <Content Include="Angular-map\distance.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\card.css" />
@@ -223,7 +224,6 @@
     <Content Include="MemberJS\register.js" />
     <Content Include="MemberJS\slide.js" />
     <Content Include="MemberJS\tab.js" />
-    <Content Include="MemberJS\translate.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-animate.js" />

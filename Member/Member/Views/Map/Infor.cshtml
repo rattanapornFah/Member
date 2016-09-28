@@ -33,11 +33,15 @@
                                 </div>*@ 
                             <div class="col-xs-12">
                                 <center>
-                                    <div id="contain" style="max-width:450px; max-height:250px;">
-                                        <ul1 id="slidImage">
-                                            <li1 class="slide selected"><img src="Images/map/oishi-grand.jpg" style="width:100%; height:100%" alt="" /></li1>
-                                            <li1 class="slide"><img src="Images/map/oishigrand2.png" style="width:100%; height:100%" alt="" /></li1>
-                                            <li1 class="slide"><img src="Images/map/oishigrandpr2015.jpg" style="width:100%; height:100%" alt="" /></li1>
+                                    <div id="contain" style="max-width:450px; max-height:250px;" ng-repeat="myWelcomes in myWelcome|filter:{storeId:1}">
+                                        <ul1 id="slidImage" >
+                                            <li1 class="slide selected"><img src={{PathImage+myWelcomes.storeImg0}} style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src={{PathImage+myWelcomes.storeImg1}} style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src={{PathImage+myWelcomes.storeImg2}} style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src={{PathImage+myWelcomes.storeImg3}} style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src={{PathImage+myWelcomes.storeImg4}} style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src={{PathImage+myWelcomes.storeImg5}} style="width:100%; height:100%" alt="" /></li1>
+                                            <li1 class="slide"><img src={{PathImage+myWelcomes.storeImg6}} style="width:100%; height:100%" alt="" /></li1>
                                         </ul1>
                                         @*<button id="p">Previous</button>
                                         <button id="n">Next</button>
@@ -145,6 +149,7 @@ function carousel() {
 
 </style>
 
+<script src="~/MemberJS/Infor.js"></script>
 <script src="~/Scripts/angular.js"></script>
 <script src="~/Scripts/angular-route.min.js"></script>
 <script src="~/Scripts/angular-sanitize.js"></script>
