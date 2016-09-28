@@ -23,24 +23,22 @@
             <div class="x_content" id="scrollArea">               
                 <a href="#/Infor" ng-repeat="myWelcomes in mapDistance |filter:{storeId}">
                     <div class="row">
-                      
-                            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                                <div class="timeline-heading">
-                                    <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
-                                </div>
-                                <div class="timeline-body">
-                                    <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
-                                    <p> {{myWelcomes.storeAddress1}}</p>
-                                    <p> {{myWelcomes.storeAddress2}}</p>
-                                  
+                        <div class="timeline-item-content" style="width: 100%; height: 100px">
+                            <div class="timeline-heading">
+                                <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
+                            </div>
+                            <div class="timeline-body">
+                                <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
+                                <p> {{myWelcomes.storeAddress1}}</p>
+                                <p> {{myWelcomes.storeAddress2}}</p>
 
-                                    <div class="timeline-footer">
-                                        <h5 href="#/Infor"><strong>{{ 'Readmore' | translate }}</strong></h5>
-                                        <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
-                                    </div>
+                                <div class="timeline-footer">
+                                    <h5 href="#/Infor"><strong>{{ 'Readmore' | translate }}</strong></h5>
+                                    <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
                                 </div>
                             </div>
-                        </div>                   
+                        </div>
+                    </div>                   
                 </a>
 
                 @*<a href="#/Infor">
