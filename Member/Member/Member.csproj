@@ -172,15 +172,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular-map\angular-map.html" />
-    <Content Include="Angular-map\cal-map.html" />
-    <Content Include="Angular-map\distance.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\card.css" />
     <Content Include="css\generic.css" />
     <Content Include="css\google-plus-signin.css" />
-    <Content Include="css\js-image-slider.css" />
     <Content Include="css\map.css" />
     <Content Include="css\slide.css" />
     <Content Include="css\star.css" />
@@ -4572,6 +4568,7 @@
     <Content Include="Template\vendors\validator\validator.jquery.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Angular-map\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
