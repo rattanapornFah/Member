@@ -28,8 +28,8 @@ app.config(function ($routeProvider) {
             templateUrl: "Map/Navigate"
          })
          .when("/Navigate2", {
-             templateUrl: "Map/Navigate2"
-      
+             templateUrl: "Map/Navigate2",
+             controller: 'NavigateController'
          })
         .when("/Feedback", {
             templateUrl: "Feedback/Feedback"

@@ -26,9 +26,9 @@
 
         var currentLocations = [{
           lat: 13.841611799999999,
-          lng: 100.6349315
+          lng: 100.6349315        
         }];
-
+             
         var service = new google.maps.DistanceMatrixService;
         service.getDistanceMatrix({
             origins: currentLocations,
@@ -137,11 +137,22 @@
     var createMarker = function (info) {
 
         var marker = new google.maps.Marker({
-            map: $scope.map,           
+            map: $scope.map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
             position: new google.maps.LatLng(info.storeLatitude, info.storeLongitude),
             title: info.storeName
         });
+        marker.addListener('click', toggleBounce);
         marker.content = '<div class="infoWindowContent">' + info.storeAddress1 + '<br />' + info.storeLatitude + ' E,' + info.storeLongitude + ' N, </div>';
+
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
 
         google.maps.event.addListener(marker, 'click', function () {
             infoWindow.setContent('<h2>' + marker.title + '</h2>' +
@@ -157,8 +168,8 @@
         createMarker(cities[i]);
     }
 
-    $scope.openInfoWindow = function (e, selectedMarker) {
-        e.preventDefault();
+    $scope.openInfoWindow = function (storeName, selectedMarker) {
+        storeName.preventDefault();
         google.maps.event.trigger(selectedMarker, 'click');
     }
    
