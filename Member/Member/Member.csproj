@@ -205,6 +205,7 @@
     <Content Include="Images\point\button_add.png" />
     <Content Include="Images\point\card4.png" />
     <Content Include="Images\point\QRcode-card.png" />
+    <Content Include="Images\register\right_icon.png" />
     <Content Include="Images\register\oishi-footer.png" />
     <Content Include="Images\register\oishi2.png" />
     <Content Include="Images\register\oishi_logo_sm.png" />
@@ -232,6 +233,7 @@
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-easyfb.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
@@ -1024,6 +1026,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ngFacebook.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />

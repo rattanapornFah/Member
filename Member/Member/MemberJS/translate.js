@@ -30,6 +30,8 @@
       Picture: 'Picture',
       Cancal: 'Cancal',
       Submit: 'Submit',
+      Success: 'You have successfully updated your information.',
+      updateSuccess: 'Update Success',
        /*--------------------Point-------------------*/
       Yourcard: 'Your cards',
       Cardnumber: 'Card number',
@@ -138,6 +140,8 @@
       Picture: 'ภาพโปรไฟล์',
       Cancal: 'ยกเลิก',
       Submit: 'บันทึก',
+      Success: 'คุณทำการแก้ไขข้อมูลของคุณสำเร็จแล้ว',
+      updateSuccess: 'แก้ไขสำเร็จ',
        /*------------------ Point ---------------------*/
       Yourcard: 'บัตรของคุณ',
       Cardnumber: 'เลขที่บัตร',

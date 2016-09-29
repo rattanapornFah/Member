@@ -173,13 +173,33 @@
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                 <a href="/Point" class="btn btn-primary pull-right">{{ 'Cancal' | translate }}</a>
-                                <a ng-click="update(memberDetails)" 
+                                <a ng-click="update(memberDetails)" data-toggle="modal" data-target="#myModal"
                                         class="btn btn-success pull-right">{{ 'Submit' | translate }}</a>
                             </div>
                         </div>
                     </form>
 
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*---------------------------------------------- Modal Alert Success ------------------------------------------*@
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
+                <h4 class="modal-title" id="defModalHead">{{'updateSuccess' | translate}} </h4>
+            </div>
+            <div class="modal-body">
+                <img src="~/Images/register/right_icon.png" class="img-responsive" />
+                <h4>{{'Success' | translate}} </h4>
+            </div>
+            <div class="modal-footer">
+                <button href="/#/Point" type="button" class="btn btn-success" data-dismiss="modal">{{'Submit' | translate}} </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}} </button>
             </div>
         </div>
     </div>

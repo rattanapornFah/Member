@@ -40,9 +40,16 @@
             console.log(apiName);
         $http.get(apiName)
         .success(function (data) {
-            console.log(data);
-            
+            if (data.status == 0) {
+                console.log(data);
+                $('#myModal').modal('show');
+            } else {
+                alert(data.dataResult);
+                //console.log(data)
+            }
+         
         })
+        
 
     }
 

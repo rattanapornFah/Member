@@ -1,7 +1,53 @@
-﻿var signin = angular.module('SigninApp', ['directive.g+signin', 'pascalprecht.translate']);
+﻿var signin = angular.module('SigninApp', ['ui.bootstrap','directive.g+signin', 'pascalprecht.translate','ngFacebook']);
+
+signin.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+//---------------------------------- Sign in with Facebook -----------------------------------------//
+signin.config( function( $facebookProvider ) {
+    $facebookProvider.setAppId('123551248102766');
+})
+
+signin.run( function( $rootScope ) {
+    // Load the facebook SDK asynchronously
+    (function(){
+        // If we've already installed the SDK, we're done
+        if (document.getElementById('facebook-jssdk')) {return;}
+
+        // Get the first script element, which we'll use to find the parent node
+        var firstScriptElement = document.getElementsByTagName('script')[0];
+
+        // Create a new script element and set its id
+        var facebookJS = document.createElement('script'); 
+        facebookJS.id = 'facebook-jssdk';
+
+        // Set the new script's source to the source of the Facebook JS SDK
+        facebookJS.src = '//connect.facebook.net/en_US/all.js';
+
+        // Insert the Facebook JS SDK into the DOM
+        firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+    }());
+});
+
+
+var FbCtrl = function ($scope, $facebook) {
+    
+    function refresh() {
+        $facebook.api("/me?fields=birthday,email,first_name,last_name,gender,picture").then( 
+        function(response) {
+            $scope.welcomeMsg = "Welcome " + response.name;
+            localStorage.setItem('memberDetails', JSON.stringify(response));
+            console.log(response);
+                
+    },
+        function(err) {
+          $scope.welcomeMsg = "Please log in";
+          console.log(err);
+    });
+    }
+};
+
 
 //---------------------------------- Sign in with Google -----------------------------------------//
-signin.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+
     $scope.$on('event:google-plus-signin-success', function (event, authResult) {
         // User successfully authorized the G+ App!
         console.log('Signed in!');
@@ -25,12 +71,12 @@ signin.controller('LoginController', ['$scope', '$http', '$location', function (
     $scope.register = {};
 
     //--------------------------------------- Log in---------------------------------------------//
-    $scope.login = function (login) {
+    $scope.signin = function (signin) {
 
         var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromUserNamePassword?' +
       'merchantId=1&' +
-      'memberUserName=' + login.username + '&' +
-      'memberPassword=' + login.password + ''
+      'memberUserName=' + signin.username + '&' +
+      'memberPassword=' + signin.password + ''
 
         $http.get(apiName)
            .success(function (data) {
@@ -42,7 +88,7 @@ signin.controller('LoginController', ['$scope', '$http', '$location', function (
 
                } else {
                    alert(data.dataResult)
-                   //console.log(data)
+                   console.log(data)
                }
 
            })

@@ -18,7 +18,9 @@
     console.log($location.path())
     if ($location.path() == "/Giftcard") {
         $scope.IsGiftCard = 1;
-    } else { $scope.IsGiftCard = 0; }
+    } else {
+        $scope.IsGiftCard = 0;
+    }
 
     //var memberDetails = localStorage.getItem('memberDetails');
     //$scope.memberDetails = JSON.parse(memberDetails);
