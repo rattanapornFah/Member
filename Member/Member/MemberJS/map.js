@@ -92,6 +92,7 @@
                     }
                 }             
                 display();
+                displayName();
             }
           
         });
@@ -120,6 +121,62 @@
             return 0;
         }
 
+        //-------------------------------------------------------------------
+
+        function displayName() {
+            // sort by distance
+            $scope.myWelcome.sort(compareName);
+
+            //html += "</br><b>after sort</b></br>";
+
+            for (var i = 0; i < $scope.myWelcome.length; i++) {
+                var store = ($scope.myWelcome[i]);
+            }
+        }
+
+        function compareName(a, b) {
+            var nameA = a.storeName.toUpperCase(); // ignore upper and lowercase
+            var nameB = b.storeName.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            // names must be equal
+            return 0;
+        }
+
+        //-------------------------------------------------------------------
+
+        //var infoWindow = new google.maps.InfoWindow({ map: map });
+
+        //    // Try HTML5 geolocation.
+        //    if (navigator.geolocation) {
+        //        navigator.geolocation.getCurrentPosition(function (position) {
+        //            var pos = {
+        //                lat: position.coords.latitude,
+        //                lng: position.coords.longitude
+        //            };
+
+        //            infoWindow.setPosition(pos);
+        //            infoWindow.setContent('Location found.');
+        //            map.setCenter(pos);
+        //        }, function () {
+        //            handleLocationError(true, infoWindow, map.getCenter());
+        //        });
+        //    } else {
+        //        // Browser doesn't support Geolocation
+        //        handleLocationError(false, infoWindow, map.getCenter());
+        //    }
+        
+        //function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        //    infoWindow.setPosition(pos);
+        //    infoWindow.setContent(browserHasGeolocation ?
+        //                          'Error: The Geolocation service failed.' :
+        //                          'Error: Your browser doesn\'t support geolocation.');
+        //}
+      
 //-------------------------------------------------------------------
 
         var mapOptions = {
@@ -127,6 +184,7 @@
         center: {lat:13.763795, lng:100.495738} ,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+
 
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
@@ -171,8 +229,7 @@
     $scope.openInfoWindow = function (storeName, selectedMarker) {
         storeName.preventDefault();
         google.maps.event.trigger(selectedMarker, 'click');
-    }
-   
+    } 
     });
 
     //$scope.currentLocation = function(){

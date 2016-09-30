@@ -172,6 +172,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular-map\current-location.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\card.css" />
@@ -4574,7 +4575,6 @@
     <Content Include="Template\vendors\validator\validator.jquery.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Angular-map\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
