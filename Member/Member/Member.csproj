@@ -188,6 +188,7 @@
     <Content Include="Images\language\English_icon.png" />
     <Content Include="Images\language\English_icon_sm.png" />
     <Content Include="Images\language\thailand_icon_sm.png" />
+    <Content Include="Images\language\USA__Icon_.png" />
     <Content Include="Images\map\bangcare.jpg" />
     <Content Include="Images\map\bigc4.jpg" />
     <Content Include="Images\map\oishi-grand.jpg" />
@@ -209,6 +210,7 @@
     <Content Include="MemberJS\app.js" />
     <Content Include="MemberJS\card.js" />
     <Content Include="MemberJS\editmember.js" />
+    <Content Include="MemberJS\Facebook.js" />
     <Content Include="MemberJS\feedback.js" />
     <Content Include="MemberJS\Infor.js" />
     <Content Include="MemberJS\js-image-slider.js" />
@@ -229,7 +231,6 @@
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
-    <Content Include="Scripts\angular-easyfb.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
@@ -269,6 +270,8 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Properties\PublishProfiles\oishi.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\facebookUtils.js" />
+    <Content Include="Scripts\facebookUtils.min.js" />
     <Content Include="Scripts\google-plus-signin.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

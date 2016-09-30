@@ -1,14 +1,14 @@
 ﻿app.controller('RegisterController', ['$scope', '$http', function ($scope, $http) {
-    $scope.register = {};
+    //$scope.register = {};
     
-    if (Number(localStorage.getItem('Status')) == 1) {
-        var register = JSON.parse(localStorage.getItem('MyProfile'));
-        $scope.register.first_name = register.FirstName;
-        $scope.register.last_name = register.LastName;
-        $scope.register.email = register.Email;
-        $scope.register.image = register.ImageProfile;
+    //if (Number(localStorage.getItem('Status')) == 1) {
+    //    var register = JSON.parse(localStorage.getItem('MyProfile'));
+    //    $scope.register.first_name = register.FirstName;
+    //    $scope.register.last_name = register.LastName;
+    //    $scope.register.email = register.Email;
+    //    $scope.register.image = register.ImageProfile;
 
-    } else { }
+    //} else { }
     //    $scope.register = JSON.parse(localStorage.getItem('memberDetails'));
     //    $scope.register.image = $scope.register.data.url;
     //}
@@ -24,7 +24,12 @@
         window.onbeforeunload = function(e){
         gapi.auth2.getAuthInstance().signOut();
         };
+
         parent.location = '/Login/login';
+        FB.logout(function(response) {
+        parent.location = '/Login/login';
+        });
+
       //  $http.jsonp('https://accounts.google.com/o/oauth2/revoke?token=' +
       //accessToken, {
       //    params: {
@@ -33,11 +38,11 @@
       //    }
       //}).success( /* Do stuff on success */);
         //window.location = "../Login/login";
-        function onLoad() {
-            gapi.load('auth2', function () {
-                gapi.auth2.init();
-            });
-        }
+        //function onLoad() {
+        //    gapi.load('auth2', function () {
+        //        gapi.auth2.init();
+        //    });
+        //}
     }
    
  
@@ -49,7 +54,7 @@
             '&title=' + register.title + '&' +
             'firstName=' + register.first_name + '&' +
             'middleName=' + register.middlename + '&' +
-            'lastName=' + register.last_name ;
+            'lastName=' + register.last_name + '&' +
             'gender=' +register.gender + '&' +
             'address1=' +register.address1 + '&'+
             'address2=' + register.address2 + '&'+

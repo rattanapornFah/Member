@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-
+           
             <div class="col-md-7 col-sm-6 ">
                 <div class="widget-item-right">
                     <div class="text-left">
@@ -68,9 +68,13 @@
                             <span class="fa fa-credit-card" style="color:black"> 
                             {{'Cardname' | translate}} :</span>{{detail.cardTypeName}}
                         </h4>
-                        <h4>
+                        <h4 ng-show="detail.isGiftCard==0">
                             <span class="fa fa-gift " style="color:black"> 
-                            {{'Stamps' | translate}} :</span> {{detail.cardBalance}}
+                            {{'Points' | translate}} :</span> {{detail.cardPoint}}
+                        </h4>
+                        <h4 ng-show="detail.isGiftCard==1">
+                            <span class="fa fa-heart" style="color:black">
+                             {{'Stamp' | translate}} :</span> {{detail.cardBalance}}
                         </h4>
                         <h4>
                             <span class="fa fa-clock-o" style="color:black"> 

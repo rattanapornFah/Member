@@ -93,12 +93,12 @@
                                 <li>
                                     <a href="#/Feedback" onclick="parent.location.reload();"><i class="fa fa-star"></i> {{ 'Feedback' | translate}} </a>
                                 </li>
-                                <li>
+                                @*<li>
                                     <button class="btn ng-scope" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">{{ 'English' | translate}}</button>
                                 </li>
                                 <li>
                                     <button class="btn ng-scope" ng-click="changeLanguage('th')" translate="BUTTON_LANG_TH">{{ 'Thai' | translate}}</button>
-                                </li>
+                                </li>*@
                             </ul>
                         </div>
                         <div class="menu_section">
@@ -125,8 +125,8 @@
                                     <li>
                                         <a>
                                             {{ 'ChangeLanguage' | translate}}
-                                            <img src="~/Images/language/English_icon.png" />
-                                            <img src="~/Images/language/thailand_icon_sm.png" />
+                                            <img src="~/Images/language/USA__Icon_.png" class="ng-scope" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">
+                                            <img src="~/Images/language/thailand_icon_sm.png" class="ng-scope" ng-click="changeLanguage('th')" translate="BUTTON_LANG_TH" />
                                         </a>
                                     </li>
 

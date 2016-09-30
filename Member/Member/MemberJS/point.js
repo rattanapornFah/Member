@@ -12,6 +12,9 @@
            
            $scope.PathImage1="http://203.150.94.101:8080/Resources/CardImages/Merchant-1/Brand-1/MemberCard-1.png";
            $scope.PathImage2="http://203.150.94.101:8080/Resources/VoucherImages/Merchant-1/Brand-1/Voucher-27.png";
+           $scope.PathImage3="http://203.150.94.101:8080/Resources/CardImages/Def-MemberCard.png";
+           $scope.PathImage3="http://203.150.94.101:8080/Resources/VoucherImages/Def-Voucher.png";
+
            console.log($scope.memberCardDetails);
          
         })
