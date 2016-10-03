@@ -4,7 +4,7 @@
         <div class="x_panel">
             <ul id="tabs">
                 <li><a href="#/Map" ng-click="openInfoWindow($event, marker)" title="tab1">{{ 'SortByLocation' | translate }}</a></li>
-                <li><a href="#/MapByName" title="tab2">{{ 'SortByName' | translate }}</a></li>
+                <li><a href="#/MapByName"  title="tab2">{{ 'SortByName' | translate }}</a></li>
             </ul>
             <div class="google-maps">
                 <iframe src="http://localhost:51813/Map/Map2"
@@ -27,18 +27,19 @@
                             <div class="timeline-heading">
                                         <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
                                 </div>
-                                <a href="#/Infor">
+                                <a href="" ng-click="infor({{myWelcomes.storeId}})">
                                     <div class="timeline-body">
                                         <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
                                         <p> {{myWelcomes.storeAddress1}}</p>
                                         <p> {{myWelcomes.storeAddress2}}</p>
 
-                                        <div class="timeline-footer">
-                                            <h5 href="#/Infor"><strong>{{ 'Readmore' | translate }}</strong></h5>
+                                        <div class="timeline-footer">                          
+                                            @*<h5 href="" ng-click="infor({{myWelcomes.storeId}})"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
                                             <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
                                         </div>
                                     </div>
                                 </a>
+                            <button ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
                             </div>                                        
                 </div>
 
@@ -153,9 +154,9 @@
     </style>
 
 
-
-    <script src="~/MemberJS/tab.js"></script>
-    <link href="~/css/tab.css" rel="stylesheet" />
+        <script src="~/MemberJS/app.js"></script>
+    @*<script src="~/MemberJS/tab.js"></script>*@
+    @*<link href="~/css/tab.css" rel="stylesheet" />*@
 <script src="~/MemberJS/map.js"></script>
 
 
@@ -274,8 +275,6 @@
 </script>
 
 
-<script src="~/MemberOnlineJS/tabs.js"></script>
-<link href="~/Content/layouts/tabs.css" rel="stylesheet" />
   
 
 

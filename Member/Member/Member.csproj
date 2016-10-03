@@ -221,6 +221,7 @@
     <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\register.js" />
     <Content Include="MemberJS\slide.js" />
+    <Content Include="MemberJS\SortName.js" />
     <Content Include="MemberJS\tab.js" />
     <Content Include="MemberJS\translate.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />

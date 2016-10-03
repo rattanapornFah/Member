@@ -15,22 +15,23 @@ app.config(function ($routeProvider) {
          })
         .when("/MapByName", {
             templateUrl: "Map/MapByName",
-            controller: 'MapController'
+            controller: 'SortNameController'
         })
-        .when("/Infor", {
+        .when("/Infor/:id", {
             templateUrl: "Map/Infor",
             controller: 'InforController'
         })
         .when("/showMap", {
             templateUrl: "Map/showMap"
         })
-         .when("/Navigate", {
-            templateUrl: "Map/Navigate"
+         .when("/Navigate/:id", {
+             templateUrl: "Map/Navigate",
+             controller: 'NavigateController'
          })
          .when("/Navigate2", {
              templateUrl: "Map/Navigate2",
              controller: 'NavigateController'
-         })
+         })        
         .when("/Feedback", {
             templateUrl: "Feedback/Feedback"
         })

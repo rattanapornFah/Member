@@ -4,8 +4,8 @@
     <div class="col-md-8 col-sm-12 col-xs-12">
         <div class="x_panel">
             <ul id="tabs">
-                <li><a href="#/Map" title="tab1">{{ 'SortByLocation' | translate }}</a></li>
-                <li><a href="#/MapByName" title="tab2">{{ 'SortByName' | translate }}</a></li>
+                <li><a href="#/Map"  title="tab1">{{ 'SortByLocation' | translate }}</a></li>
+                <li><a href="#/MapByName" ng-click="openInfoWindowName($event, marker)" title="tab2">{{ 'SortByName' | translate }}</a></li>
             </ul>
                 <div class="google-maps">
                     <iframe src="http://localhost:51813/Map/Map2"
@@ -24,115 +24,115 @@
         <div class="clearfix"></div>
     </div>*@
             <div class="x_content" id="scrollArea">
-                
-                <a href="#/Infor"  ng-repeat="myWelcomes in myWelcome">
-                    <div class="row">
-                        <div class="timeline-item-content" style="width: 100%; height: 100px">
-                            <div class="timeline-heading">
-                                <h5 href="#" style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
+                    <div ng-repeat="myWelcomes in mapDistance |filter:storeName">
+                        <div class="row">
+                            <div class="timeline-item-content" style="width: 100%; height: 100px">
+                                <div class="timeline-heading">
+                                    <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
+                                </div>
+                                <a href="" ng-click="infor(myWelcomes.storeId)">
+                                    <div class="timeline-body">
+                                        <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
+                                        <p> {{myWelcomes.storeAddress1}}</p>
+                                        <p> {{myWelcomes.storeAddress2}}</p>
+
+                                        <div class="timeline-footer">
+                                            @*<h5 href="#/Infor"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
+                                            <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
                             </div>
-                            <div class="timeline-body">
-                                <img src="~/Images/map/bangcare.jpg" class="img-text" width="150" align="left" />
-                                <p> {{myWelcomes.storeAddress1}}</p>
-                                <p> {{myWelcomes.storeAddress2}}</p>
-                                <div class="timeline-footer">
-                                    <h5 href="#">
-                                        <strong> {{ 'Readmore' | translate }}</strong>
-                                    </h5>
-                                    <h6 class="pull-right">49.2 กม.</h6>
+                        </div>
+
+                        @*      <a href="#/Infor">
+                        <div class="row" href="#/Infor">
+                            <div class="timeline-item-content" style="width: 100%; height: 100px">
+                                <div class="timeline-heading">
+                                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิบุฟเฟ่ต์ ซีคอนสแควร์</strong></h5>
+                                </div>
+                                <div class="timeline-body">
+                                    <img src="~/Images/map/square.jpg" class="img-text" width="150" align="left" />
+                                    <p>	ชั้น 4 ซีคอนสแควร์ ถ.ศรีนครินทร์</p>
+                                    <div class="timeline-footer">
+                                        <h5 href="#">
+                                            <strong> Read more</strong>
+                                        </h5>
+                                        <h6 class="pull-right">23.8 กม.</h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-          @*      <a href="#/Infor">
-        <div class="row" href="#/Infor">
-            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                <div class="timeline-heading">
-                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิบุฟเฟ่ต์ ซีคอนสแควร์</strong></h5>
-                </div>
-                <div class="timeline-body">
-                    <img src="~/Images/map/square.jpg" class="img-text" width="150" align="left" />
-                    <p>	ชั้น 4 ซีคอนสแควร์ ถ.ศรีนครินทร์</p>
-                    <div class="timeline-footer">
-                        <h5 href="#">
-                            <strong> Read more</strong>
-                        </h5>
-                        <h6 class="pull-right">23.8 กม.</h6>
+                    <a href="#/Infor">
+                        <div class="row" href="#/Infor">
+                            <div class="timeline-item-content" style="width: 100%; height: 100px">
+                                <div class="timeline-heading">
+                                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิบุฟเฟ่ต์ ปิ่นเกล้า</strong></h5>
+                                </div>
+                                <div class="timeline-body">
+                                    <img src="~/Images/map/pin.jpg" class="img-text" width="150" align="left" />
+                                    <p>	เมเจอร์ปิ่นเกล้า ชั้น G ถ.บรมราชชนนี </p>
+                                    <div class="timeline-footer">
+                                        <h5 href="#">
+                                            <strong> Read more</strong>
+                                        </h5>
+                                        <h6 class="pull-right">30.6 กม.</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#/Infor">
+                        <div class="row" href="#/Infor">
+                            <div class="timeline-item-content" style="width: 100%; height: 100px">
+                                <div class="timeline-heading">
+                                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิบุฟเฟ่ต์ พระราม4</strong></h5>
+                                </div>
+                                <div class="timeline-body">
+                                    <img src="~/Images/map/bigc4.jpg" class="img-text" width="150" align="left" />
+                                    <p>บิ๊กซี เอ็กซ์ตร้า พระราม 4 ชั้น 1 ถนนพระราม 4</p>
+                                    <p>(ใกล้อาคารมาลีนนท์ ช่อง3)</p>
+                                    <div class="timeline-footer">
+                                        <h5 href="#">
+                                            <strong> Read more</strong>
+                                        </h5>
+                                        <h6 class="pull-right">20.1 กม.</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#/Infor">
+                        <div class="row" href="#/Infor">
+                            <div class="timeline-item-content" style="width: 100%; height: 100px">
+                                <div class="timeline-heading">
+                                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิแกรนด์ สยามพารากอน</strong></h5>
+                                </div>
+                                <div class="timeline-body">
+                                    <img src="~/Images/map/oishi-grand.jpg" class="img-text" width="150" align="left" />
+                                    <p>ศูนย์การค้าสยามพารากอน ถ.พระราม 1 </p>
+                                    <p>แขวง ปทุมวัน เขต ปทุมวัน กรุงเทพฯ 10330</p>
+
+                                    <div class="timeline-footer">
+                                        <h5 href="#">
+                                            <strong> Read more</strong>
+                                        </h5>
+                                        <h6 class="pull-right">22.3 กม.</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>   *@
                     </div>
+                    <!-- END VISITORS BLOCK -->
+
                 </div>
             </div>
-        </div>
-    </a>
-
-    <a href="#/Infor">
-        <div class="row" href="#/Infor">
-            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                <div class="timeline-heading">
-                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิบุฟเฟ่ต์ ปิ่นเกล้า</strong></h5>
-                </div>
-                <div class="timeline-body">
-                    <img src="~/Images/map/pin.jpg" class="img-text" width="150" align="left" />
-                    <p>	เมเจอร์ปิ่นเกล้า ชั้น G ถ.บรมราชชนนี </p>
-                    <div class="timeline-footer">
-                        <h5 href="#">
-                            <strong> Read more</strong>
-                        </h5>
-                        <h6 class="pull-right">30.6 กม.</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-
-    <a href="#/Infor">
-        <div class="row" href="#/Infor">
-            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                <div class="timeline-heading">
-                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิบุฟเฟ่ต์ พระราม4</strong></h5>
-                </div>
-                <div class="timeline-body">
-                    <img src="~/Images/map/bigc4.jpg" class="img-text" width="150" align="left" />
-                    <p>บิ๊กซี เอ็กซ์ตร้า พระราม 4 ชั้น 1 ถนนพระราม 4</p>
-                    <p>(ใกล้อาคารมาลีนนท์ ช่อง3)</p>
-                    <div class="timeline-footer">
-                        <h5 href="#">
-                            <strong> Read more</strong>
-                        </h5>
-                        <h6 class="pull-right">20.1 กม.</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-
-    <a href="#/Infor">
-        <div class="row" href="#/Infor">
-            <div class="timeline-item-content" style="width: 100%; height: 100px">
-                <div class="timeline-heading">
-                    <h5 href="#" style="color:darkred"><strong>&nbsp; โออิชิแกรนด์ สยามพารากอน</strong></h5>
-                </div>
-                <div class="timeline-body">
-                    <img src="~/Images/map/oishi-grand.jpg" class="img-text" width="150" align="left" />
-                    <p>ศูนย์การค้าสยามพารากอน ถ.พระราม 1 </p>
-                    <p>แขวง ปทุมวัน เขต ปทุมวัน กรุงเทพฯ 10330</p>
-
-                    <div class="timeline-footer">
-                        <h5 href="#">
-                            <strong> Read more</strong>
-                        </h5>
-                        <h6 class="pull-right">22.3 กม.</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>   *@
-            </div>
-            <!-- END VISITORS BLOCK -->
-
-        </div>
-    </div>
 </div>
 
 
@@ -164,10 +164,11 @@
 
 </style>
 
-
-<script src="~/MemberJS/tab.js"></script>
-<link href="~/css/tab.css" rel="stylesheet" />
+    <script src="~/MemberJS/app.js"></script>
+@*<script src="~/MemberJS/tab.js"></script>*@
+@*<link href="~/css/tab.css" rel="stylesheet" />*@
 <script src="~/MemberJS/map.js"></script>
+    <script src="~/MemberJS/SortName.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8IGKMUWQo5jUlPv7q9wfNOAFBHRLFlVs&callback=initMap"
         async defer></script>
