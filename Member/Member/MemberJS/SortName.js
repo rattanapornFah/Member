@@ -1,4 +1,4 @@
-﻿app.controller('MapController', ['$scope', '$http', function ($scope, $http) {
+﻿app.controller('SortNameController', ['$scope', '$http', function ($scope, $http) {
 
 
     $http.get("http://www.vtec-system.com:8080/LoyaltyApi/Stores/GetListAllStoresOfBrand?merchantId=1&brandId=1").success(function (data) {
@@ -7,7 +7,7 @@
 
         var cities = $scope.myWelcome;
         //console.log($scope.myWelcome);
-        
+
         //for (i = 0 ; i < $scope.myWelcome.length; i++) {
         //    $scope.myWelcome[i].distance = 0;
         //    $scope.myWelcome[i].distanceText = "";
@@ -29,7 +29,7 @@
         //  lng: 100.6349315        
         //}];
 
-        
+
         var options = {
             enableHighAccuracy: true
         };
@@ -106,6 +106,7 @@
                         }
                     }
                     display();
+                    sortName();
                 }
 
             });
@@ -117,21 +118,21 @@
 
         //-------------------------------------------------------------------
 
-        function display() {           
+        function display() {
             // sort by distance
             $scope.myWelcome.sort(compare);
 
             //html += "</br><b>after sort</b></br>";
-            
+
             for (var i = 0; i < $scope.myWelcome.length; i++) {
-                var store=($scope.myWelcome[i]);              
+                var store = ($scope.myWelcome[i]);
             }
 
-            
+
         }
-            $scope.mapDistance = $scope.myWelcome;
-            
-            console.log($scope.mapDistance);
+        $scope.mapDistance = $scope.myWelcome;
+
+        console.log($scope.mapDistance);
 
         function compare(a, b) {
             if (a.distance < b.distance)
@@ -141,65 +142,91 @@
             return 0;
         }
 
+
+        //-------------------------------------------------------------------
+        
+        function sortName() {
+            // sort by distance
+            $scope.myWelcome.sort(compareName);
+
+            //html += "</br><b>after sort</b></br>";
+
+            for (var i = 0; i < $scope.myWelcome.length; i++) {
+                var store = ($scope.myWelcome[i]);
+            }
+
+
+        }
+        $scope.mapDistance = $scope.myWelcome;
+
+        console.log($scope.mapDistance);
+
+        function compareName(a, b) {
+            if (a.storeName < b.storeName)
+                return -1;
+            if (a.storeName > b.storeName)
+                return 1;
+            return 0;
+        }
+
         //-------------------------------------------------------------------
 
         var mapOptions = {
-        zoom: 4,
-        center: {lat:13.763795, lng:100.495738} ,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-
-    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-    $scope.markers = [];
-
-    var infoWindow = new google.maps.InfoWindow();
-
-    var createMarker = function (info) {
-
-        var marker = new google.maps.Marker({
-            map: $scope.map,
-            draggable: true,
-            animation: google.maps.Animation.DROP,
-            position: new google.maps.LatLng(info.storeLatitude, info.storeLongitude),
-            title: info.storeName
-        });
-        marker.addListener('click', toggleBounce);
-        marker.content = '<div class="infoWindowContent">' + info.storeAddress1 + '<br />' + info.storeLatitude + ' E,' + info.storeLongitude + ' N, </div>';
-
-        function toggleBounce() {
-            if (marker.getAnimation() !== null) {
-                marker.setAnimation(null);
-            } else {
-                marker.setAnimation(google.maps.Animation.BOUNCE);
-            }
+            zoom: 4,
+            center: { lat: 13.763795, lng: 100.495738 },
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         }
 
-        google.maps.event.addListener(marker, 'click', function () {
-            infoWindow.setContent('<h2>' + marker.title + '</h2>' +
-              marker.content);
-            infoWindow.open($scope.map, marker);
-        });
 
-        $scope.markers.push(marker);
+        $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    }
+        $scope.markers = [];
 
-    for (i = 0; i < cities.length; i++) {
-        createMarker(cities[i]);
-    }
+        var infoWindow = new google.maps.InfoWindow();
 
-    $scope.openInfoWindow = function (storeName, selectedMarker) {
-        storeName.preventDefault();
-        google.maps.event.trigger(selectedMarker, 'click');
-    }
+        var createMarker = function (info) {
 
+            var marker = new google.maps.Marker({
+                map: $scope.map,
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                position: new google.maps.LatLng(info.storeLatitude, info.storeLongitude),
+                title: info.storeName
+            });
+            marker.addListener('click', toggleBounce);
+            marker.content = '<div class="infoWindowContent">' + info.storeAddress1 + '<br />' + info.storeLatitude + ' E,' + info.storeLongitude + ' N, </div>';
+
+            function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infoWindow.setContent('<h2>' + marker.title + '</h2>' +
+                  marker.content);
+                infoWindow.open($scope.map, marker);
+            });
+
+            $scope.markers.push(marker);
+
+        }
+
+        for (i = 0; i < cities.length; i++) {
+            createMarker(cities[i]);
+        }
+
+        $scope.openInfoWindowName = function (storeName, selectedMarker) {
+            storeName.preventDefault();
+            google.maps.event.trigger(selectedMarker, 'click');
+        }
     });
 
     $scope.infor = function (storeId) {
         console.log(storeId);
-        window.location = '#/Infor/'+ storeId;
+        window.location = '#/Infor/' + storeId;
     };
-    
+
 }])

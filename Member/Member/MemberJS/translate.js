@@ -31,7 +31,7 @@
       Cancal: 'Cancal',
       Submit: 'Submit',
       Success: 'You have successfully updated your information.',
-      updateSuccess: 'Update Success',
+      updateSuccess: 'Update Success',      
        /*--------------------Point-------------------*/
       Yourcard: 'Your cards',
       Cardnumber: 'Card number',

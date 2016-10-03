@@ -172,7 +172,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular-map\current-location.html" />
+    <Content Include="Angular-map\nearby-search.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\card.css" />
@@ -221,6 +221,7 @@
     <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\register.js" />
     <Content Include="MemberJS\slide.js" />
+    <Content Include="MemberJS\SortName.js" />
     <Content Include="MemberJS\tab.js" />
     <Content Include="MemberJS\translate.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
