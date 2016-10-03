@@ -1,10 +1,9 @@
 ﻿var signin = angular.module('SigninApp', ['ui.bootstrap','directive.g+signin', 'pascalprecht.translate']);
 
-
-
 signin.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 
 //---------------------------------- Sign in with Google -----------------------------------------//
+    $scope.statusLogin = -1;
 
     $scope.$on('event:google-plus-signin-success', function (event, authResult) {
         // User successfully authorized the G+ App!
@@ -16,7 +15,7 @@ signin.controller('LoginController', ['$scope', '$http', '$location', function (
             "LastName": user.wea,
             "Email": user.U3
         }
-        localStorage.setItem("Status", 1);
+        localStorage.setItem('loginStatus', 1);
         localStorage.setItem("MyProfile", JSON.stringify(userdata));
         window.location = "/#/Point";
 
@@ -44,11 +43,12 @@ signin.controller('LoginController', ['$scope', '$http', '$location', function (
                    parent.location = '/#/Point';
                    console.log(data);
 
+                   $scope.statusLogin = 1;
+
+                   localStorage.setItem('loginStatus', 0);
 
                } else {
-                   //alert(data.dataResult);
-                   alert('username and password invalid')
-                   console.log(data);
+                   $scope.statusLogin = 0;
   
                }
        })

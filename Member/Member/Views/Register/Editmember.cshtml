@@ -21,7 +21,7 @@
                                     <option value="mr">{{ 'Mr' | translate }}</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> 
                         
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >
@@ -63,14 +63,14 @@
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                Birthday
+                                {{ 'Birthday' | translate }}
                                 <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;">
                                     <div class="control-group">
                                         <div class="input-group">
-                                            <input type="text" ng-model="start"  class="form-control datepicker ng-pristine ng-valid ng-isolate-scope ng-not-empty ng-valid-date ng-valid-required ng-touched" ng-click="openStart()" min-date="minStartDate" max-date="maxStartDate" uib-datepicker-popup="yyyy-MM-dd" is-open="popupStart.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required="required" />
+                                            <input type="text" ng-model="memberDetails.birthday" class="form-control datepicker ng-pristine ng-valid ng-isolate-scope ng-not-empty ng-valid-date ng-valid-required ng-touched" ng-click="openStart()" min-date="minStartDate" max-date="maxStartDate" uib-datepicker-popup="dd-MM-yyyy" is-open="popupStart.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required="required" />
                                             <span class="input-group-addon">
                                                 <i class="ace-icon fa fa-calendar"></i>
                                             </span>
@@ -102,18 +102,35 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="city">
+                                {{ 'City' | translate }}
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" id="city" ng-model="memberDetails.city"
+                                       name="city" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
                                 {{ 'City' | translate }}
                                 <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="form-control" ng-model="memberDetails.city" required="required">
-                                    <option value="">{{ 'SelectCity' | translate }}</option>
-                                    <option value="1">{{ 'Bangkok' | translate }}</option>
-                                    <option value="2">{{ 'ChiangMai' | translate }}</option>
-                                    <option value="3">{{ 'Krabi' | translate }}</option>
-                                    <option value="4">{{ 'Phuket' | translate }}</option>
-                                    <option value="5">{{ 'Ubon' | translate }}</option>
+                                <select class="select2_single form-control" ng-model="memberDetails.province" ng-options="province.provinceId as province.provinceName for province in provinces" tabindex="-1" required="required">
+                                    <option value=""> -- Please Select Province --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                Country
+                                <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="select2_single form-control" ng-model="memberDetails.country" ng-options="country.countryId as country.countryName for country in countries" tabindex="-1" required="required">
+                                    <option value=""> -- Please Select Country --</option>
                                 </select>
                             </div>
                         </div>
@@ -163,8 +180,10 @@
                                     <img id="blah" src="~/Images/register/user_sm.png" 
                                          class="img-circle img-responsive center-block" style="width:50%">
                                     <br><br>
-                                    <input type="file" ng-model="memberDetails.imgUrl" 
-                                           class="align:center" onchange="readURL(this);">
+                                    @*<input type="file" ng-model="memberDetails.imgUrl" 
+                                           class="align:center" onchange="readURL(this);">*@
+                                    <input type="file" onchange="previewFile()"><br>
+                                    <img src="" height="200" >
                                 </div>
                             </div>
                         </div>
@@ -198,7 +217,6 @@
                 <h4>{{'Success' | translate}} </h4>
             </div>
             <div class="modal-footer">
-                <button href="/#/Point" type="button" class="btn btn-success" data-dismiss="modal">{{'Submit' | translate}} </button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}} </button>
             </div>
         </div>
@@ -215,5 +233,23 @@
 <script src="~/MemberJS/picture.js"></script>
 <script src="~/MemberJS/translate.js"></script>
 
+<script>
+   function previewFile(){
+       var preview = document.querySelector('img'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
 
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+
+  previewFile();  //calls the function named previewFile()
+</script>
 
