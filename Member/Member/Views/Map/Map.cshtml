@@ -9,19 +9,19 @@
             <div class="google-maps">
                 <iframe src="http://localhost:51813/Map/Map2"
                         width="735" height="455" frameborder="0" style="border:0"></iframe>
-            </div>
+            </div>            
         </div>
     </div>
     <!-- END GOOGLE WORLD MAP-->
 
-    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="x_panel" style="height:513px">
           @*  <div class="x_title">
         <h4>Map <small>Sort By Location</small></h4>
         <div class="clearfix"></div>
     </div>  *@
             <div class="x_content" id="scrollArea">               
-                <div ng-repeat="myWelcomes in mapDistance |filter:{storeId}">
+                <div ng-repeat="myWelcomes in mapDistance |filter:storeName">
                     <div class="row">
                         <div class="timeline-item-content" style="width: 100%; height: 100px">
                             <div class="timeline-heading">

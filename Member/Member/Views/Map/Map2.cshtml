@@ -4,6 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link href="~/css/map.css" rel="stylesheet" />
+    <marker animation="DROP" position="current-location"></marker>
 </head>
 <body>
 
@@ -18,11 +19,11 @@
                             <label id="names">{{marker.title}}</label>
                         </a>
                     </div>
-                    <div id="repeat" ng-repeat="window in windows | orderBy : 'title'">
+                    @*<div id="repeat" ng-repeat="window in windows | orderBy : 'title'">
                         <a id="country_container" href="#" ng-click="openInfoWindow($event, window)">
                             <label id="names">{{windows.title}}</label>
                         </a>
-                    </div>
+                    </div>*@
                 </div>
             </div>           
         </div>

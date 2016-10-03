@@ -47,7 +47,7 @@
                 <div class="left_col scroll-view">
                     <br />
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="#/Point" class="site_title" onclick="window.parent.location.reload();">
+                        <a href="#/Point" class="site_title" @*onclick="window.parent.location.reload();*@">
                             <div align="center">
                                 <img src="~/Images/register/oishi_logo_sm.png" class="pull-left" style="width:50px; top:20px;" />OISHI GROUP
                             </div>
@@ -77,21 +77,21 @@
                                     <br />
                                 </li>
                                 <li>
-                                    <a href="#/Point" onclick="parent.location.reload();"><i class="fa fa-credit-card"></i> {{ 'MemberCard' | translate}}</a>
+                                    <a href="#/Point" @*onclick="parent.location.reload();"*@><i class="fa fa-credit-card"></i> {{ 'MemberCard' | translate}}</a>
                                 </li>
                                 <li>
-                                    <a href="#/Editmember" onclick="parent.location.reload();"><i class="fa fa-edit"></i> {{ 'EditMember' | translate}} </a>
+                                    <a href="#/Editmember" @*onclick="parent.location.reload();"*@><i class="fa fa-edit"></i> {{ 'EditMember' | translate}} </a>
                                 </li>
                                 <li>
-                                    <a href="#/News" onclick="parent.location.reload();"><i class="fa fa-bullhorn"></i> {{ 'News' | translate}} </a>
-                                </li>
-
-                                <li>
-                                    <a href="#/Map " onclick="parent.location.reload();"><i class="fa fa-map-marker"></i> {{ 'Map' | translate}} </a>
+                                    <a href="#/News" @*onclick="parent.location.reload();"*@><i class="fa fa-bullhorn"></i> {{ 'News' | translate}} </a>
                                 </li>
 
                                 <li>
-                                    <a href="#/Feedback" onclick="parent.location.reload();"><i class="fa fa-star"></i> {{ 'Feedback' | translate}} </a>
+                                    <a href="#/Map " @*onclick="parent.location.reload();"*@><i class="fa fa-map-marker"></i> {{ 'Map' | translate}} </a>
+                                </li>
+
+                                <li>
+                                    <a href="#/Feedback" @*onclick="parent.location.reload();"*@><i class="fa fa-star"></i> {{ 'Feedback' | translate}} </a>
                                 </li>
                                 @*<li>
                                     <button class="btn ng-scope" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">{{ 'English' | translate}}</button>

@@ -24,78 +24,98 @@
             });
         }
 
-        var currentLocations = [{
-          lat: 13.841611799999999,
-          lng: 100.6349315        
-        }];
-             
-        var service = new google.maps.DistanceMatrixService;
-        service.getDistanceMatrix({
-            origins: currentLocations,
-            destinations: destinationLocation,
-            travelMode: 'DRIVING',
-            unitSystem: google.maps.UnitSystem.METRIC,
-            avoidHighways: false,
-            avoidTolls: false
-        }, function (response, status) {
-            if (status !== 'OK') {
-                alert('Error was: ' + status);
-            } else {
-                /* json return like this
-                {
-                  "rows": [
+        //var currentLocations = [{
+        //  lat: 13.841611799999999,
+        //  lng: 100.6349315        
+        //}];
+
+        
+        var options = {
+            enableHighAccuracy: true
+        };
+
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            $scope.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+            console.log(JSON.stringify($scope.position));
+            console.log($scope.position);
+
+            var currentLocations = [
+                $scope.position
+            ];
+            console.log(currentLocations);
+            var service = new google.maps.DistanceMatrixService;
+            service.getDistanceMatrix({
+                origins: currentLocations,
+                destinations: destinationLocation,
+                travelMode: 'DRIVING',
+                unitSystem: google.maps.UnitSystem.METRIC,
+                avoidHighways: false,
+                avoidTolls: false
+            }, function (response, status) {
+                if (status !== 'OK') {
+                    alert('Error was: ' + status);
+                } else {
+                    /* json return like this
                     {
-                      "elements": [
+                      "rows": [
                         {
-                          "distance": {
-                            "text": "17.4 กม.",
-                            "value": 17400
-                          },
-                          "duration": {
-                            "text": "25 นาที",
-                            "value": 1473
-                          },
-                          "status": "OK"
-                        },
-                        {
-                          "distance": {
-                            "text": "7.5 กม.",
-                            "value": 7508
-                          },
-                          "duration": {
-                            "text": "12 นาที",
-                            "value": 696
-                          },
-                          "status": "OK"
+                          "elements": [
+                            {
+                              "distance": {
+                                "text": "17.4 กม.",
+                                "value": 17400
+                              },
+                              "duration": {
+                                "text": "25 นาที",
+                                "value": 1473
+                              },
+                              "status": "OK"
+                            },
+                            {
+                              "distance": {
+                                "text": "7.5 กม.",
+                                "value": 7508
+                              },
+                              "duration": {
+                                "text": "12 นาที",
+                                "value": 696
+                              },
+                              "status": "OK"
+                            }
+                          ]
                         }
+                      ],
+                      "originAddresses": [
+                        "ถนน ประดิษฐ์มนูธรรม - Pradist Manudharm Rd - ทางด่วนรามอินทรา-อาจณรงค์ แขวง ลาดพร้าว เขต ลาดพร้าว กรุงเทพมหานคร 10230 ประเทศไทย"
+                      ],
+                      "destinationAddresses": [
+                        "1325 ถนน สุขุมวิท แขวง พระโขนงเหนือ เขต วัฒนา กรุงเทพมหานคร 10110 ประเทศไทย",
+                        "ซอย รามอินทรา 7 แขวง อนุสาวรีย์ เขต บางเขน กรุงเทพมหานคร 10220 ประเทศไทย"
                       ]
                     }
-                  ],
-                  "originAddresses": [
-                    "ถนน ประดิษฐ์มนูธรรม - Pradist Manudharm Rd - ทางด่วนรามอินทรา-อาจณรงค์ แขวง ลาดพร้าว เขต ลาดพร้าว กรุงเทพมหานคร 10230 ประเทศไทย"
-                  ],
-                  "destinationAddresses": [
-                    "1325 ถนน สุขุมวิท แขวง พระโขนงเหนือ เขต วัฒนา กรุงเทพมหานคร 10110 ประเทศไทย",
-                    "ซอย รามอินทรา 7 แขวง อนุสาวรีย์ เขต บางเขน กรุงเทพมหานคร 10220 ประเทศไทย"
-                  ]
-                }
-                */
+                    */
 
-                var currentLocationList = response.originAddresses;
-                var destinationList = response.destinationAddresses;
+                    var currentLocationList = response.originAddresses;
+                    var destinationList = response.destinationAddresses;
 
-                for (var i = 0; i < currentLocationList.length; i++) {
-                    var elements = response.rows[i].elements;
-                    for (var j = 0; j < elements.length; j++) {
-                        $scope.myWelcome[j].distance = elements[j].distance.value;
-                        $scope.myWelcome[j].distanceText = elements[j].distance.text;
+                    for (var i = 0; i < currentLocationList.length; i++) {
+                        var elements = response.rows[i].elements;
+                        for (var j = 0; j < elements.length; j++) {
+                            $scope.myWelcome[j].distance = elements[j].distance.value;
+                            $scope.myWelcome[j].distanceText = elements[j].distance.text;
+                        }
                     }
-                }             
-                display();
-                displayName();
-            }
-          
-        });
+                    display();
+                }
+
+            });
+        },
+                    function (error) {
+                        alert('Unable to get location: ' + error.message);
+                    }, options);
+
+
+        //-------------------------------------------------------------------
 
         function display() {           
             // sort by distance
@@ -122,62 +142,6 @@
         }
 
         //-------------------------------------------------------------------
-
-        function displayName() {
-            // sort by distance
-            $scope.myWelcome.sort(compareName);
-
-            //html += "</br><b>after sort</b></br>";
-
-            for (var i = 0; i < $scope.myWelcome.length; i++) {
-                var store = ($scope.myWelcome[i]);
-            }
-        }
-
-        function compareName(a, b) {
-            var nameA = a.storeName.toUpperCase(); // ignore upper and lowercase
-            var nameB = b.storeName.toUpperCase(); // ignore upper and lowercase
-            if (nameA < nameB) {
-                return -1;
-            }
-            if (nameA > nameB) {
-                return 1;
-            }
-            // names must be equal
-            return 0;
-        }
-
-        //-------------------------------------------------------------------
-
-        //var infoWindow = new google.maps.InfoWindow({ map: map });
-
-        //    // Try HTML5 geolocation.
-        //    if (navigator.geolocation) {
-        //        navigator.geolocation.getCurrentPosition(function (position) {
-        //            var pos = {
-        //                lat: position.coords.latitude,
-        //                lng: position.coords.longitude
-        //            };
-
-        //            infoWindow.setPosition(pos);
-        //            infoWindow.setContent('Location found.');
-        //            map.setCenter(pos);
-        //        }, function () {
-        //            handleLocationError(true, infoWindow, map.getCenter());
-        //        });
-        //    } else {
-        //        // Browser doesn't support Geolocation
-        //        handleLocationError(false, infoWindow, map.getCenter());
-        //    }
-        
-        //function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        //    infoWindow.setPosition(pos);
-        //    infoWindow.setContent(browserHasGeolocation ?
-        //                          'Error: The Geolocation service failed.' :
-        //                          'Error: Your browser doesn\'t support geolocation.');
-        //}
-      
-//-------------------------------------------------------------------
 
         var mapOptions = {
         zoom: 4,
@@ -232,23 +196,5 @@
     } 
     });
 
-    //$scope.currentLocation = function(){
-    //    var options = {
-    //        enableHighAccuracy: true
-    //    };
-
-    //    navigator.geolocation.getCurrentPosition(function (pos) {
-    //        $scope.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-    //        console.log(JSON.stringify($scope.position));
-    //    },
-    //                function (error) {
-    //                    alert('Unable to get location: ' + error.message);
-    //                }, options);
-
-    //    var marker = new google.maps.Marker({
-    //        position: LatLng,
-    //        map: map,
-    //        title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
-    //    });
-    //};
+    
 }])
