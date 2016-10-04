@@ -185,13 +185,20 @@
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" ng-model="register.province" required="required">
+                                    <select class="select2_single form-control" ng-model="register.province" ng-options="province.provinceId as province.provinceName for province in provinces" required="required">
                                         <option value="">{{ 'SelectProvince' | translate }}</option>
-                                        <option value="1">Bangkok</option>
-                                        <option value="2">Chiang Mai</option>
-                                        <option value="3">Krabi</option>
-                                        <option value="4">Phuket</option>
-                                        <option value="5">Ubon Ratchathani</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    {{ 'Country' | translate }}
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select class="select2_single form-control" ng-model="register.country" ng-options="country.countryId as country.countryName for country in countries" required="required">
+                                        <option value="">{{ 'SelectCountry' | translate }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -291,7 +298,25 @@
         </div>
     </div>
 
-
+    @*---------------------------------------------- Modal Alert Success ------------------------------------------*@
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
+                    <h4 class="modal-title" id="defModalHead">{{'RegisterSuccess' | translate}} </h4>
+                </div>
+                <div class="modal-body">
+                    <img src="~/Images/register/right_icon.png" class="img-responsive" />
+                    <h4>{{'mainpage'| translate}} </h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="parent.location='/#/Point'" class="btn btn-success" data-dismiss="modal">{{'YES' | translate}} </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{'NO' | translate}} </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- /footer content -->
     <script src="~/Scripts/angular.js"></script>
@@ -346,5 +371,30 @@
     <!-- Flot -->
     <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
    
+    <script>
+    $(document).ready(function() {
+    $.listen('parsley:field:validate', function() {
+    validateFront();
+    });
+    $('#demo-form2 .btn').on('click', function() {
+    $('#demo-form2').parsley().validate();
+    validateFront();
+    });
+    var validateFront = function() {
+    if (true === $('#demo-form2').parsley().isValid()) {
+    $('.bs-callout-info').removeClass('hidden');
+    $('.bs-callout-warning').addClass('hidden');
+    } else {
+    $('.bs-callout-info').addClass('hidden');
+    $('.bs-callout-warning').removeClass('hidden');
+    }
+    };
+    });
+    try {
+    hljs.initHighlightingOnLoad();
+    } catch (err) {}
+    </script>
+   
+
 </body>
 </html>

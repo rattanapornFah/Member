@@ -5,7 +5,15 @@
     $scope.Cancel = function () {
         parent.location = '/Login/login';
     }
+    var loadBaseMemberData = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/LoadBaseMemberData?' +
+   'merchantId=1&brandId=1';
+    $http.get(loadBaseMemberData).
+        success(function (data) {
+            $scope.provinces = data[1];
+            //console.log($scope.provinces);
+            $scope.countries = data[2];
 
+     })
     //--------------------------- Register Member ---------------------------------------------------//
     $scope.addMember = function (register) {
         console.log(register)
@@ -19,9 +27,9 @@
             'address1=' +register.address1 + '&'+
             'address2=' + register.address2 + '&'+
             'city=' +register.city + '&'+
-            'provinceId=2' + '&' +
+            'provinceId=' +register.province+ '&' +
             'zipCode=' +register.zipcode+ '&'+
-            'countryId=2' + '&' +
+            'countryId=' + register.country + '&' +
             'phoneNo=' +register.phone+ '&'+
             'mobileNo=' +register.mobile+ '&'+
             'email=' +register.email+ '&'+
@@ -31,10 +39,17 @@
         console.log(apiName);
              $http.get(apiName)
              .success(function (data) {
-                 parent.location = '/#/Point';
-            })
+                 if (data.status == 0) {
+               $('#myModal').modal('show');
+               //parent.location = '/#/Point';
+           } else {
+               alert(data.dataResult);
+               //console.log(data)
+           }  
+        })
 
     }
+
 
     $scope.start = new Date();
 

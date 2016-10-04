@@ -16,7 +16,7 @@
                     $scope.memberDetails = data.dataExtra;
 
                     $scope.memberDetails.birthday = new Date(data.dataExtra.birthday);
-                    //console.log($scope.memberDetails)
+                    console.log($scope.memberDetails)
                 })
      } else {
          $scope.memberDetails = JSON.parse(localStorage.getItem('memberDetails'));
