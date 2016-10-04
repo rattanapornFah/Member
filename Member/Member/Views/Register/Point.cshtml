@@ -1,37 +1,84 @@
-﻿
+﻿<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="icon" type="image/png" href="img/logo.png">
 <style>
-    .btn-circle, .btn-sm {
-        text-align: center;
-        padding: 6px 0;
-        font-size: 12px;
-        line-height: 1.428571429;
-        border-radius: 15px;
-        z-index:1;
+
+    [ng-cloak] { display: none; }
+
+    .ribbon-wrapper {
+      width: 85px;
+      height: 88px;
+      overflow: hidden;
+      position: absolute;
+      top: -3px;
+      right: -3px;
     }
-    .btn-circle {
-	box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
-	border: .5em solid #00CED1;
-	font-size: 1em;
-	line-height: 1em;
-	color: #ffffff;
-	background-color: #00CED1;
-	margin: auto;
-	border-radius: 50%;
-	position: relative;
-    height: 4em;
-	width: 4em;
-}
-.btn-circle:hover {
-		color:#ffffff;
-        background-color: #00CED1;
-        text-decoration: none;
-	    border-color: #66CCFF;
-}
-.btn-circle:visited {
-	color:#ffffff; 
-	text-decoration: none;
-    background-color: #00CED1;
-} 
+
+    .ribbon {
+      font: bold 15px Sans-Serif;
+      color: #333;
+      text-align: center;
+      text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform:    rotate(45deg);
+      -ms-transform:     rotate(45deg);
+      -o-transform:      rotate(45deg);
+      position: relative;
+      padding: 7px 0;
+      left: -5px;
+      top: 15px;
+      width: 120px;
+      background-color: rgb(229,42,58);
+      color: white;
+    }
+
+    .love {
+      display: inline-block;
+      position: relative;
+      top: .2em;
+      font-size: 1.2em;
+      color: white;
+      -webkit-transform: scale(.9);
+      -moz-transform: scale(.9);
+      transform: scale(.9);
+      -webkit-animation: love .5s infinite linear alternate-reverse;
+      -moz-animation: love .5s infinite linear alternate-reverse;
+      animation: love .5s infinite linear alternate-reverse;
+    }
+
+    .code {
+      padding: 2px 10px;
+      background-color: rgb(29,31,33);
+      color: rgb(175,186,183);
+      font-family: 'Droid Sans Mono', 'Titillium Web', sans-serif;
+      font-size: 14px;
+    }
+
+    .code-prompt {
+      font-weight: bold;
+    }
+
+    .code-vial {
+      color: rgb(108,143,167);
+    }
+
+    .code-yellow {
+      color: rgb(230,151,70);
+    }
+
+    .textarea {
+      width: 100%;
+      height: 100px;
+      resize: vertical;
+      font-family: 'Droid Sans Mono', 'Titillium Web', sans-serif;
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    .range {
+      width: 100%;
+    }
+
 </style>
 <div class="row" ng-controller="PointController">
     <form class="form-horizontal">
@@ -42,21 +89,22 @@
         <button type="button" class="btn btn-info btn-circle btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Add Card" onclick="parent.location='#/Card'">
              <i class="glyphicon glyphicon-plus"></i>
         </button>
-     <div ng-show="cardsStatus == 1 && IsGiftCard==0">
+     <div ng-show="cardsStatus == 1 && IsGiftCard==1">
           <div class="x_panel">
               <span class="glyphicon-plus"></span>
               <p> Plus button to add your cards</p>
           </div>
-      </div>
-        <div ng-show="cardsStatus == 0 && IsGiftCard==1">
+      </div>  
+        <div ng-show="cardsStatus == 1 && IsGiftCard==0">
             <div class="x_panel">
                 <center>
-                <p></p>
-                <p>You don't have giftcard.</p>
-                <p></p>
+                    <p></p>
+                    <p>You don't have giftcard.</p>
+                    <p></p>
                 </center>
             </div>
         </div>
+
         <div class="panel-body list-group-item" href="" ng-repeat="detail in memberCardDetails|filter:{isGiftCard:IsGiftCard}" ng-show="cardsStatus == 0">
             <div class="col-md-5 col-sm-6">
                 <div class="widget-item-left">
@@ -65,7 +113,12 @@
                             <img src={{PathImage2}} class="img-responsive img-thumbnail img-rounded">
                         </div>
                         <div ng-if="detail.isGiftCard==0">
-                            <img src={{PathImage1}} class="img-responsive img-thumbnail img-rounded">
+                            <a ng-if="detail.cardTypeId==1">
+                                <img src={{PathImage1}} class="img-responsive img-thumbnail img-rounded">
+                            </a>
+                            <a ng-if="detail.cardTypeId==2">
+                                <img src={{PathImage3}} class="img-responsive img-thumbnail img-rounded">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -82,14 +135,18 @@
                             <span class="fa fa-credit-card" style="color:black"> 
                             {{'Cardname' | translate}} :</span>{{detail.cardTypeName}}
                         </h4>
-                        <h4 ng-show="detail.isGiftCard==0">
-                            <span class="fa fa-gift " style="color:black"> 
-                            {{'Points' | translate}} :</span> {{detail.cardPoint}}
-                        </h4>
-                        <h4 ng-show="detail.isGiftCard==1">
-                            <span class="fa fa-heart" style="color:black">
-                             {{'Stamp' | translate}} :</span> {{detail.cardBalance}}
-                        </h4>
+                        <div>
+                            <h4 ng-show="detail.isStampType==1">
+                                <span class="fa fa-heart" style="color:black">
+                                    {{'Stamp' | translate}} :
+                                </span> {{detail.cardBalance}}                            
+                            </h4>
+                            <h4 ng-show="detail.isStampType==0">
+                                <span class="fa fa-gift " style="color:black">
+                                    {{'Points' | translate}} :
+                                </span> {{detail.cardPoint}}
+                            </h4>
+                        </div>
                         <h4>
                             <span class="fa fa-clock-o" style="color:black"> 
                             {{'Activatedate' | translate}} :</span> {{detail.cardActivateDate}}
@@ -98,10 +155,10 @@
                             <span class="fa fa-clock-o" style="color:black"> 
                             {{'Expiredate' | translate}} :</span> {{detail.cardExpireDate}}
                         </h4>
+
                     </div>
                 </div>
-
-                <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic"> {{'QRcode' | translate}}  </button>
+                <button class="btn btn-info" ng-click="QRcode(detail.cardNo)" data-toggle="modal" data-target="#modal_basic"> {{'QRcode' | translate}}  </button>
                 <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic2"> {{'Barcode' | translate}}  </button>
                 <button class="btn btn-info"> {{'History' | translate}} </button>
             </div>
@@ -110,15 +167,17 @@
 </div>
 
 @*------------------------------------------------ Modal QRcode --------------------------------------------*@
-<div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
-    <div class="modal-dialog">
+<div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center" ng-controller="PointController">
+    <div class="modal-dialog" ng-init="QRcode()">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
                 <h4 class="modal-title" id="defModalHead">{{'QRcode' | translate}} </h4>
             </div>
             <div class="modal-body">
-                <img src="~/Images/point/QRcode-card.png" class="img-responsive">
+                <p>
+                    <qr text="qrcodeString"></qr>
+                </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}} </button>
@@ -150,4 +209,11 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
+@*<script src="~/Scripts/angular.js"></script>
+
+<script src="~/MemberJS/app.js"></script>
+<script src="~/MemberJS/point.js"></script>
+<script src="~/MemberJS/angular-qr.js"></script>
+<script src="~/MemberJS/qrcode.js"></script>*@
+
 

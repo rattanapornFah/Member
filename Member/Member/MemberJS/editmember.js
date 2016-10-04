@@ -57,7 +57,8 @@
             'birthday=' + moment(memberDetails.birthday).format('YYYY-MM-DD') + '&' +
             'atShopId=1';
 
-            console.log(apiName);
+        console.log(apiName);
+        debugger;
         $http.get(apiName)
         .success(function (data) {
             if (data.status == 0) {

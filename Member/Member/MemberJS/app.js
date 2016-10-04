@@ -1,4 +1,4 @@
-﻿var app = angular.module('Member', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate']);
+﻿var app = angular.module('Member', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate','ja.qr']);
 app.config(function ($routeProvider) {
     $routeProvider
 
@@ -68,5 +68,13 @@ app.controller('langCtrl', function ($scope, $translate) {
      $scope.logout= function () {
          localStorage.removeItem();
      }
-
 });
+
+//app.controller('AdaptiveCtrl', function ($scope) {
+//    $scope.qrcodeString = 'YOUR TEXT TO ENCODE';
+//    $scope.size = 250;
+//    $scope.correctionLevel = '';
+//    $scope.typeNumber = 0;
+//    $scope.inputMode = '';
+//    $scope.image = true;
+//});

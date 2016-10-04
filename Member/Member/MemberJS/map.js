@@ -160,6 +160,8 @@
 
         var marker = new google.maps.Marker({
             map: $scope.map,
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=restaurant|FF0000',
+            title: 'Cafe',
             draggable: true,
             animation: google.maps.Animation.DROP,
             position: new google.maps.LatLng(info.storeLatitude, info.storeLongitude),

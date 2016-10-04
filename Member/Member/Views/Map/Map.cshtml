@@ -3,7 +3,7 @@
     <div class="col-md-8 col-sm-12 col-xs-12">
         <div class="x_panel">
             <ul id="tabs">
-                <li><a href="#/Map" ng-click="openInfoWindow($event, marker)" title="tab1">{{ 'SortByLocation' | translate }}</a></li>
+                <li><a href="" ng-click="openInfoWindow($event, marker)" title="tab1">{{ 'SortByLocation' | translate }}</a></li>
                 <li><a href="#/MapByName"  title="tab2">{{ 'SortByName' | translate }}</a></li>
             </ul>
             <div class="google-maps">
@@ -25,24 +25,24 @@
                     <div class="row">
                         <div class="timeline-item-content" style="width: 100%; height: 100px">
                             <div class="timeline-heading">
-                                        <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
-                                </div>
-                                <a href="" ng-click="infor({{myWelcomes.storeId}})">
-                                    <div class="timeline-body">
-                                        <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
-                                        <p> {{myWelcomes.storeAddress1}}</p>
-                                        <p> {{myWelcomes.storeAddress2}}</p>
+                                <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
+                            </div>
+                            <a href="" ng-click="infor({{myWelcomes.storeId}})">
+                                <div class="timeline-body">
+                                    <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
+                                    <p> {{myWelcomes.storeAddress1}}</p>
+                                    <p> {{myWelcomes.storeAddress2}}</p>
 
-                                        <div class="timeline-footer">                          
-                                            @*<h5 href="" ng-click="infor({{myWelcomes.storeId}})"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
-                                            <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
-                                        </div>
+                                    <div class="timeline-footer">
+                                        @*<h5 href="" ng-click="infor({{myWelcomes.storeId}})"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
+                                        <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
                                     </div>
-                                </a>
+                                </div>
+                            </a>
                             <button ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
-                            </div>                                        
+                        </div>
+                    </div>
                 </div>
-
                 @*<a href="#/Infor">
                     <div class="row">
                         <div class="timeline-item-content" style="width: 100%; height: 100px">
