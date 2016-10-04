@@ -15,8 +15,8 @@
                 success(function (data) {
                     $scope.memberDetails = data.dataExtra;
 
-                    $scope.memberDetails.birthday = new Date(data.dataExtra.birthday)
-                    //console.log($scope.memberDetails)
+                    $scope.memberDetails.birthday = new Date(data.dataExtra.birthday);
+                    console.log($scope.memberDetails)
                 })
      } else {
          $scope.memberDetails = JSON.parse(localStorage.getItem('memberDetails'));
@@ -30,8 +30,7 @@
             $scope.provinces = data[1];
             //console.log($scope.provinces);
             $scope.countries = data[2];
-           
-
+          
         })
 
     //--------------------------- Update Member Details---------------------------------------------------//
@@ -103,4 +102,6 @@
     };
 
     //----------------------------------------------------------------------------------------------//
+
+   
 }])

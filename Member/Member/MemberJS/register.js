@@ -1,81 +1,54 @@
-﻿app.controller('RegisterController', ['$scope', '$http', function ($scope, $http) {
-    //$scope.register = {};
-    
-    //if (Number(localStorage.getItem('Status')) == 1) {
-    //    var register = JSON.parse(localStorage.getItem('MyProfile'));
-    //    $scope.register.first_name = register.FirstName;
-    //    $scope.register.last_name = register.LastName;
-    //    $scope.register.email = register.Email;
-    //    $scope.register.image = register.ImageProfile;
-
-    //} else { }
-    //    $scope.register = JSON.parse(localStorage.getItem('memberDetails'));
-    //    $scope.register.image = $scope.register.data.url;
-    //}
-
+﻿app.controller('RegisterController', ['$scope', '$http', function ($scope, $http) {   
+    $scope.register = {};
+    $scope.register.gender = 1;
 
     $scope.Cancel = function () {
-        //var accessToken = sessionStorage.getItem(oauth2_tr);
-        //console.log(accessToken);
-        //localStorage.removeItem('Details');
-        //localStorage.removeItem('status');
-        //console.log(localStorage);
-        //debugger;
-        window.onbeforeunload = function(e){
-        gapi.auth2.getAuthInstance().signOut();
-        };
-
         parent.location = '/Login/login';
-        FB.logout(function(response) {
-        parent.location = '/Login/login';
-        });
-
-      //  $http.jsonp('https://accounts.google.com/o/oauth2/revoke?token=' +
-      //accessToken, {
-      //    params: {
-      //        callback: 'JSON_CALLBACK',
-      //        format: 'json'
-      //    }
-      //}).success( /* Do stuff on success */);
-        //window.location = "../Login/login";
-        //function onLoad() {
-        //    gapi.load('auth2', function () {
-        //        gapi.auth2.init();
-        //    });
-        //}
     }
-   
- 
-    //--------------------------- Register Member with facebook ---------------------------------------------------//
+    var loadBaseMemberData = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/LoadBaseMemberData?' +
+   'merchantId=1&brandId=1';
+    $http.get(loadBaseMemberData).
+        success(function (data) {
+            $scope.provinces = data[1];
+            //console.log($scope.provinces);
+            $scope.countries = data[2];
+
+     })
+    //--------------------------- Register Member ---------------------------------------------------//
     $scope.addMember = function (register) {
         console.log(register)
         var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/InsertNewMemberData?' + 
-            'merchantId=1&brandId=1&code=001' +
-            '&title=' + register.title + '&' +
-            'firstName=' + register.first_name + '&' +
-            'middleName=' + register.middlename + '&' +
-            'lastName=' + register.last_name + '&' +
-            'gender=' +register.gender + '&' +
+            'merchantId=1&brandId=1&code=001' + '&' +
+            'title=' +register.title+ '&' +
+            'firstName=' +register.first_name+ '&' +
+            'middleName=' +register.middlename+ '&' +
+            'lastName=' +register.last_name+ '&' +
+            'gender=' + register.gender + '&' +
             'address1=' +register.address1 + '&'+
             'address2=' + register.address2 + '&'+
             'city=' +register.city + '&'+
-            'provinceId=77' +
-            '&zipCode=' +register.zipcode+ '&'+
-            'countryId=2' +
-            '&phoneNo=' +register.phone+ '&'+
+            'provinceId=' +register.province+ '&' +
+            'zipCode=' +register.zipcode+ '&'+
+            'countryId=' + register.country + '&' +
+            'phoneNo=' +register.phone+ '&'+
             'mobileNo=' +register.mobile+ '&'+
             'email=' +register.email+ '&'+
-            'birthday=' +register.birthday+ '&'+
+            'birthday=' + moment(register.birthday).format('YYYY-MM-DD') + '&' +
             'memberGroupId=1&atShopId=1'
          
-            console.log(apiName)
+        console.log(apiName);
              $http.get(apiName)
              .success(function (data) {
-                 parent.location = '/#/Point';
-            })
+                 if (data.status == 0) {
+               $('#myModal').modal('show');
+               //parent.location = '/#/Point';
+           } else {
+               alert(data.dataResult);
+               //console.log(data)
+           }  
+        })
 
     }
-
 
 
     $scope.start = new Date();
