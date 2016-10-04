@@ -1,4 +1,21 @@
-﻿var signin = angular.module('SigninApp', ['ui.bootstrap','directive.g+signin', 'pascalprecht.translate']);
+﻿var signin = angular.module('SigninApp', ['ngRoute','ui.bootstrap','directive.g+signin', 'pascalprecht.translate']);
+signin.config(function ($routeProvider) {
+    $routeProvider
+        .when("/", {
+            templateUrl: "Login/login"
+        })
+         .when("/Register", {
+             templateUrl: "Register/register",
+         })
+        .otherwise({
+            templateUrl: "/"
+        })
+});
+signin.controller('languageCtrl', function ($scope, $translate) {
+    $scope.changeLanguage = function (key) {
+        $translate.use(key);
+    };
+});
 
 signin.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 

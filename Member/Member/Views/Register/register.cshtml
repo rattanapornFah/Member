@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en" ng-app="Member">
-<<head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script> 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
     <script src="https://plus.google.com/js/client:platform.js" async defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oishi Member</title>
     <!-- Bootstrap -->
     <link href="~/Template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,57 +28,55 @@
     <link href="~/Template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
-    <link href="~/css/google-plus-signin.css" rel="stylesheet" />
-    
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    <script>
-    function start() {
-      gapi.load('auth2', function() {
-        auth2 = gapi.auth2.init({
-            client_id: '398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj.apps.googleusercontent.com',
-          // Scopes to request in addition to 'profile' and 'email'
-          //scope: 'additional_scope'
-        });
-      });
-    }
-    </script>
+    <link href="~/css/tab.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
- <style>
-    #head {
-        color: #333;
-        background-color: darkred;
-        border-color: #5c5151;
-    }
-</style>
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        #head {
+            color: #333;
+            background-color: darkred;
+            border-color: #5c5151;
+        }
+    </style>
 </head>
 <body>
     <!-- page content -->
-    <div id="head" class="panel panel-default" role="main" ng-controller="RegisterController">
+    <div id="head" class="panel panel-default" role="main" ng-controller="langCtrl">
         <div id="head" class="panel-heading ui-draggable-handle">
-            <h1 class="panel-title" style="color:white" align="center"><strong>Register</strong></h1>
+            <h1 class="panel-title" style="color:white" align="center">
+            <strong>{{ 'Register' | translate }} </strong>
+                <img src="~/Images/language/USA__Icon_.png" class="ng-scope pull-right" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">
+                <img src="~/Images/language/thailand_icon_sm.png" class="ng-scope pull-right" ng-click="changeLanguage('th')" translate="BUTTON_LANG_TH" />
+            </h1>
         </div>
         <div class="clearfix"></div>
-        <div class="row">
+        <div class="row" ng-controller="RegisterController">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Your Profile</h2>
+                        <h2>{{ 'Profile' | translate }}  
+                        </h2>
                         <div class="clearfix"></div>
                     </div>
-                    
+                   
                     <div class="x_content">
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12 form-group has-feedback">User Name</label>
+                            @*<div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+                                {{ 'UserName' | translate }} </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" class="form-control has-feedback-left" id="username" placeholder="username" required="required">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12 form-group has-feedback">Password</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+                                {{ 'Password' | translate }} </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="password" class="form-control has-feedback-left" id="password" placeholder="password" required="required">
                                     <span class="fa fa-unlock-alt form-control-feedback left" aria-hidden="true"></span>
@@ -86,81 +84,109 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12 form-group has-feedback">Confirm Password</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+                                {{ 'ConfirmPassword' | translate }} </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="password" class="form-control has-feedback-left" id="confirm" placeholder="confirm password" required="required">
                                     <span class="fa fa-unlock-alt form-control-feedback left" aria-hidden="true"></span>
                                 </div>
-                            </div>
+                            </div>*@
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Title
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    {{ 'Title' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" ng-model="register.title" required="required" >
-                                        <option value="">-- select your title --</option>
-                                        <option value="1">Mrs.</option>
-                                        <option value="2">Miss</option>
-                                        <option value="3">Mr.</option>
+                                    <select class="form-control" ng-model="register.title" required="required">
+                                        <option value="">{{ 'SelectTitle' | translate }}</option>
+                                        <option value="mrs">{{ 'Mrs' | translate }}</option>
+                                        <option value="ms">{{ 'Ms' | translate }}</option>
+                                        <option value="mr">{{ 'Mr' | translate }}</option>
                                     </select>
                                 </div>
                             </div>
-                            
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                    {{ 'Firstname' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.first_name" id="firstname" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Middle Name</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                {{ 'Middlename' | translate }}</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.middlename" id="lastname" name="lastname" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                    {{ 'Lastname' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.last_name" id="lastname" name="lastname" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="gender" class="control-label col-md-3 col-sm-3 col-xs-12">Gender
-                                    <span class="required">*</span></label>
+                                <label for="genders" class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    {{ 'Gender' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <p>
-                                        <input class="flat iradio_flat-green" ng-model="register.gender" value="male" type="radio" name="gender" id="genderM"  checked="" required /> Male
-                                        <input class="flat iradio_flat-green" ng-model="register.gender" value="female" type="radio" name="gender" id="genderF" /> Female
+                                        <input class="flat iradio_flat-green" ng-model="register.gender" type="radio"
+                                               name="genders" value="1" />
+                                        {{ 'Male' | translate }}
+                                        <input class="flat iradio_flat-green" type="radio" ng-model="register.gender"
+                                               name="gender" value="2" />
+                                        {{ 'Female' | translate }}
                                     </p>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">Address1
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">
+                                    {{ 'Address1' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.address1" id="address" name="address" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">Address2</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">
+                                    {{ 'Address2' | translate }}</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.address2" id="address" name="address" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">City
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="city">
+                                    {{ 'City' | translate }}
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" ng-model="register.city" required="required">
-                                        <option value="">--select your city--</option>
+                                    <input type="text" id="city" ng-model="register.city"
+                                           name="city" class="form-control col-md-7 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    {{ 'Province' | translate }}
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" ng-model="register.province" required="required">
+                                        <option value="">{{ 'SelectProvince' | translate }}</option>
                                         <option value="1">Bangkok</option>
                                         <option value="2">Chiang Mai</option>
                                         <option value="3">Krabi</option>
@@ -171,23 +197,28 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zipcode">Zip code
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zipcode">
+                                    {{ 'Zipcode' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="number" ng-model="register.zipcode" id="zipcode" name="zipcode" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Phone Number
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
+                                    {{ 'Phone' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.phone" id="phone" name="phone" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Mobile Number</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
+                                    {{ 'Mobile' | translate }}</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" ng-model="register.mobile" id="phone" name="phone" class="form-control col-md-7 col-xs-12">
                                 </div>
@@ -196,17 +227,21 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Email
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
+                                    {{ 'Email' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="email" ng-model="register.email"  class="form-control has-feedback-left" id="email" placeholder="example@email.com" required="required">
+                                    <input type="email" ng-model="register.email" class="form-control has-feedback-left" id="email" placeholder="example@email.com" required="required">
                                     <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthday
-                                    <span class="required">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    {{ 'Birthday' | translate }}
+                                    <span class="required">*</span>
+                                </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;">
                                         <div class="control-group">
@@ -222,11 +257,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Your picture</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="picture">
+                                {{ 'Picture' | translate }}</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="input-group">
                                         <br>
-                                        <img id="blah" ng-src="{{register.image}}" class="img-circle img-responsive center-block" style="width:50%">
+                                        <img id="blah" src="~/Images/register/user_sm.png"
+                                             class="img-circle img-responsive center-block" style="width:50%">
                                         <br><br>
                                         <input type="file" class="align:center" ng-model="register.picture" onchange="readURL(this);">
                                     </div>
@@ -236,12 +273,14 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <button type="button" ng-click="Cancel(register)"
+                                    <button type="button" ng-click="Cancel()"
                                             class="btn btn-primary pull-right">
-                                        Cancel
+                                        {{ 'Cancel' | translate }}
                                     </button>
-                                    <button type="submit" ng-click="addMember(register)" 
-                                            class="btn btn-success pull-right">Submit</button>
+                                    <button type="submit" ng-click="addMember(register)"
+                                            class="btn btn-success pull-right">
+                                        {{ 'Submit' | translate }}
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -251,22 +290,61 @@
             </div>
         </div>
     </div>
+
+
+
+    <!-- /footer content -->
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-translate.js"></script>
+    <script src="~/MemberJS/app.js"></script>
+
+    <script src="~/MemberJS/register.js"></script>
+    <script src="~/MemberJS/addimage.js"></script>
+    <script src="~/MemberJS/translate.js"></script>
+
+    <!-- jQuery -->
+    <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/Template/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+ 
+    <!-- FastClick -->
+    <script src="~/Template/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/Template/vendors/nprogress/nprogress.js"></script>
+    <!-- gauge.js -->
+    <script src="~/Template/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="~/Template/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="~/Template/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="~/Template/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="~/Template/vendors/Flot/jquery.flot.js"></script>
+    <script src="~/Template/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="~/Template/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="~/Template/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="~/Template/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="~/Template/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="~/Template/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="~/Template/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="~/Template/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="~/Template/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="~/Template/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="~/Template/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="~/Template/js/moment/moment.min.js"></script>
+    <script src="~/Template/js/datepicker/daterangepicker.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Template/build/js/custom.min.js"></script>
+    <!-- Flot -->
+    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
+   
 </body>
 </html>
-
-
-
-<script src="~/Scripts/angular.js"></script>
-<script src="~/Scripts/angular-route.min.js"></script>
-<script src="~/Scripts/angular-sanitize.js"></script>
-<script src="~/Scripts/angular-translate.js"></script>
-<script src="~/MemberJS/app.js"></script>
-<script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
-<script src="~/MemberJS/register.js"></script>
-<script src="~/MemberJS/picture.js"></script>
-<script src="~/Scripts/google-plus-signin.js"></script>
-<script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
-
-
-
-

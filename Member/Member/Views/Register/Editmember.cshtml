@@ -9,7 +9,6 @@
                 </div>
                 <div class="x_content">
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ 'Title' | translate }}
                                 <span class="required">*</span></label>
@@ -34,6 +33,15 @@
                             </div>
                         </div>
                        
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="middle-name">
+                                {{ 'Middlename' | translate }}
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" id="middlename" ng-model="memberDetails.middlename" name="middlename" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
                                  {{ 'Lastname' | translate }}
@@ -113,24 +121,24 @@
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                Province
+                                {{ 'Province' | translate }}
                                 <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="select2_single form-control" ng-model="memberDetails.province" ng-options="province.provinceId as province.provinceName for province in provinces" tabindex="-1" required="required">
-                                    <option value=""> -- Please Select Province --</option>
+                                <select class="select2_single form-control" ng-model="memberDetails.province" ng-options="province.provinceId as province.provinceName for province in provinces"  required="required">
+                                    <option value="">{{ 'SelectProvince' | translate }}</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                                Country
+                                {{ 'Country' | translate }}
                                 <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="select2_single form-control" ng-model="memberDetails.country" ng-options="country.countryId as country.countryName for country in countries" tabindex="-1" required="required">
-                                    <option value=""> -- Please Select Country --</option>
+                                <select class="select2_single form-control" ng-model="memberDetails.country" ng-options="country.countryId as country.countryName for country in countries"  required="required">
+                                    <option value="">{{ 'SelectCountry' | translate }}</option>
                                 </select>
                             </div>
                         </div>
@@ -147,12 +155,22 @@
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
-                                {{ 'Mobile' | translate }}
+                                {{ 'Phone' | translate }}
                                 <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" ng-model="memberDetails.mobileNo"id="phone" name="phone" 
+                                <input type="text" ng-model="memberDetails.phone" id="phone" name="phone" 
                                        required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobile">
+                                {{ 'Mobile' | translate }}
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" ng-model="memberDetails.mobileNo" id="mobile" name="mobile"  
+                                       class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
@@ -180,10 +198,9 @@
                                     <img id="blah" src="~/Images/register/user_sm.png" 
                                          class="img-circle img-responsive center-block" style="width:50%">
                                     <br><br>
-                                    @*<input type="file" ng-model="memberDetails.imgUrl" 
-                                           class="align:center" onchange="readURL(this);">*@
-                                    <input type="file" onchange="previewFile()"><br>
-                                    <img src="" height="200" >
+                                   <input type="file" ng-model="memberDetails.imgUrl" 
+                                           class="align:center" onchange="readURL(this);">
+                                 
                                 </div>
                             </div>
                         </div>
@@ -223,33 +240,5 @@
     </div>
 </div>
 
-<script src="~/Scripts/angular.js"></script>
-<script src="~/Scripts/angular-route.min.js"></script>
-<script src="~/Scripts/angular-sanitize.js"></script>
-<script src="~/Scripts/angular-translate.js">
-</script><script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
-<script src="~/MemberJS/app.js"></script>
-<script src="~/MemberJS/editmember.js"></script>
-<script src="~/MemberJS/picture.js"></script>
-<script src="~/MemberJS/translate.js"></script>
 
-<script>
-   function previewFile(){
-       var preview = document.querySelector('img'); //selects the query named img
-       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
-       var reader  = new FileReader();
-
-       reader.onloadend = function () {
-           preview.src = reader.result;
-       }
-
-       if (file) {
-           reader.readAsDataURL(file); //reads the data as a URL
-       } else {
-           preview.src = "";
-       }
-  }
-
-  previewFile();  //calls the function named previewFile()
-</script>
 
