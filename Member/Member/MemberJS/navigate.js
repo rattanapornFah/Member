@@ -18,10 +18,6 @@
             console.log($scope.position);
             localStorage.setItem('currentLocationLatitude', pos.coords.latitude);
             localStorage.setItem('currentLocationLongitude', pos.coords.longitude);
-            //var currentLocations = [
-            //    $scope.position
-            //];
-            //console.log(currentLocations);
         },
                     function (error) {
                         alert('Unable to get location: ' + error.message);

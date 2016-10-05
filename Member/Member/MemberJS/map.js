@@ -103,9 +103,12 @@
                         for (var j = 0; j < elements.length; j++) {
                             $scope.myWelcome[j].distance = elements[j].distance.value;
                             $scope.myWelcome[j].distanceText = elements[j].distance.text;
+                            $scope.myWelcome[j].duration = elements[j].duration.value;
+                            $scope.myWelcome[j].durationText = elements[j].duration.text;
+                            localStorage.setItem('duration', elements[j].duration.text);
                         }
                     }
-                    display();
+                    display();                  
                 }
 
             });
@@ -160,8 +163,7 @@
 
         var marker = new google.maps.Marker({
             map: $scope.map,
-            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=restaurant|FF0000',
-            title: 'Cafe',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=restaurant|FF0000',            
             draggable: true,
             animation: google.maps.Animation.DROP,
             position: new google.maps.LatLng(info.storeLatitude, info.storeLongitude),
@@ -204,4 +206,5 @@
         window.location = '#/Infor/'+ storeId;
     };
     
+
 }])
