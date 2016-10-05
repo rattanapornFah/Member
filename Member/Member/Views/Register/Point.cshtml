@@ -34,24 +34,27 @@
  	color:#ffffff; 
  	text-decoration: none;
      background-color: #00CED1;
- }     
+ }  
+ #barcode{
+     text-align:center;
+ }   
 
 </style>
 <div class="row" ng-controller="PointController">
     <form class="form-horizontal">
         <ul id="tabs">
-            <li><a href="#/Point/" title="Latest" >{{ 'MemberCard' | translate }} </a></li>
-            <li><a href="#/Giftcard" title="Unread" >{{ 'Giftcard' | translate }} </a></li>
+            <li><a href="#/Point/" title="Latest">{{ 'MemberCard' | translate }} </a></li>
+            <li><a href="#/Giftcard" title="Unread">{{ 'Giftcard' | translate }} </a></li>
         </ul>
         <button type="button" class="btn btn-info btn-circle btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Add Card" onclick="parent.location='#/Card'">
-             <i class="glyphicon glyphicon-plus"></i>
+            <i class="glyphicon glyphicon-plus"></i>
         </button>
-     <div ng-show="cardsStatus == 1 && IsGiftCard==1">
-          <div class="x_panel">
-              <span class="glyphicon-plus"></span>
-              <p> Plus button to add your cards</p>
-          </div>
-      </div>  
+        <div ng-show="cardsStatus == 1 && IsGiftCard==1">
+            <div class="x_panel">
+                <span class="glyphicon-plus"></span>
+                <p> Plus button to add your cards</p>
+            </div>
+        </div>
         <div ng-show="cardsStatus == 1 && IsGiftCard==0">
             <div class="x_panel">
                 <center>
@@ -61,7 +64,6 @@
                 </center>
             </div>
         </div>
-
         <div class="panel-body list-group-item" href="" ng-repeat="detail in memberCardDetails|filter:{isGiftCard:IsGiftCard}" ng-show="cardsStatus == 0">
             <div class="col-md-5 col-sm-6">
                 <div class="widget-item-left">
@@ -80,23 +82,25 @@
                     </div>
                 </div>
             </div>
-           
+
             <div class="col-md-7 col-sm-6 ">
                 <div class="widget-item-right">
                     <div class="text-left">
                         <h4>
-                            <span class="fa fa-user" style="color:black"> 
-                            {{'Cardnumber' | translate}} :</span> {{detail.cardNo}}
+                            <span class="fa fa-user" style="color:black">
+                                {{'Cardnumber' | translate}} :
+                            </span> {{detail.cardNo}}
                         </h4>
                         <h4>
-                            <span class="fa fa-credit-card" style="color:black"> 
-                            {{'Cardname' | translate}} :</span>{{detail.cardTypeName}}
+                            <span class="fa fa-credit-card" style="color:black">
+                                {{'Cardname' | translate}} :
+                            </span>{{detail.cardTypeName}}
                         </h4>
                         <div>
                             <h4 ng-show="detail.isStampType==1">
                                 <span class="fa fa-heart" style="color:black">
                                     {{'Stamp' | translate}} :
-                                </span> {{detail.cardBalance}}                            
+                                </span> {{detail.cardBalance}}
                             </h4>
                             <h4 ng-show="detail.isStampType==0">
                                 <span class="fa fa-gift " style="color:black">
@@ -105,60 +109,71 @@
                             </h4>
                         </div>
                         <h4>
-                            <span class="fa fa-clock-o" style="color:black"> 
-                            {{'Activatedate' | translate}} :</span> {{detail.cardActivateDate}}
+                            <span class="fa fa-clock-o" style="color:black">
+                                {{'Activatedate' | translate}} :
+                            </span> {{detail.cardActivateDate}}
                         </h4>
                         <h4>
-                            <span class="fa fa-clock-o" style="color:black"> 
-                            {{'Expiredate' | translate}} :</span> {{detail.cardExpireDate}}
+                            <span class="fa fa-clock-o" style="color:black">
+                                {{'Expiredate' | translate}} :
+                            </span> {{detail.cardExpireDate}}
                         </h4>
 
                     </div>
                 </div>
-                <button class="btn btn-info" ng-click="QRcode(detail.cardNo)" data-toggle="modal" data-target="#modal_basic"> {{'QRcode' | translate}}  </button>
-                <button class="btn btn-info" data-toggle="modal" data-target="#modal_basic2"> {{'Barcode' | translate}}  </button>
+                <button class="btn btn-info"  data-toggle="modal" data-target="#modal_qr{{detail.cardId}}"> {{'QRcode' | translate}}  </button>
+                <button class="btn btn-info" data-toggle="modal" data-target="#modal_barcode{{detail.cardId}}"> {{'Barcode' | translate}}  </button>
                 <button class="btn btn-info"> {{'History' | translate}} </button>
-            </div>
-        </div>
-     </form>
-</div>
 
-@*------------------------------------------------ Modal QRcode --------------------------------------------*@
-<div class="modal" id="modal_basic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center" ng-controller="PointController">
-    <div class="modal-dialog" ng-init="QRcode()">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
-                <h4 class="modal-title" id="defModalHead">{{'QRcode' | translate}} </h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    <qr text="qrcodeString"></qr>
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}} </button>
-            </div>
-        </div>
-    </div>
-</div>
-@*------------------------------------------------ Modal Barcode -------------------------------------------*@
-<div class="modal" id="modal_basic2" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
-                <h4 class="modal-title" id="defModalHead">{{'Barcode' | translate}}</h4>
-            </div>
-            <div class="modal-body">
-                <img src="~/Images/point/Barcode-card.png" class="img-responsive" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}}</button>
-            </div>
-        </div>
-    </div>
+                <div class="modal" id="modal_barcode{{detail.cardId}}" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
+                                <h4 class="modal-title" id="defModalHead">{{'Barcode' | translate}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                @*<img src="~/Images/point/Barcode-card.png" class="img-responsive" />*@
+                                <div barcode-generator="{{detail.cardNo}}" id="barcode" style="height:208px;">
+                                </div>
+                                {{detail.cardNo}}
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}}</button>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+
+                <div class="modal" id="modal_qr{{detail.cardId}}" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center" ng-controller="PointController">
+                    <div class="modal-dialog" ng-init="QRcode()">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
+                                <h4 class="modal-title" id="defModalHead">{{'QRcode' | translate}} </h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <qr text="detail.cardNo"></qr>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}} </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    @*------------------------------------------------ Modal QRcode --------------------------------------------*@
+    
+   
+    @*------------------------------------------------ Modal Barcode -------------------------------------------*@
+    
 </div>
 @*--------------------------------------------------- Tooltip ----------------------------------------------*@
 <script>
@@ -173,4 +188,4 @@
 <script src="~/MemberJS/angular-qr.js"></script>
 <script src="~/MemberJS/qrcode.js"></script>*@
 
-
+ <link href="~/css/barcode.css" rel="stylesheet" />

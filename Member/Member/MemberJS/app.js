@@ -1,4 +1,4 @@
-﻿var app = angular.module('Member', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate']);
+﻿var app = angular.module('Member', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate','barcodeGenerator', 'ja.qr']);
 app.config(function ($routeProvider) {
     $routeProvider
 
