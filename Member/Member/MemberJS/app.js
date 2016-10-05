@@ -1,4 +1,4 @@
-﻿var app = angular.module('Member', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate','ja.qr']);
+﻿var app = angular.module('Member', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate']);
 app.config(function ($routeProvider) {
     $routeProvider
 
@@ -70,11 +70,3 @@ app.controller('langCtrl', function ($scope, $translate) {
      }
 });
 
-//app.controller('AdaptiveCtrl', function ($scope) {
-//    $scope.qrcodeString = 'YOUR TEXT TO ENCODE';
-//    $scope.size = 250;
-//    $scope.correctionLevel = '';
-//    $scope.typeNumber = 0;
-//    $scope.inputMode = '';
-//    $scope.image = true;
-//});
