@@ -46,6 +46,19 @@
         line-height: 30px;
         padding-left: 10px;
     }
+    #floating-panel2 {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+    }
 </style>
 
 
@@ -59,7 +72,12 @@
         <option value="TRANSIT">Transit</option>
     </select>
 </div>
-<div id="map"></div>
+<div id="floating-panel2">
+    <b>Mode of Travel: </b>
+    <select>
+        <option value="DRIVING">Driving</option>
+    </select>
+</div>
 
 <script src="~/MemberJS/app.js"></script>
 <script src="~/MemberJS/navigate.js"></script>
