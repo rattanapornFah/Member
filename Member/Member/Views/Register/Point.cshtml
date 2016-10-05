@@ -126,18 +126,18 @@
                 <button class="btn btn-info"> {{'History' | translate}} </button>
 
                 
-                <div class="modal" id="modal_barcode{{detail.cardId}}" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
+                <div class="modal col-" id="modal_barcode{{detail.cardId}}" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{'Close' | translate}}</span></button>
                                 <h4 class="modal-title" id="defModalHead">{{'Barcode' | translate}}</h4>
                             </div>
-                            <div class="modal-body">
-                                @*<img src="~/Images/point/Barcode-card.png" class="img-responsive" />*@
-                                <div barcode-generator="{{detail.cardNo}}" id="barcode" style="height:208px;" class="center-block">
-                                </div>
-                                {{detail.cardNo}}
+                            <div class="modal-body img-responsive" style="position:relative;">
+
+                                    <div barcode-generator="{{detail.cardNo}}" id="barcode" style="height:208px;width:390px;" ></div>
+                                <h4> {{detail.cardNo}}</h4>
+                              
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}}</button>
                                 </div>

@@ -1,5 +1,3 @@
-(function () {
-    'use strict';
 
     angular
         .module('ngBarcode', [])
@@ -357,4 +355,3 @@
 
         barcodeCtrl.base64Barcode = generateBarcode;
     }
-})();

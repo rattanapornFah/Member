@@ -1,4 +1,5 @@
 ﻿app.controller('PointController', ['$scope', '$http','$translate','$location', function ($scope, $http,$translate,$location) {
+  
     $scope.changeLanguage = function (key) {
     $translate.use(key);
     };
@@ -52,7 +53,10 @@
         $scope.image = true;
     }
 
-        
+    
+
+   
+ 
 
     //var memberDetails = localStorage.getItem('memberDetails');
     //$scope.memberDetails = JSON.parse(memberDetails);

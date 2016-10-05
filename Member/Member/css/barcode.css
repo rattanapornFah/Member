@@ -1,26 +1,33 @@
 ﻿.barcode.code128 {
-    float: left;
-    height: 100%;
+    float:right;
+    height: 90%;
     min-height: 10px;
+    width: 100%;
+    text-align:center;
+ 
+   
 }
 .barcode.code128 > div.b {
     background: none repeat scroll 0 0 #000000;
     float: left;
     height: 100%;
+      
+    
 }
 .barcode.code128 > div.w {
     background: none repeat scroll 0 0 #FFFFFF;
     float: left;
     height: 100%;
+      
 }
 .barcode.code128 .w20 {
-    width: 20px;
+    width: 1px;
 }
 .barcode.code128 .w1 {
     width: 1px;
 }
 .barcode.code128 .w2 {
-    width: 2px;
+    width: 1px;
 }
 .barcode.code128 .w3 {
     width: 3px;
