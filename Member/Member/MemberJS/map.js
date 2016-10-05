@@ -144,7 +144,7 @@
         //-------------------------------------------------------------------
 
         var mapOptions = {
-        zoom: 4,
+        zoom: 11,
         center: {lat:13.763795, lng:100.495738} ,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }

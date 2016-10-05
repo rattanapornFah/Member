@@ -43,9 +43,8 @@
     }
 
     $scope.QRcode = function (cardNoQRcode) {
-        console.log(cardNoQRcode);
-        $scope.qrcodeString = "";
-        $scope.qrcodeString = angular.isString(cardNoQRcode);
+        $scope.qrcodeString = cardNoQRcode;
+        console.log($scope.qrcodeString);
         $scope.size = 250;
         $scope.correctionLevel = '';
         $scope.typeNumber = 0;

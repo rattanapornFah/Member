@@ -208,6 +208,7 @@
     <Content Include="Images\register\oishi2.png" />
     <Content Include="Images\register\oishi_logo_sm.png" />
     <Content Include="Images\register\user_sm.png" />
+    <Content Include="MemberJS\addimage.js" />
     <Content Include="MemberJS\angular-qr.js" />
     <Content Include="MemberJS\app.js" />
     <Content Include="MemberJS\card.js" />
