@@ -208,6 +208,7 @@
     <Content Include="Images\register\oishi2.png" />
     <Content Include="Images\register\oishi_logo_sm.png" />
     <Content Include="Images\register\user_sm.png" />
+    <Content Include="MemberJS\addimage.js" />
     <Content Include="MemberJS\angular-qr.js" />
     <Content Include="MemberJS\app.js" />
     <Content Include="MemberJS\card.js" />
@@ -226,6 +227,7 @@
     <Content Include="MemberJS\SortName.js" />
     <Content Include="MemberJS\tab.js" />
     <Content Include="MemberJS\translate.js" />
+    <Content Include="MemberJS\unit.spec.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-animate.js" />
