@@ -16,7 +16,7 @@
         <!-- END GOOGLE WORLD MAP-->
 
 
-    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="x_panel" style="height:525px">
           @*  <div class="x_title">
         <h4>Map <small>Sort By Name</small></h4>
@@ -29,19 +29,20 @@
                             <div class="timeline-heading">
                                 <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
                             </div>
-                            <a href="">
-                                <div class="timeline-body">
-                                    <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
-                                    <p> {{myWelcomes.storeAddress1}}</p>
-                                    <p> {{myWelcomes.storeAddress2}}</p>
+                            @*<a href="">*@
+                                <div class="timeline-body" style="text-align:center">
+                                    <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="160" align="left" />
+                                    <p> {{myWelcomes.storeAddress1}}{{myWelcomes.storeAddress2}}</p>
+                                    @*<p> </p>*@
 
                                     <div class="timeline-footer">
                                         @*<h5 href="#/Infor"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
                                         <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
                                     </div>
+                                    <button ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
                                 </div>
-                            </a>
-                            <button ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
+                            @*</a>*@
+                            
                         </div>
                     </div>
                 </div>
