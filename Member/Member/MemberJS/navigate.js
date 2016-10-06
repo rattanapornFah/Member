@@ -1,8 +1,11 @@
-﻿app.controller('NavigateController', ['$scope', '$http', '$translate', '$routeParams', function ($scope, $http, $translate,$routeParams) {
-
+﻿app.controller('NavigateController', ['$scope', '$http', '$translate', '$routeParams', '$filter', function ($scope, $http, $translate, $routeParams, $filter) {
+   
     $scope.changeLanguage = function (key) {
         $translate.use(key);
     };
+
+    $scope.durationText = localStorage.getItem('durationText');
+    console.log($scope.durationText);
 
     $scope.backInfo = function () {
         window.location = '#/Infor/' + Number($routeParams.id);
@@ -25,4 +28,5 @@
 
         console.log(Number($routeParams.id));
        
+        
 }])

@@ -29,7 +29,7 @@
         //  lng: 100.6349315        
         //}];
 
-
+   
         var options = {
             enableHighAccuracy: true
         };

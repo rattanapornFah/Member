@@ -70,9 +70,7 @@
       ShowMap: 'Show Map',
 
       /*--------------------Navigate-------------------*/
-      EnterDestination: 'Enter Destination :',
-      Select: 'select',
-      SearchRoute: 'Search',
+      Time: ' Time :',
 
       /*--------------------Feedback-------------------*/
       Feedback: 'Feedback',
@@ -194,9 +192,7 @@
       ShowMap: 'แสดงแผนที่',
 
       /*--------------------Navigate-------------------*/
-      EnterDestination: 'เลือกร้านปลายทาง :',
-      Select: 'เลือก',
-      SearchRoute: 'ค้นหา',
+      Time: ' เวลา :',
 
       /*--------------------Feedback-------------------*/
       Feedback: 'ข้อติชม',

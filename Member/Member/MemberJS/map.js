@@ -1,4 +1,4 @@
-﻿app.controller('MapController', ['$scope', '$http', function ($scope, $http) {
+﻿app.controller('MapController', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
 
 
     $http.get("http://www.vtec-system.com:8080/LoyaltyApi/Stores/GetListAllStoresOfBrand?merchantId=1&brandId=1").success(function (data) {
@@ -104,10 +104,10 @@
                             $scope.myWelcome[j].distance = elements[j].distance.value;
                             $scope.myWelcome[j].distanceText = elements[j].distance.text;
                             $scope.myWelcome[j].duration = elements[j].duration.value;
-                            $scope.myWelcome[j].durationText = elements[j].duration.text;
-                            localStorage.setItem('duration', elements[j].duration.text);
+                            $scope.myWelcome[j].durationText = elements[j].duration.text;                            
                         }
                     }
+                    localStorage.setItem('duration', JSON.stringify($scope.myWelcome));
                     display();                  
                 }
 
@@ -135,6 +135,7 @@
             $scope.mapDistance = $scope.myWelcome;
             
             console.log($scope.mapDistance);
+
 
         function compare(a, b) {
             if (a.distance < b.distance)
@@ -202,7 +203,9 @@
     });
 
     $scope.infor = function (storeId) {
-        console.log(storeId);
+        var FilterMyWelcome = $filter('filter')($scope.mapDistance, { storeId: storeId });
+        console.log(FilterMyWelcome);
+        localStorage.setItem('durationText', FilterMyWelcome[0].durationText);
         window.location = '#/Infor/'+ storeId;
     };
     
