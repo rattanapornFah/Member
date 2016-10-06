@@ -4,6 +4,7 @@
     $translate.use(key);
   };
      $scope.memberDetails = {};
+    
 
     //--------------------EditMember ----------------//
      if (localStorage.getItem('loginStatus') == 0) {
@@ -57,7 +58,6 @@
             'atShopId=1';
 
         console.log(apiName);
-        debugger;
         $http.get(apiName)
         .success(function (data) {
             if (data.status == 0) {

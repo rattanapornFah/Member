@@ -30,7 +30,7 @@
         $scope.IsGiftCard = 0;
         
     }
-
+    console.log($scope.IsGiftCard)
     if ($location.path() == "/Point") {
         $scope.cardTypeId = 1;
     } else {

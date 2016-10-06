@@ -72,13 +72,13 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
                                 {{ 'Birthday' | translate }}
-                                <span class="required">*</span>
+                                
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;">
                                     <div class="control-group">
                                         <div class="input-group">
-                                            <input type="text" ng-model="memberDetails.birthday" class="form-control datepicker ng-pristine ng-valid ng-isolate-scope ng-not-empty ng-valid-date ng-valid-required ng-touched" ng-click="openStart()" min-date="minStartDate" max-date="maxStartDate" uib-datepicker-popup="dd-MM-yyyy" is-open="popupStart.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false" required="required" />
+                                            <input type="text" ng-model="memberDetails.birthday" class="form-control datepicker ng-pristine ng-valid ng-isolate-scope ng-not-empty ng-valid-date ng-valid-required ng-touched" ng-click="openStart()" min-date="minStartDate" max-date="maxStartDate" uib-datepicker-popup="dd-MM-yyyy" is-open="popupStart.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" show-button-bar="false"  />
                                             <span class="input-group-addon">
                                                 <i class="ace-icon fa fa-calendar"></i>
                                             </span>
@@ -91,11 +91,11 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">
                                 {{ 'Address1' | translate }}
-                                <span class="required">*</span>
+                               
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" id="address" ng-model="memberDetails.address1" 
-                                       name="address" required="required" class="form-control col-md-7 col-xs-12">
+                                       name="address"  class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
@@ -122,10 +122,10 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
                                 {{ 'Province' | translate }}
-                                <span class="required">*</span>
+                              
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="select2_single form-control" ng-model="memberDetails.province" ng-options="province.provinceId as province.provinceName for province in provinces"  required="required">
+                                <select class="select2_single form-control" ng-model="memberDetails.province" ng-options="province.provinceId as province.provinceName for province in provinces"  >
                                     <option value="">{{ 'SelectProvince' | translate }}</option>
                                 </select>
                             </div>
@@ -134,10 +134,10 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">
                                 {{ 'Country' | translate }}
-                                <span class="required">*</span>
+                               
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="select2_single form-control" ng-model="memberDetails.country" ng-options="country.countryId as country.countryName for country in countries"  required="required">
+                                <select class="select2_single form-control" ng-model="memberDetails.country" ng-options="country.countryId as country.countryName for country in countries" >
                                     <option value="">{{ 'SelectCountry' | translate }}</option>
                                 </select>
                             </div>
@@ -146,7 +146,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zipcode">
                                 {{ 'Zipcode' | translate }}
-                                <span class="required">*</span></label>
+                               </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" ng-model="memberDetails.zipCode" id="zipcode" name="zipcode" 
                                        ng-required="true" class="form-control col-md-7 col-xs-12">
@@ -156,11 +156,11 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
                                 {{ 'Phone' | translate }}
-                                <span class="required">*</span>
+                                
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" ng-model="memberDetails.phone" id="phone" name="phone" 
-                                       required="required" class="form-control col-md-7 col-xs-12">
+                                        class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
@@ -191,7 +191,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">
                                 {{ 'Picture' | translate }}
-                                <span class="required">*</span></label>
+                                </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="input-group">
                                     <br>

@@ -1,6 +1,8 @@
 ﻿app.controller('RegisterController', ['$scope', '$http', function ($scope, $http) {   
     $scope.register = {};
     $scope.register.gender = 1;
+    $scope.register.country = 1;
+    $scope.register.province = 37;
 
     $scope.Cancel = function () {
         parent.location = '/Login/login';
@@ -9,8 +11,9 @@
    'merchantId=1&brandId=1';
     $http.get(loadBaseMemberData).
         success(function (data) {
+            console.log(loadBaseMemberData);
             $scope.provinces = data[1];
-            //console.log($scope.provinces);
+            
             $scope.countries = data[2];
 
      })

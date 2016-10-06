@@ -36,7 +36,7 @@
       Email: 'Email',
       Birthday: 'Birthday',
       Picture: 'Picture',
-      Cancal: 'Cancal',
+      Cancel: 'Cancel',
       Submit: 'Submit',
       Success: 'You have successfully updated your information.',
       updateSuccess: 'Update Success',
@@ -102,7 +102,7 @@
       Enterpin: 'Enter your card number and pin code',
 
       /*--------------------Index-------------------*/
-       MemberCard: ' Member Card',
+       MemberCard: ' Member Cards',
        EditMember: 'Edit Member',
        News: 'News',
        Map: 'Map',
@@ -160,7 +160,7 @@
       Email: 'อีเมล์',
       Birthday: 'วันเกิด',
       Picture: 'ภาพโปรไฟล์',
-      Cancal: 'ยกเลิก',
+      Cancel: 'ยกเลิก',
       Submit: 'บันทึก',
       Success: 'คุณทำการแก้ไขข้อมูลของคุณสำเร็จแล้ว',
       updateSuccess: 'แก้ไขสำเร็จ',
@@ -177,8 +177,8 @@
       Balance: 'ยอดเงิน',
       Activatedate: 'วันที่เปิดใช้งาน',
       Expiredate: 'วันที่หมดอายุ',
-      QRcode: 'คิวอาร์โค้ด',
-      Barcode: 'บาร์โค้ด',
+     
+    
       Close: 'ปิด',
       History: 'ประวัติ',
       Stamps:'แต้มสะสม',

@@ -20,6 +20,7 @@ signin.controller('languageCtrl', function ($scope, $translate) {
 signin.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 
 //---------------------------------- Sign in with Google -----------------------------------------//
+    
     $scope.statusLogin = -1;
 
     $scope.$on('event:google-plus-signin-success', function (event, authResult) {
