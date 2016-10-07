@@ -15,8 +15,8 @@
                     <div id="map" style="width:100%"></div>
                     <marker animation="DROP" position="current-location"></marker>
                     <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
-                        <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
-                            <label id="names">{{marker.title}}</label>
+                        <a id="country_container">
+                            <label href="#" ng-click="openInfoWindow($event, marker)" id="names">{{ marker.title }}</label>
                         </a>
                     </div>
                 </div>
@@ -24,27 +24,6 @@
         </div>
         <!-- END GOOGLE WORLD MAP-->
     </div>
-
-  
-
-    @*<style>
-        .google-maps {
-            position: relative;
-            padding-bottom: 68%;
-             /*This is the aspect ratio height: 0;*/
-            overflow: hidden;
-        }
-
-            .google-maps iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100% !important;
-                height: 100% !important;
-            }
-    </style>
-
-    @*<div id="map"></div>*@
 
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>

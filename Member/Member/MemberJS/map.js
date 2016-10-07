@@ -2,10 +2,12 @@
 
 
     $http.get("http://www.vtec-system.com:8080/LoyaltyApi/Stores/GetListAllStoresOfBrand?merchantId=1&brandId=1").success(function (data) {
-        $scope.myWelcome = data.dataResult;
+       $scope.myWelcome = data.dataResult;
+        console.log($scope.myWelcome);
         $scope.PathImage = "http://203.150.94.101:8080/Resources/StoreImages/Merchant-1/Brand-1/";
-
+        
         var cities = $scope.myWelcome;
+
         //console.log($scope.myWelcome);
         
         //for (i = 0 ; i < $scope.myWelcome.length; i++) {
@@ -28,11 +30,11 @@
         //  lat: 13.841611799999999,
         //  lng: 100.6349315        
         //}];
-
         
         var options = {
             enableHighAccuracy: true
         };
+
 
         navigator.geolocation.getCurrentPosition(function (pos) {
             $scope.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
@@ -42,6 +44,7 @@
             var currentLocations = [
                 $scope.position
             ];
+
             console.log(currentLocations);
             var service = new google.maps.DistanceMatrixService;
             service.getDistanceMatrix({
@@ -106,9 +109,8 @@
                             $scope.myWelcome[j].duration = elements[j].duration.value;
                             $scope.myWelcome[j].durationText = elements[j].duration.text;                            
                         }
-                    }
-                    localStorage.setItem('duration', JSON.stringify($scope.myWelcome));
-                    display();                  
+                    }                 
+                    display();
                 }
 
             });
@@ -129,13 +131,7 @@
             for (var i = 0; i < $scope.myWelcome.length; i++) {
                 var store=($scope.myWelcome[i]);              
             }
-
-            
         }
-            $scope.mapDistance = $scope.myWelcome;
-            
-            console.log($scope.mapDistance);
-
 
         function compare(a, b) {
             if (a.distance < b.distance)
@@ -147,16 +143,20 @@
 
         //-------------------------------------------------------------------
 
+        navigator.geolocation.getCurrentPosition(function (pos) {
+           new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        
+
         var mapOptions = {
         zoom: 11,
-        center: {lat:13.763795, lng:100.495738} ,
+        center: { lat: pos.coords.latitude, lng: pos.coords.longitude },
         mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
+        }
+            
 
+        $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-    $scope.markers = [];
+        $scope.markers = [];
 
     var infoWindow = new google.maps.InfoWindow();
 
@@ -183,31 +183,35 @@
 
         google.maps.event.addListener(marker, 'click', function () {
             infoWindow.setContent('<h2>' + marker.title + '</h2>' +
-              marker.content);
+            marker.content);
             infoWindow.open($scope.map, marker);
         });
 
         $scope.markers.push(marker);
 
     }
-
+        
     for (i = 0; i < cities.length; i++) {
         createMarker(cities[i]);
     }
-
+ 
     $scope.openInfoWindow = function (storeName, selectedMarker) {
         storeName.preventDefault();
         google.maps.event.trigger(selectedMarker, 'click');
     }
 
-    });
+        });
+ })
 
     $scope.infor = function (storeId) {
-        var FilterMyWelcome = $filter('filter')($scope.mapDistance, { storeId: storeId });
+        var FilterMyWelcome = $filter('filter')($scope.myWelcome, { storeId: storeId });
         console.log(FilterMyWelcome);
         localStorage.setItem('durationText', FilterMyWelcome[0].durationText);
         window.location = '#/Infor/'+ storeId;
     };
     
-
+    $scope.mapByName = function () {
+        window.location = '#/MapByName/';
+    };
+    
 }])

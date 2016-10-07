@@ -6,6 +6,7 @@
         $scope.PathImage = "http://203.150.94.101:8080/Resources/StoreImages/Merchant-1/Brand-1/";
 
         var cities = $scope.myWelcome;
+
         //console.log($scope.myWelcome);
 
         //for (i = 0 ; i < $scope.myWelcome.length; i++) {
@@ -130,9 +131,8 @@
 
 
         }
-        $scope.mapDistance = $scope.myWelcome;
 
-        console.log($scope.mapDistance);
+        console.log($scope.myWelcome);
 
         function compare(a, b) {
             if (a.distance < b.distance)
@@ -231,4 +231,7 @@
         window.location = '#/Infor/' + storeId;
     };
 
+     $scope.map = function () {
+        window.location = '#/Map/';
+    };
 }])

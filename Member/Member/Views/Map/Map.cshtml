@@ -3,201 +3,78 @@
     <div class="col-md-8 col-sm-12 col-xs-12">
         <div class="x_panel">
             <ul id="tabs">
-                <li><a href="" ng-click="openInfoWindow($event, marker)" title="tab1">{{ 'SortByLocation' | translate }}</a></li>
-                <li><a href="#/MapByName"  title="tab2">{{ 'SortByName' | translate }}</a></li>
+                <li><a ng-click="" title="tab1">{{ 'SortByLocation' | translate }}</a></li>
+                <li><a ng-click="mapByName()" title="tab2">{{ 'SortByName' | translate }}</a></li>
             </ul>
             <div class="google-maps">
                 <iframe src="http://localhost:51813/Map/Map2"
                         width="735" height="455" frameborder="0" style="border:0"></iframe>
-            </div>            
+            </div>
         </div>
     </div>
     <!-- END GOOGLE WORLD MAP-->
 
     <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="x_panel" style="height:513px">
-          @*  <div class="x_title">
-        <h4>Map <small>Sort By Location</small></h4>
-        <div class="clearfix"></div>
-    </div>  *@
-            <div class="x_content" id="scrollArea">               
-                <div ng-repeat="myWelcomes in mapDistance |filter:storeName">
+            @*  <div class="x_title">
+                    <h4>Map <small>Sort By Location</small></h4>
+                    <div class="clearfix"></div>
+                </div>  *@
+            <div class="x_content" id="scrollArea">
+                <div ng-repeat="myWelcomes in myWelcome | orderBy:myWelcomes.storeName">
                     <div class="row">
                         <div class="timeline-item-content" style="width: 100%; height: 100px">
                             <div class="timeline-heading">
-                                <h5 style="color:darkred"><strong>&nbsp; {{myWelcomes.storeName}}</strong></h5>
+                                <h5 style="color:darkred"><strong>&nbsp;{{myWelcomes.storeName}}</strong></h5>
                             </div>
                             @*<a href="">*@
-                                <div class="timeline-body" style="text-align:center">
-                                    <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="160" align="left" />
-                                    <p> {{myWelcomes.storeAddress1}}{{myWelcomes.storeAddress2}}</p>
-                                    @*<p> </p>*@
+                            <div class="timeline-body" style="text-align:center" ng-click="infor(myWelcomes.storeId)">
+                                <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
+                                <p> {{myWelcomes.storeAddress1}}{{myWelcomes.storeAddress2}}</p>
+                                @*<p> </p>*@
 
-                                    <div class="timeline-footer">
-                                        @*<h5 href="" ng-click="infor({{myWelcomes.storeId}})"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
-                                        <h6 class="pull-right">{{myWelcomes.distanceText}}</h6>
-                                    </div>
-                                    <button ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
-                                </div>
+                                <button style="border-radius:14px;" ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
+                                <div class="timeline-footer">
+                                    @*<h5 href="" ng-click="infor({{myWelcomes.storeId}})"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
+                                    <h6 class="pull-right" style="color:darkgreen"><strong>{{myWelcomes.distanceText}}</strong></h6>
+                                </div>                       
+                            </div>
                             @*</a>*@
-                            
                         </div>
                     </div>
-                </div>              
+                </div>
             </div>
         </div>
     </div>
 </div>
-              
-            
 
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Complex icons</title>
-    <style>
-        .google-maps {
-            position: relative;
-            padding-bottom: 70%;
-            // This is the aspect ratio height: 0;
-            overflow: hidden;
+
+<style>
+    .google-maps {
+        position: relative;
+        padding-bottom: 68%;
+        // This is the aspect ratio height: 0;
+        overflow: hidden;
+    }
+
+        .google-maps iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
         }
 
-            .google-maps iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100% !important;
-                height: 100% !important;
-            }
-
-        #scrollArea {
-            height: 445px;
-            overflow: auto;
-        }
-    </style>
+    #scrollArea {
+        height: 500px;
+        overflow: auto;
+    }
+</style>
 
 
-        <script src="~/MemberJS/app.js"></script>
-    @*<script src="~/MemberJS/tab.js"></script>*@
-    @*<link href="~/css/tab.css" rel="stylesheet" />*@
+<script src="~/MemberJS/app.js"></script>
+@*<script src="~/MemberJS/tab.js"></script>
+<link href="~/css/tab.css" rel="stylesheet" />*@
 <script src="~/MemberJS/map.js"></script>
-
-
-
-
-
-    <style>
-        .google-maps {
-            position: relative;
-            padding-bottom: 68%;
-             /*This is the aspect ratio height: 0;*/
-            overflow: hidden;
-        }
-
-            .google-maps iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100% !important;
-                height: 100% !important;
-            }
-    </style>
-
-    <div id="map"></div>
-
-
-     <script>
-
-        // The following example creates complex markers to indicate beaches near
-        // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
-        // to the base of the flagpole.
-
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: LatLng
-            });
-         
-            setMarkers(map);
-        }
-
-        // Data for the markers consisting of a name, a LatLng and a zIndex for the
-        // order in which these markers should display on top of each other.
-        var oishis = [
-          ['โออิชิบุฟเฟ่ต์ Major Avenue', 13.831637, 100.583606, 4],
-          ['โออิชิบุฟเฟ่ต์ ไอทีสแคร์', 13.890382, 100.598026, 5],
-          ['โอิชิราเมน เซนทรัลรัตนาธิเบศร์', 13.868384, 100.460011, 3],
-          ['โออิชิบุฟเฟ่ต์ บิ๊กซีพระราม4', 13.718344, 100.597340, 2],
-          ['ชาบูชิ เซนทรัลเวิลด์พลาซ่า', 13.743691, 100.563007, 1]
-        ];
-
-       
-        function setMarkers(map) {
-            // Adds markers to the map.
-
-            // Marker sizes are expressed as a Size of X,Y where the origin of the image
-            // (0,0) is located in the top left of the image.
-
-            // Origins, anchor positions and coordinates of the marker increase in the X
-            // direction to the right and in the Y direction down.
-            //var image = {
-            //    url: 'http://cdn.com/my-custom-icon.png',
-            //  // This marker is 20 pixels wide by 32 pixels high.
-            //  size: new google.maps.Size(20, 32),
-            //  // The origin for this image is (0, 0).
-            //  origin: new google.maps.Point(0, 0),
-            //  // The anchor for this image is the base of the flagpole at (0, 32).
-            //  anchor: new google.maps.Point(0, 32)
-            //};
-            // Shapes define the clickable region of the icon. The type defines an HTML
-            // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-            // The final coordinate closes the poly by connecting to the first coordinate.
-
-            var shape = {
-                coords: [1, 1, 1, 20, 18, 20, 18, 1],
-                type: 'poly'
-            };
-
-
-        /*      for (var i = 0; i < oishis.length; i++) {
-                var oishi = oishis[i];
-                var marker = new google.maps.Marker({
-                    position: { lat: oishi[1], lng: oishi[2] },
-                    map: map,
-                    shape: shape,
-                    title: oishi[0],
-                    zIndex: oishi[3]
-                });
-
-            }  */
-
-            var infowindow = new google.maps.InfoWindow();
-
-            var marker, i;
-
-            for (var i = 0; i < oishis.length; i++) {
-                var oishi = oishis[i];
-                var marker = new google.maps.Marker({
-                    position: { lat: oishi[1], lng: oishi[2] },
-                    map: map,
-                    shape: shape,
-                    title: oishi[0],
-                    zIndex: oishi[3]
-                });
-
-                google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                    return function () {
-                        infowindow.setContent(oishis[i][0]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, i));
-            }
-
-
-        }
-</script>
-
-
-  
 
 
