@@ -130,7 +130,7 @@
                                         </a>
                                     </li>
 
-                                    <li><a id="fbLogout"  href="/Login/login" onclick="signOut(); fbLogout();"><i class="fa fa-sign-out pull-right"></i> 
+                                    <li><a id="fbLogout"  @*href="/Login/login"*@ ng-click="signOut()"><i class="fa fa-sign-out pull-right"></i> 
                                         {{ 'LogOut' | translate}}</a></li>
                                     
                                 </ul>
@@ -216,6 +216,7 @@
         </div>
     </div>
 
+
     <!-- /footer content -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="~/Scripts/angular.js"></script>
@@ -295,53 +296,32 @@
             async defer></script>
     @*-------------------------------- Log out Google ---------------------------------*@
     <script>
-    function signOut() {
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out google.');
-      });
-    }
-
-    window.onload = function () {
-      gapi.load('auth2', function() {
-        gapi.auth2.init();
-      });
-    }
-    </script>
-    @*-------------------------------- Log out Facebook ---------------------------------*@
-    
-
-    <script>
-     function fbLogout() {
-        FB.logout(function (response) {
-            //Do what ever you want here when logged out like reloading the page
-            window.location.reload();
-            console.log('User signed out facebook.');
-        });
-    }
-    </script>
-
-    <!-- bootstrap-daterangepicker -->
-    <script>
-
         //function signOut() {
+        //    //--------- Log out google --------//
         //    var auth2 = gapi.auth2.getAuthInstance();
         //    auth2.signOut().then(function () {
-        //        console.log('User signed out.');
-        //        localStorage.removeItem('Details');
-        //        localStorage.removeItem('status');
-        //        console.log(localStorage);
-        //        debugger;
-        //        parent.location = '/Login/login';
+        //        console.log('User signed out google.');
         //    });
+        //    window.onload = function () {
+        //        gapi.load('auth2', function () {
+        //            gapi.auth2.init();
+        //        });
+        //    }
         //}
-        //function onLoad() {
-        //    gapi.load('auth2', function () {
-        //        gapi.auth2.init();
-        //    });
-        //}
+            //--------- Log out facebook --------//
+            // function fbLogout() {
+            //    FB.logout(function (response) {
+            //        parent.location = 'Login/login';
+            //        window.location.reload();
 
+            //    });
+            //}
 
+    </script>
+
+ 
+    <!-- bootstrap-daterangepicker -->
+    <script>
         $(document).ready(function () {
 
             var cb = function (start, end, label) {

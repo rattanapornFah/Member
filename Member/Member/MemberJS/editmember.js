@@ -1,29 +1,42 @@
-﻿app.controller('EditController', ['$scope', '$http','$translate', function ($scope, $http,$translate) {
+﻿app.controller('EditController', ['$scope', '$http', '$translate', function ($scope, $http, $translate) {
+
+    $scope.changeLanguage = function (key) {
+        $translate.use(key);
+    };
+    $scope.memberDetails = {};
+
+    $scope.signOut = function () {
+        localStorage.clear();
+        sessionStorage.clear();
+        
+        parent.location = '/Login/login';
+
+        //FB.api("/me/permissions", "DELETE", function (response) {
+        //    console.log(response); //gives true on app delete success 
+        //});
+
+    }
     
-     $scope.changeLanguage = function (key) {
-    $translate.use(key);
-  };
-     $scope.memberDetails = {};
-    
+
 
     //--------------------EditMember ----------------//
-     if (localStorage.getItem('loginStatus') == 0) {
+    if (localStorage.getItem('loginStatus') == 0) {
 
-         var member = JSON.parse(localStorage.getItem('memberDetails'));
-         var memberApi = 'merchantId=' +1+ '&memberId=' + member.memberId;
-            var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromMemberId?'+memberApi;
-            $http.get(apiName).
-                success(function (data) {
-                    $scope.memberDetails = data.dataExtra;
+        var member = JSON.parse(localStorage.getItem('memberDetails'));
+        var memberApi = 'merchantId=' + 1 + '&memberId=' + member.memberId;
+        var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/GetMemberDataFromMemberId?' + memberApi;
+        $http.get(apiName).
+            success(function (data) {
+                $scope.memberDetails = data.dataExtra;
 
-                    $scope.memberDetails.birthday = new Date(data.dataExtra.birthday);
-                    console.log($scope.memberDetails)
-                })
-     } else {
-         $scope.memberDetails = JSON.parse(localStorage.getItem('memberDetails'));
-     }
-        
-   
+                $scope.memberDetails.birthday = new Date(data.dataExtra.birthday);
+                console.log($scope.memberDetails)
+            })
+    } else {
+        $scope.memberDetails = JSON.parse(localStorage.getItem('memberDetails'));
+    }
+
+
     var loadBaseMemberData = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/LoadBaseMemberData?' +
     'merchantId=1&brandId=1';
     $http.get(loadBaseMemberData).
@@ -31,15 +44,15 @@
             $scope.provinces = data[1];
             //console.log($scope.provinces);
             $scope.countries = data[2];
-          
+
         })
 
     //--------------------------- Update Member Details---------------------------------------------------//
     $scope.update = function (memberDetails) {
-        
+
         var member = JSON.parse(localStorage.getItem('memberDetails'));
         var memberApi = 'merchantId=' + 1 + '&memberId=' + member.memberId;
-        var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/UpdateMemberProfile?'+memberApi+
+        var apiName = 'http://www.vtec-system.com:8080/LoyaltyApi/Member/UpdateMemberProfile?' + memberApi +
             '&title=' + memberDetails.title + '&' +
             'firstName=' + memberDetails.firstName + '&' +
             'middleName=' + memberDetails.middlename + '&' +
@@ -67,9 +80,9 @@
                 alert(data.dataResult);
                 //console.log(data)
             }
-         
+
         })
-        
+
 
     }
 
@@ -103,5 +116,5 @@
 
     //----------------------------------------------------------------------------------------------//
 
-   
+
 }])

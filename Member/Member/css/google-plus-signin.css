@@ -1,4 +1,4 @@
-#googlebutton{
+#google-plus-signin{
     width: 120px;
     height: 36px;    
     color: #FFFFFF;
@@ -8,20 +8,20 @@
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-#googlebutton:hover,
-#googlebutton:focus{
+#google-plus-signin:hover,
+#google-plus-signin:focus{
    border-bottom: solid 2px #04538d;
    background: #427FED;
    cursor: pointer;
 }
 
-#googlebutton .google-icon{
+#google-plus-signin .google-icon{
     margin: 6px 0 0 6px;
     float: left; 
     fill: #FFFFFF;   
 }
 
-#googlebutton .sign-in-text{
+#google-plus-signin .sign-in-text{
     text-align: center;
     vertical-align: middle;
     margin: 3px 0 0 0;

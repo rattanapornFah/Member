@@ -39,15 +39,12 @@
         }
 
     .modal-body {
- margin: 0 auto 0 auto;
-  position: relative;
-  padding: 15px;
-  overflow-y: auto;
-  transform: rotate(-90deg);
- 
-}
-
-
+        margin: 0 auto 0 auto;
+        position: relative;
+        padding: 15px;
+        overflow-y: auto;
+        transform: rotate(-90deg);
+    }
 </style>
 <div class="row" ng-controller="PointController">
     <form class="form-horizontal">
@@ -60,28 +57,31 @@
             <i class="glyphicon glyphicon-plus"></i>
         </button>
 
-        <div ng-show="cardsStatus == 1">
-            <div class="x_panel">
-                <h1 href="#/Addcard"><span class="glyphicon-plus"></span></h1>
-                <p> Plus button to add your cards</p>
-            </div>
-        </div>
-        <div ng-show="IsGiftCard == 1" >
+        <div ng-show="cardsStatus == null && IsGiftCard == 0">
             <div class="x_panel">
                 <center>
-                    <br />
-                    <br />
+                    <br /><br />
+                    <p> You don't have card.</p>
+                    <p><strong> If</strong> you have card.<strong> Please</strong> add card.</p>
+                    <button class="btn btn-link btn-block" onclick="parent.location='#/Card'"><strong> Add card Now</strong></button>
+                    <br /><br />
+                 </center>
+            </div>
+        </div>
+        <div ng-show="IsGiftCard == 1">
+            <div class="x_panel">
+                <center>
+                    <br /><br />
                     @*<img id="nogiftcard" href="/#/Addcard" src={{PathImage4}}  class="img-responsive img-thumbnail img-rounded" >*@
                     <p>You don't have giftcard.</p>
-                    <br />
-                    <br />
+                    <br /><br />
                 </center>
             </div>
         </div>
 
         <div class="panel-body list-group-item" href="" ng-repeat="detail in memberCardDetails|filter:{isGiftCard:IsGiftCard}" ng-show="cardsStatus == 0">
 
-           
+
 
             <div class="col-md-5 col-sm-6">
                 <div class="widget-item-left">
@@ -143,7 +143,7 @@
                 <button class="btn btn-info" data-toggle="modal" data-target="#modal_barcode{{detail.cardId}}"> {{'Barcode' | translate}}  </button>
                 <button class="btn btn-info"> {{'History' | translate}} </button>
 
-                
+
                 <div class="modal col-" id="modal_barcode{{detail.cardId}}" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -153,10 +153,10 @@
                             </div>
                             <div class="modal-body img-responsive">
                                 <br /><br />
-                                    <div barcode-generator="{{detail.cardNo}}" id="barcode" style="height:208px;width:390px;" ></div>
+                                <div barcode-generator="{{detail.cardNo}}" id="barcode" style="height:208px;width:390px;"></div>
                                 <h4> {{detail.cardNo}}</h4>
-                              
-                                
+
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">{{'Close' | translate}}</button>
@@ -165,7 +165,7 @@
 
                     </div>
                 </div>
-                
+
                 <div class="modal" id="modal_qr{{detail.cardId}}" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" align="center" ng-controller="PointController">
                     <div class="modal-dialog" ng-init="QRcode()">
                         <div class="modal-content">
