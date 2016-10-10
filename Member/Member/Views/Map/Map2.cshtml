@@ -15,9 +15,9 @@
                     <div id="map" style="width:100%"></div>
                     <marker animation="DROP" position="current-location"></marker>
                     <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
-                        <a id="country_container">
+                        @*<a id="country_container">*@
                             <label href="#" ng-click="openInfoWindow($event, marker)" id="names">{{ marker.title }}</label>
-                        </a>
+                        @*</a>*@
                     </div>
                 </div>
             </div>           
