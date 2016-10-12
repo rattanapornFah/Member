@@ -246,7 +246,9 @@
         window.location = '#/Infor/'+ storeId;
     };
     
-    $scope.mapByName = function () {
+    $scope.mapByName = function (storeId) {
+        var FilterMyWelcome = $filter('filter')($scope.myWelcome, { storeId: storeId });
+        localStorage.setItem('distance', FilterMyWelcome[0].distanceText);
         window.location = '#/MapByName/';
     };
     
