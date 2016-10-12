@@ -1,4 +1,4 @@
-﻿var signin = angular.module('SigninApp', ['ngRoute','ui.bootstrap','directive.g+signin', 'pascalprecht.translate']);
+﻿var signin = angular.module('SigninApp', ['ngRoute', 'ui.bootstrap', 'directive.g+signin', 'pascalprecht.translate']);
 signin.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
@@ -19,8 +19,8 @@ signin.controller('languageCtrl', function ($scope, $translate) {
 
 signin.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 
-//---------------------------------- Sign in with Google -----------------------------------------//
-    
+    //---------------------------------- Sign in with Google -----------------------------------------//
+
     $scope.statusLogin = -1;
 
     $scope.$on('event:google-plus-signin-success', function (event, authResult) {
@@ -67,9 +67,18 @@ signin.controller('LoginController', ['$scope', '$http', '$location', function (
 
                } else {
                    $scope.statusLogin = 0;
-  
+                   new PNotify({
+                                  title: 'WRONG !!',
+                                  type: 'error',
+                                  text: 'The username or password is incorrect.',
+                                  nonblock: {
+                                      nonblock: true
+                                  },
+                                  styling: 'bootstrap3',
+                                  //addclass: 'dark'
+                              })
                }
-       })
+           })
     };
 
 }]);

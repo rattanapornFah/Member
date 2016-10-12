@@ -6,15 +6,24 @@
     $scope.memberDetails = {};
 
     $scope.signOut = function () {
-        localStorage.clear();
-        sessionStorage.clear();
-        
-        parent.location = '/Login/login';
+        //localStorage.clear();
+        //sessionStorage.clear();
+        $scope.getLogin = localStorage.getItem('loginStatus');
+        console.log($scope.getLogin);
+        if (( $scope.getLogin == 2)) {
+            FB.getLoginStatus(function (response) {
+                if (response && response.status === 'connected') {
+                    FB.logout(function (response) {
+                        document.location.reload();
+                        parent.location = '/Login/login';
 
-        //FB.api("/me/permissions", "DELETE", function (response) {
-        //    console.log(response); //gives true on app delete success 
-        //});
-
+                    });
+                }
+            });
+        } else {
+            window.location='/Login/login';
+        }
+     
     }
     
 

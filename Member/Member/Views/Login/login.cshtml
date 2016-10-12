@@ -37,8 +37,12 @@
             font-family: 'Kanit', sans-serif;
         }
     </style>
-</head>
+    <!-- PNotify -->
+    <link href="~/Template/vendors/pnotify/dist/pnotify.css" rel="stylesheet" />
+    <link href="~/Template/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet" />
+    <link href="~/Template/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet" />
 
+</head>
 
 <body class="login" bgcolor="PaleGreen" ng-controller="LoginController">
     <div>
@@ -65,177 +69,190 @@
                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                     <a ng-click="signin(main)" class="btn btn-default btn-block alert-success"><span class="fa fa-sign-in"></span> Log In </a>
                                 </div>
+
                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                     <a href="/Register/register" class="btn btn-default btn-block alert-success"><span class="fa fa-edit"></span> Create an account </a>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
-                            <br />
+                        </form>
+                        <div class="clearfix"></div>
+                        <br />
 
-                            <div class="separator">
-                                <p class="change_link"><strong>OR</strong></p>
-                                <div class="form-group">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        @*<div class="g-signin2" data-onsuccess="onSignIn"></div>*@
-                                        @*<google-plus-signin clientid="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj" language="en">
-                                            </google-plus-signin>*@
-                                        <google-plus-signin clientid="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj" autorender="false" customtargetid="my-custom-element">
-                                            <div id="my-custom-element">
-                                                <button class="btn btn-default btn-sm" style="background-color:#d34836;color:white;font-size: 13px;">
-                                                    <span class="fa fa-google-plus"></span> <strong>&nbsp;   Sign In With Google </strong>
-                                                </button>
-                                            </div>
-                                        </google-plus-signin>
-                                    </div>
+                        <div class="separator">
+                            <p class="change_link"><strong>OR</strong></p>
+                            <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    @*<div class="g-signin2" data-onsuccess="onSignIn"></div>*@
+                                    @*<google-plus-signin clientid="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj" language="en">
+                                        </google-plus-signin>*@
+                                    <google-plus-signin clientid="398506059135-ksocfvjtrc37jn87mhahgsa4lh7nfkbj" autorender="false" customtargetid="my-custom-element">
+                                        <div id="my-custom-element">
+                                            <button class="btn btn-default btn-sm" style="background-color:#d34836;color:white;font-size: 13px;">
+                                                <span class="fa fa-google-plus"></span> <strong>&nbsp;   Sign In With Google </strong>
+                                            </button>
+                                        </div>
+                                    </google-plus-signin>
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-
-                                        <fb:login-button scope="public_profile,email" data-size="large" autologoutlink="false" onlogin="checkLoginState();">
-                                            Sign In With Facebook
-                                        </fb:login-button>
-
-                                        <div id="fb-root"></div>
-                                    </div>
-                                </div>
-
                             </div>
 
-                        </form>
-                    </section>
-                    <div class="x_content bs-example-popovers" ng-show="statusLogin == 0">
-                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                            <strong>ERROR</strong> username and password invalid.
-                        </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
 
-                    </div>
+                                    <fb:login-button scope="public_profile,email" data-size="large" autologoutlink="false" onlogin="checkLoginState();">
+                                        Sign In With Facebook
+                                    </fb:login-button>
+                                    <div id="fb-root"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        @*</form>*@
+
+
+                    </section>
+                    @*<div class="x_content bs-example-popovers" ng-show="statusLogin == 0">
+                            <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <strong>ERROR</strong> username and password invalid.
+                            </div>
+                        </div>*@
                 </div>
             </div>
         </div>
     </div>
-                <script src="~/Scripts/angular.js"></script>
-                <script src="~/Scripts/angular-route.min.js"></script>
-                <script src="~/Scripts/angular-sanitize.js"></script>
-                <script src="~/Scripts/angular-translate.js"></script>
-                <script src="~/Scripts/google-plus-signin.js"></script>
-                <script src="~/MemberJS/login.js"></script>
-                <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
-                <script src="~/Scripts/google-plus-signin.js"></script>
-       
+    <!-- PNotify -->
+    <script src="~/Template/vendors/pnotify/dist/pnotify.js"></script>
+    <script src="~/Template/vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="~/Template/vendors/pnotify/dist/pnotify.nonblock.js"></script>
+  
 
-                <script>
-                    // This is called with the results from from FB.getLoginStatus().
-                    function statusChangeCallback(response) {
-                        console.log('statusChangeCallback');
-                        console.log(response);
-                        // The response object is returned with a status field that lets the
-                        // app know the current login status of the person.
-                        // Full docs on the response object can be found in the documentation
-                        // for FB.getLoginStatus().
-                        if (response.status === 'connected') {
-                            // Logged into your app and Facebook.
-                            testAPI();
-                        } else if (response.status === 'not_authorized') {
-                            // The person is logged into Facebook, but not your app.
-                            //document.getElementById('status').innerHTML = 'Please log ' +
-                            //  'into this app.';
-                        } else {
-                            // The person is not logged into Facebook, so we're not sure if
-                            // they are logged into this app or not.
-                            document.getElementById('status').innerHTML = 'Please log ' +
-                              'into Facebook.';
-                        }
-                    }
+    <!-- PNotify -->
 
-                    // This function is called when someone finishes with the Login
-                    // Button.  See the onlogin handler attached to it in the sample
-                    // code below.
-                    function checkLoginState() {
-                        FB.getLoginStatus(function (response) {
-                            statusChangeCallback(response);
-                        });
-                    }
+    <!-- /PNotify -->
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-translate.js"></script>
+    <script src="~/Scripts/google-plus-signin.js"></script>
+    <script src="~/MemberJS/login.js"></script>
+    <script data-require="ui-bootstrap@1.0.0" data-semver="1.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
+    <script src="~/Scripts/google-plus-signin.js"></script>
 
-                    window.fbAsyncInit = function () {
-                        FB.init({
-                            appId: '123551248102766',
-                            xfbml: true,
-                            version: 'v2.7'
-                        });
+    <script>
+        // This is called with the results from from FB.getLoginStatus().
+        function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            // The response object is returned with a status field that lets the
+            // app know the current login status of the person.
+            // Full docs on the response object can be found in the documentation
+            // for FB.getLoginStatus().
+            if (response.status === 'connected') {
+                // Logged into your app and Facebook.
+                testAPI();
+            } else if (response.status === 'not_authorized') {
+                // The person is logged into Facebook, but not your app.
+                //document.getElementById('status').innerHTML = 'Please log ' +
+                //  'into this app.';
+            } else {
+                // The person is not logged into Facebook, so we're not sure if
+                // they are logged into this app or not.
+                document.getElementById('status').innerHTML = 'Please log ' +
+                  'into Facebook.';
+            }
+        }
 
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
 
-                        // Now that we've initialized the JavaScript SDK, we call
-                        // FB.getLoginStatus().  This function gets the state of the
-                        // person visiting this page and can return one of three states to
-                        // the callback you provide.  They can be:
-                        //
-                        // 1. Logged into your app ('connected')
-                        // 2. Logged into Facebook, but not your app ('not_authorized')
-                        // 3. Not logged into Facebook and can't tell if they are logged into
-                        //    your app or not.
-                        //
-                        // These three cases are handled in the callback function.
-
-                        FB.getLoginStatus(function (response) {
-                            statusChangeCallback(response);
-                            //if (response.status === 'connected') {
-                            //    var accessToken = response.authResponse.accessToken;
-                            //}
-                        });
-
-                    };
-
-                    // Load the SDK asynchronously
-                    (function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s); js.id = id;
-                        js.src = "//connect.facebook.net/en_US/sdk.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));
-
-                    // Here we run a very simple test of the Graph API after login is
-                    // successful.  See statusChangeCallback() for when this call is made.
-                    function testAPI() {
-                        console.log('Welcome!  Fetching your information.... ');
-                        FB.api('/me?fields=birthday,email,first_name,last_name,gender,picture', function (response) {
-                            localStorage.setItem('memberDetails', JSON.stringify(response));
-                            localStorage.setItem('loginStatus', 2);
-                            console.log(response);
-
-                            parent.location = '/#/Point';
-
-                            //console.log('Successful login for: ' + response.name);
-                            //document.getElementById('status').innerHTML =
-                            //  'Thanks for logging in, ' + response.name + '!';
-                        });
-                    }
-                </script>
-
-                @*<script>
-                        function onSignIn(googleUser) {
-                            console.log(googleUser);
-                            console.log(localStorage);
-                            debugger;
-                            var profile = googleUser.getBasicProfile();
-                            console.log(profile);
-                            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-                            console.log('Name: ' + profile.getName());
-                            console.log('Image URL: ' + profile.getImageUrl());
-                            console.log('Email: ' + profile.getEmail());
-                            localStorage.setItem('Details', JSON.stringify(profile));
-                            localStorage.setItem('status', 'google');
-                            debugger;
-                            parent.location = '/#/Point';
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '123551248102766',
+                xfbml: true,
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                version: 'v2.7'
+            });
 
 
-                        }
-                    </script>*@
+            // Now that we've initialized the JavaScript SDK, we call
+            // FB.getLoginStatus().  This function gets the state of the
+            // person visiting this page and can return one of three states to
+            // the callback you provide.  They can be:
+            //
+            // 1. Logged into your app ('connected')
+            // 2. Logged into Facebook, but not your app ('not_authorized')
+            // 3. Not logged into Facebook and can't tell if they are logged into
+            //    your app or not.
+            //
+            // These three cases are handled in the callback function.
 
-                <link href="~/css/google-plus-signin.css" rel="stylesheet" />
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+                if (response.status === 'connected') {
+                    var accessToken = response.authResponse.accessToken;
+                }
+            });
+        };
+
+
+        // Load the SDK asynchronously
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        function testAPI() {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me?fields=birthday,email,first_name,last_name,gender,picture', function (response) {
+                localStorage.setItem('memberDetails', JSON.stringify(response));
+                localStorage.setItem('loginStatus', 2);
+                console.log(response);
+
+                parent.location = '/#/Point';
+
+                //console.log('Successful login for: ' + response.name);
+                //document.getElementById('status').innerHTML =
+                //  'Thanks for logging in, ' + response.name + '!';
+            });
+
+        }
+
+    </script>
+
+
+    @*<script>
+            function onSignIn(googleUser) {
+                console.log(googleUser);
+                console.log(localStorage);
+                debugger;
+                var profile = googleUser.getBasicProfile();
+                console.log(profile);
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail());
+                localStorage.setItem('Details', JSON.stringify(profile));
+                localStorage.setItem('status', 'google');
+                debugger;
+                parent.location = '/#/Point';
+
+
+            }
+        </script>*@
+
 </body>
 </html>
