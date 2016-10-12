@@ -1,14 +1,11 @@
 ﻿app.controller('MapController', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
 
-
     $http.get("http://www.vtec-system.com:8080/LoyaltyApi/Stores/GetListAllStoresOfBrand?merchantId=1&brandId=1").success(function (data) {
        $scope.myWelcome = data.dataResult;
         console.log($scope.myWelcome);
         $scope.PathImage = "http://203.150.94.101:8080/Resources/StoreImages/Merchant-1/Brand-1/";
         
         var cities = $scope.myWelcome;
-
-        //console.log($scope.myWelcome);
         
         //for (i = 0 ; i < $scope.myWelcome.length; i++) {
         //    $scope.myWelcome[i].distance = 0;
@@ -107,9 +104,9 @@
                             $scope.myWelcome[j].distance = elements[j].distance.value;
                             $scope.myWelcome[j].distanceText = elements[j].distance.text;
                             $scope.myWelcome[j].duration = elements[j].duration.value;
-                            $scope.myWelcome[j].durationText = elements[j].duration.text;                            
+                            $scope.myWelcome[j].durationText = elements[j].duration.text;                         
                         }
-                    }                 
+                    }
                     display();
                 }
 
@@ -125,9 +122,7 @@
         function display() {           
             // sort by distance
             $scope.myWelcome.sort(compare);
-
-            //html += "</br><b>after sort</b></br>";
-            
+            //html += "</br><b>after sort</b></br>";           
             for (var i = 0; i < $scope.myWelcome.length; i++) {
                 var store=($scope.myWelcome[i]);              
             }
@@ -143,24 +138,67 @@
 
         //-------------------------------------------------------------------
 
-        navigator.geolocation.getCurrentPosition(function (pos) {
-           new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-        
+        var mapOptions = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 13.752457, lng: 100.525943 },
+            zoom: 10
+        });
+      
+        //var infoWindows = new google.maps.InfoWindow({ map: mapOptions });
 
-        var mapOptions = {
-        zoom: 11,
-        center: { lat: pos.coords.latitude, lng: pos.coords.longitude },
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };               
+
+                var contentString = 
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h3 id="firstHeading" class="firstHeading">Your Current Location</h1>' +            
+            '</div>' +
+            '</div>';
+
+                var infowindowCurrent = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                var markerCurrent = new google.maps.Marker({
+                    position: pos,
+                    map: mapOptions,
+                    icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=home|FFFF00',
+                });
+                markerCurrent.addListener('click', function () {
+                    infowindowCurrent.open(mapOptions, markerCurrent);
+                });
+
+                //infoWindows.setPosition(pos);
+                //infoWindows.setContent('Your Current Location');
+                map.setCenter(pos);
+            }, function() {
+                handleLocationError(true, infoWindows, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindows, map.getCenter());
         }
-            
+
+    function handleLocationError(browserHasGeolocation, infoWindows, pos) {
+        infoWindows.setPosition(pos);
+        infoWindows.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+    }
 
         $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+     
+
+        var infoWindow = new google.maps.InfoWindow();
 
         $scope.markers = [];
 
-    var infoWindow = new google.maps.InfoWindow();
-
-    var createMarker = function (info) {
+        var createMarker = function (info) {
 
         var marker = new google.maps.Marker({
             map: $scope.map,
@@ -199,10 +237,8 @@
         storeName.preventDefault();
         google.maps.event.trigger(selectedMarker, 'click');
     }
-
-        });
- })
-
+    });
+ 
     $scope.infor = function (storeId) {
         var FilterMyWelcome = $filter('filter')($scope.myWelcome, { storeId: storeId });
         console.log(FilterMyWelcome);
