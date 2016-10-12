@@ -139,7 +139,7 @@
         //-------------------------------------------------------------------
 
         var mapOptions = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 13.841611799999999, lng: 100.6349315},
+            center: { lat: 13.752457, lng: 100.525943 },
             zoom: 10
         });
       

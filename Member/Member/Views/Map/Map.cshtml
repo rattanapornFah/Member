@@ -28,13 +28,12 @@
                                 <h5 style="color:darkred"><strong>&nbsp;{{myWelcomes.storeName}}</strong></h5>
                             </div>
                             @*<a href="">*@
-                            <div class="timeline-body" style="text-align:center" ng-click="infor(myWelcomes.storeId)">
+                          <div class="timeline-body" style="text-align:center" ng-click="infor(myWelcomes.storeId)">
                                 <img src={{PathImage+myWelcomes.storeImg0}} class="img-text" width="150" align="left" />
                                 <p> {{myWelcomes.storeAddress1}}{{myWelcomes.storeAddress2}}</p>
                                 @*<p> </p>*@
-
                                 <button style="border-radius:14px;" ng-click="infor(myWelcomes.storeId)">{{ 'Readmore' | translate }}</button>
-                                <div class="timeline-footer">
+                                <div class="footer">
                                     @*<h5 href="" ng-click="infor({{myWelcomes.storeId}})"><strong>{{ 'Readmore' | translate }}</strong></h5>*@
                                     <h6 class="pull-right" style="color:lightseagreen"><strong>{{myWelcomes.distanceText}}</strong></h6>
                                 </div>                       

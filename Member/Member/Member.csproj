@@ -172,7 +172,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular-map\nearby-search.html" />
+    <Content Include="Angular-map\cuurent.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\barcode.css" />
@@ -229,7 +229,6 @@
     <Content Include="MemberJS\SortName.js" />
     <Content Include="MemberJS\tab.js" />
     <Content Include="MemberJS\translate.js" />
-    <Content Include="MemberJS\unit.spec.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-animate.js" />
