@@ -220,6 +220,7 @@
     <Content Include="MemberJS\js-image-slider.js" />
     <Content Include="MemberJS\login.js" />
     <Content Include="MemberJS\map.js" />
+    <Content Include="MemberJS\map2.js" />
     <Content Include="MemberJS\navigate.js" />
     <Content Include="MemberJS\point.js" />
     <Content Include="MemberJS\qrcode.js" />

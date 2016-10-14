@@ -11,7 +11,7 @@ app.config(function ($routeProvider) {
          })
          .when("/Map2", {
              templateUrl: "Map/Map2",
-             controller: 'MapController'
+             controller: 'Map2Controller'
          })
         .when("/MapByName", {
             templateUrl: "Map/MapByName",

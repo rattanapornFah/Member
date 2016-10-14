@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="x_panel">
-                <div ng-controller="MapController">
+                <div ng-controller="Map2Controller">
                     <div id="map" style="width:100%"></div>
                     <marker animation="DROP" position="current-location"></marker>
                     <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
@@ -35,7 +35,7 @@
 
     <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
     <script src="~/MemberJS/app.js"></script>
-    <script src="~/MemberJS/map.js"></script>
+    <script src="~/MemberJS/map2.js"></script>
     <script src="~/MemberJS/qrcode.js"></script>
     <script src="~/MemberJS/angular-qr.js"></script> 
     <script src="~/MemberJS/barcodeGenerator.js"></script>

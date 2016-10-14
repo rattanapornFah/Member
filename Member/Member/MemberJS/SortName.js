@@ -5,10 +5,6 @@
         $scope.myWelcome = data.dataResult;
         $scope.PathImage = "http://203.150.94.101:8080/Resources/StoreImages/Merchant-1/Brand-1/";
 
-        var cities = $scope.myWelcome;
-
-        //console.log($scope.myWelcome);
-
         //for (i = 0 ; i < $scope.myWelcome.length; i++) {
         //    $scope.myWelcome[i].distance = 0;
         //    $scope.myWelcome[i].distanceText = "";
@@ -171,59 +167,6 @@
 
         //-------------------------------------------------------------------
 
-        var mapOptions = {
-            zoom: 4,
-            center: { lat: 13.763795, lng: 100.495738 },
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-
-
-        $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-        $scope.markers = [];
-
-        var infoWindow = new google.maps.InfoWindow();
-
-        var createMarker = function (info) {
-
-            var marker = new google.maps.Marker({
-                map: $scope.map,
-                icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=restaurant|FF0000',
-                title: 'Cafe',
-                draggable: true,
-                animation: google.maps.Animation.DROP,
-                position: new google.maps.LatLng(info.storeLatitude, info.storeLongitude),
-                title: info.storeName
-            });
-            marker.addListener('click', toggleBounce);
-            marker.content = '<div class="infoWindowContent">' + info.storeAddress1 + '<br />' + info.storeLatitude + ' E,' + info.storeLongitude + ' N, </div>';
-
-            function toggleBounce() {
-                if (marker.getAnimation() !== null) {
-                    marker.setAnimation(null);
-                } else {
-                    marker.setAnimation(google.maps.Animation.BOUNCE);
-                }
-            }
-
-            google.maps.event.addListener(marker, 'click', function () {
-                infoWindow.setContent('<h2>' + marker.title + '</h2>' +
-                  marker.content);
-                infoWindow.open($scope.map, marker);
-            });
-
-            $scope.markers.push(marker);
-
-        }
-
-        for (i = 0; i < cities.length; i++) {
-            createMarker(cities[i]);
-        }
-
-        $scope.openInfoWindowName = function (storeName, selectedMarker) {
-            storeName.preventDefault();
-            google.maps.event.trigger(selectedMarker, 'click');
-        }
     });
 
     $scope.infor = function (storeId) {
